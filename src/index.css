@@ -25,3 +25,12 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.name-logo {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, rgba(19,163,234,255) 0%, rgba(176,51,145,255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+

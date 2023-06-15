@@ -27,19 +27,18 @@ import projectImage4 from "./assets/projects/project4.jpg";
 import projectImage5 from "./assets/projects/project5.jpg";
 import projectImage6 from "./assets/projects/project6.jpg";
 
-// Logos
-export const logos = {
-  logogradient: logogradient,
-  logo: logo,
-};
-
 // Enter your Personal Details here
 export const personalDetails = {
-  name: "Pavan MG",
+  name: "Alexandre Benoit",
   tagline: "I build things for web",
   img: profile,
-  about: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-};
+  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and currently living in London. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.
+
+  In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
+  
+  On this portfolio website, you will discover my projects, my different skillset, as well as my accomplishments. Feel free to reach out to me to discuss your projects or to learn more about my experiences and passions.
+  
+  Welcome to my portfolio! `, };
 
 // Enter your Social Media URLs here
 export const socialMediaUrl = {
