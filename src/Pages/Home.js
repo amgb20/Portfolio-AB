@@ -8,6 +8,7 @@ function Home() {
   const h12 = useRef();
   const h13 = useRef();
   const myimageref = useRef();
+  const myimageref2 = useRef();
   useEffect(() => {
     const tl = gsap.timeline();
     tl.from(
@@ -53,6 +54,17 @@ function Home() {
           ease: "Power3.easeOut",
         },
         "<"
+        )
+        .from(
+          myimageref2.current,
+          {
+            x: "200%",
+            delay: 0.5,
+            opacity: 0,
+            duration: 2,
+            ease: "Power3.easeOut",
+          },
+          "<"
       );
       return () => tl.kill();
   }, []);
@@ -78,7 +90,7 @@ function Home() {
         >
           {tagline}
         </h2>
-        <img ref={myimageref} className="w-1/2 mx-auto rounded-l" src={img2} alt="uob" />
+        <img ref={myimageref2} className="w-1/2 mx-auto rounded-l" src={img2} alt="uob" />
       </div>
       <div className="md:w-1/2">
         <img ref={myimageref} className="w-full md:ml-auto rounded-2xl" src={img} alt="Alexandre Benoit" />

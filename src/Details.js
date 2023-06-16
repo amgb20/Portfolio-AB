@@ -9,18 +9,31 @@ import profile2 from "./assets/uoblogo.png";
 // Tech stack images
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
-import sass from "./assets/techstack/sass.png";
 import js from "./assets/techstack/js.png";
 import react from "./assets/techstack/react.png";
-import redux from "./assets/techstack/redux.png";
-import tailwind from "./assets/techstack/tailwind.png";
-import bootstrap from "./assets/techstack/bootstrap.png";
 import vscode from "./assets/techstack/vscode.png";
 import github from "./assets/techstack/github.png";
 import git from "./assets/techstack/git.png";
 import npm from "./assets/techstack/npm.png";
-import postman from "./assets/techstack/postman.png";
 import figma from "./assets/techstack/figma.png";
+import anaconda from "./assets/techstack/Anaconda_Logo.png";
+import arduino from "./assets/techstack/Arduino_Logo.png";
+import arm from "./assets/techstack/arm.png";
+import autodesk from "./assets/techstack/autodesk.png";
+import c from "./assets/techstack/c.png";
+import cplusplus from "./assets/techstack/c++.png";
+import comsol from "./assets/techstack/comsol.png";
+import django from "./assets/techstack/django.png";
+import googlecolab from "./assets/techstack/Google_Colaboratory_SVG_Logo.png";
+import microsoft from "./assets/techstack/icons8-microsoft-48.png";
+import jupyter from "./assets/techstack/jupyter.png";
+import matlab from "./assets/techstack/matlab.png";
+import numpy from "./assets/techstack/numpy.png";
+import orcad from "./assets/techstack/OrCAD_Logo.png";
+import pandas from "./assets/techstack/Pandas_logo.png";
+import pycharm from "./assets/techstack/PyCharm_Icon.png";
+import python from "./assets/techstack/python.png";
+import solidity from "./assets/techstack/solidity.png";
 // Porject Images
 import projectImage1 from "./assets/projects/project1.jpg";
 import projectImage2 from "./assets/projects/project2.jpg";
@@ -28,6 +41,9 @@ import projectImage3 from "./assets/projects/project3.jpg";
 import projectImage4 from "./assets/projects/project4.jpg";
 import projectImage5 from "./assets/projects/project5.jpg";
 import projectImage6 from "./assets/projects/project6.jpg";
+import { findRenderedComponentWithType } from "react-dom/test-utils";
+
+import "./index.css";
 
 // Enter your Personal Details here
 export const personalDetails = {
@@ -51,46 +67,187 @@ export const socialMediaUrl = {
   github: "https://github.com/amgb20/",
 };
 
+ 
+export const languageDetails = [
+  {
+    Position: "French 🇫🇷",
+    Type: "Native",
+    Company: "C2",
+  },
+  {
+    Position: "English 🇬🇧",
+    Type: "Fluent",
+    Company: "C2",
+  },
+  {
+    Position: "Spanish 🇪🇸",
+    Type: "Advanced",
+    Company: "B2",
+  },
+]
+
 // Enter your Work Experience here
 export const workDetails = [
   {
-    Position: "Frontend Web Developer",
-    Company: `Company Name here`,
-    Location: "Bengaluru",
+    Position: "Software Autonomous Pipeline Engineer",
+    Company: `Team Bath Racing Electric Artificial Intelliegence`,
+    Location: "University of Bath, Bath, UK",
     Type: "Full Time",
-    Duration: "Sep 2021 - Dec 2021",
+    Duration: "Mars 2023 - Present",
   },
   {
-    Position: "Internship",
-    Company: `Company Name here`,
-    Location: "Bengaluru",
-    Type: "Internship",
-    Duration: "Sep 2021 - Dec 2021",
+    Position: "Vehicle Dynamics Lead Engineer",
+    Company: `Team Bath Racing Electric`,
+    Location: "University of Bath, Bath, UK",
+    Type: "Full Time",
+    Duration: "Sep 2022 - Mars 2023",
   },
   {
-    Position: "Internship",
-    Company: `Company Name here`,
-    Location: "Bengaluru",
+    Position: "Co-Founder",
+    Company: `Belieth LTD`,
+    Location: "London",
+    Type: "Full Time",
+    Duration: "Jan 2022 - Nov 2022",
+  },
+  {
+    Position: "Vehicle Dynamics Engineer",
+    Company: `Williams Advanced Engineering and Jaguar TCS Formula E`,
+    Location: "Grove, Oxfordshire, UK ",
+    Type: "Full Time",
+    Duration: "Sep 2021 - May 2021",
+  },
+  {
+    Position: "Powertrain and Aerodynamic Engineer",
+    Company: `Team Bath Racing Electric`,
+    Location: "University of Bath, Bath, UK",
+    Type: "Full Time",
+    Duration: "Sep 2020 - Mars 2021",
+  },
+  {
+    Position: "Race Engineer for FunCup France and Belgium",
+    Company: `Motorsports-Marketing-Management M3M`,
+    Location: "French GP – Paul Ricard, Magny-Cours, Belgium GP – Spa-Francorchamps",
+    Type: "Part Time",
+    Duration: "Jul 2019 - Sep 2022",
+  },
+  {
+    Position: "Summer Intern",
+    Company: `Amplify Trading`,
+    Location: "London, UK",
     Type: "Internship",
-    Duration: "Sep 2021 - Dec 2021",
+    Duration: "Aug 2020 - Sep 2020",
+  },
+  {
+    Position: "Treasurer",
+    Company: `University of Bath Skydiving Society`,
+    Location: "University of Bath, Bath, UK",
+    Type: "Full Time",
+    Duration: "Sep 2020 - Jul 2021",
+  },
+  {
+    Position: "Mechanic Assistant",
+    Company: `Cycle Neaud Morind`,
+    Location: "Ile de Ré, France ",
+    Type: "Full Time",
+    Duration: "Jul 2020 - Aug 2021",
+  },
+  {
+    Position: "Research Assistant",
+    Company: `Imperial College`,
+    Location: "Imperial College, Dpt of Electrical and Robotics Engineering, South Kensington, London, UK",
+    Type: "Intership",
+    Duration: "Jul 2018 ",
+  },
+  {
+    Position: "Mechanic Assistant",
+    Company: `Garage du Moulin Bleu`,
+    Location: "Ile de Ré, France ",
+    Type: "Intership",
+    Duration: "April 2018",
+  },
+  {
+    Position: "Teacher Assistant",
+    Company: `L'Ecole des Petits`,
+    Location: "L’Ecole des Petits, London, UK ",
+    Type: "Intership",
+    Duration: "July 2017",
+  },
+  {
+    Position: "Official French Handball Referee",
+    Company: `French Handball Federetion`,
+    Location: "France",
+    Type: "PArt Time",
+    Duration: "Sep 2013 - Jul 2017",
+  },
+  {
+    Position: "French Open, Roland Garros Ball Boy",
+    Company: `French Federation`,
+    Location: "Stade of Roland Garros, Paris, France",
+    Type: "Full Time",
+    Duration: "May 2014 - Jul 2014",
+  },
+];
+
+export const charitiesDetails = [
+  {
+    Position: "Volunteer Chef Assistant",
+    Company: `Notre Dame De France Church Charity`,
+    Location: "Notre Dame De France Church Charity, London, United Kingdom ",
+    Type: "Part Time",
+    Duration: "Sept 2017 - Jul 2019",
+  },
+  {
+    Position: "Volunteer",
+    Company: `Mama Love’s Childcare Centre`,
+    Location: "Mama Love’s Childcare Centre, Cape Town, South-Africa ",
+    Type: "Part Time",
+    Duration: "Feb 2017",
   },
 ];
 
 // Enter your Education Details here
 export const eduDetails = [
   {
-    Position: "Frontend Development",
-    Company: "Udemy, YouTube, Google, Medium",
-    Location: "Online",
+    Position: "Meng in Integrated Mechanical & Electrical Engineering",
+    Company: "University of Bath",
+    Location: "University of Bath, Bath, UK",
     Type: "Full Time",
-    Duration: "Jan 2022 - Present",
+    Duration: "Sept 2019 - Present",
+    Grade: (
+      <>
+        <span className="name-logo1">Predicted First Class</span>. <br/>
+        <b>1st year</b>: Upper 2.1 – 66% - GPA: 3.7. <br/>
+        <b>2nd year</b>: Upper 2.1 – 66% - GPA: 3.7. <br/>
+        <b>3rd year</b>: First 1.0 – 74% - GPA 4.0.<br/>
+      </>
+    ),
   },
+
   {
-    Position: "Bachelor in Electronics & Communication",
-    Company: `Your College Name here`,
-    Location: "Bengaluru",
+    Position: "French Scientific Baccalauréat",
+    Company: `Lycée Français Charles de Gaulle`,
+    Location: "Lycée Français Charles de Gaulle, South Kensington, Chelsea, London, UK",
     Type: "Full Time",
-    Duration: "Aug 2020 - Present",
+    Duration: "Sept 2017 - July 2019",
+    Grade: (
+      <>
+        <span className="name-logo1">French Scientific Bac with Honours</span>. <br/>
+        Lower 6th in Science section, focusing on Maths (A), Physics (A), Chemistry (A)
+      </>
+    ),
+  },
+
+  {
+    Position: "French Brevet ",
+    Company: `Saint Jean de Passy School`,
+    Location: "Saint Jean de Passy School, Paris, France ",
+    Type: "Full Time",
+    Duration: "Sept 2012 - July 2017",
+    Grade: (
+      <>
+        <span className="name-logo1">French Brevet with Honours</span>. <br/>
+      </>
+    ),
   },
 ];
 
@@ -100,16 +257,29 @@ export const techStackDetails = {
   css: css,
   js: js,
   react: react,
-  redux: redux,
-  sass: sass,
-  tailwind: tailwind,
-  bootstrap: bootstrap,
   vscode: vscode,
-  postman: postman,
   npm: npm,
   git: git,
   github: github,
   figma: figma,
+  anaconda: anaconda,
+  arduino: arduino,
+  arm: arm,
+  autodesk: autodesk,
+  c: c,
+  cplusplus: cplusplus,
+  comsol: comsol,
+  django: django,
+  googlecolab: googlecolab,
+  microsoft: microsoft,
+  jupyter: jupyter,
+  matlab: matlab,
+  numpy: numpy,
+  orcad: orcad,
+  pandas: pandas,
+  pycharm: pycharm,
+  python: python,
+  solidity: solidity,
 };
 
 // Enter your Project Details here
