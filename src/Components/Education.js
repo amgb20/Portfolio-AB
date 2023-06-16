@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
 
 function Work({ position, company, location, type, duration, grade }) {
+  const elementsRef = useRef([]);
+  const refsEduc = el => {
+    if (el && !elementsRef.current.includes(el)) {
+      elementsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    elementsRef.current.forEach((el, i) => {
+      tl.from(
+        el,
+        {
+          x: i % 2 === 0 ? "-100%" : "200%",
+          delay: 0.5,
+          opacity: 0,
+          duration: 2,
+          ease: "Power3.easeOut",
+        },
+        "<"
+      )
+    });
+    return () => tl.kill();
+  }, []);
+  
   return (
-    <article className="pt-8 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
+    <article ref={refsEduc} className="pt-8 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
       <div className="flex justify-between items-center">
         <h1 className="text-content md:text-lg lg:text-xl">{position}</h1>
         <div className="btn bg-greenbg text-green-text text-xs inline-block rounded-3xl px-3 py-1 min-w-fit">

@@ -34,6 +34,9 @@ import pandas from "./assets/techstack/Pandas_logo.png";
 import pycharm from "./assets/techstack/PyCharm_Icon.png";
 import python from "./assets/techstack/python.png";
 import solidity from "./assets/techstack/solidity.png";
+
+// Accreditations Images
+import img1 from "./assets/techstack/ffh.svg";
 // Porject Images
 import projectImage1 from "./assets/projects/project1.jpg";
 import projectImage2 from "./assets/projects/project2.jpg";
@@ -48,7 +51,7 @@ import "./index.css";
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Alexandre Benoit",
-  tagline: "I am future Mechanical and Electrical Engineer",
+  tagline: "I am a future Mechanical and Electrical Engineer",
   img: profile,
   img1: profile1,
   img2: profile2,
@@ -202,6 +205,19 @@ export const charitiesDetails = [
     Location: "Mama Love’s Childcare Centre, Cape Town, South-Africa ",
     Type: "Part Time",
     Duration: "Feb 2017",
+  },
+];
+
+export const hobbiesDetails = [
+  
+
+];
+
+export const accreditationsDetails = [
+  {
+    Position: "Handball Referee",
+    Company: "Federation Francaise de Handball 🇫🇷",
+    Img: img1,
   },
 ];
 

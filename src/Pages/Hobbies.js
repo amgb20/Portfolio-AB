@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import Accreditations from "../Components/AccrediationText";
-import { accreditationsDetails } from "../Details";
+import Work from "../Components/Work";
+import { hobbiesDetails } from "../Details";
 import "../index.css";
 import { Link } from "react-router-dom";
 
@@ -46,15 +46,16 @@ function About() {
       
       <section>
         <h1 ref={addaccre} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Accreditations
+          Hobbies
         </h1>
         {React.Children.toArray(
-          accreditationsDetails.map(({ Position, Company, Img }) => (
-            <Accreditations
-            position={Position}
-            company={Company}
-            accreditation={Img}
-
+          hobbiesDetails.map(({ Position, Company, Location, Type, Duration }) => (
+            <Work
+              position={Position}
+              company={Company}
+              location={Location}
+              type={Type}
+              duration={Duration}
             />
           ))
         )}

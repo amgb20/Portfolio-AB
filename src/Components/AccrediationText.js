@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-function Work({ position, type, company }) {
+function Work({ position, company, accreditation }) {
   const elementsRef = useRef([]);
   const refsLan = el => {
     if (el && !elementsRef.current.includes(el)) {
@@ -31,9 +31,7 @@ function Work({ position, type, company }) {
     <article ref={refsLan} className="pt-8 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
       <div className="flex justify-between items-center">
         <h1 className="text-content md:text-lg lg:text-xl">{position}</h1>
-        <div className="btn bg-greenbg text-green-text text-xs inline-block rounded-3xl px-3 py-1 min-w-fit">
-          {type}
-        </div>
+        <img src={accreditation} alt={accreditation} style={{height: "30px", width: "30px"}}/>
       </div>
       <div className="flex justify-between pt-2">
         <div className="flex flex-col md:flex-row">

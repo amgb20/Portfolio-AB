@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact";
 import Projects from "./Pages/Projects";
 import Technologies from "./Pages/Technologies";
 import Accreditations from "./Pages/Accreditations";
+import Hobbies from "./Pages/Hobbies";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/technologies" element={<Technologies />} />
         <Route path="/accreditations" element={<Accreditations />} />
+        <Route path="/hobbies" element={<Hobbies />} />
       </Routes>
       <Footer />
     </Router>
