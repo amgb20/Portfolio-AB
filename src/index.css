@@ -76,4 +76,40 @@ body::-webkit-scrollbar {
   gap: 20px;
 }
 
+.image-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-item {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slideshowSlider {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.slideshow {
+  width: 50%; /* Adjust as needed */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.md\:w-1\/2 {
+  width: 100%;
+}
+
+
+
+
 

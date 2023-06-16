@@ -5,7 +5,17 @@ import logo from "./assets/logo2.svg";
 // Profile Image
 import profile from "./assets/profile1.png";
 import profile1 from "./assets/aboutme.png";
-import profile2 from "./assets/uoblogo.png";
+import profile3 from "./assets/1.png";
+import profile4 from "./assets/2.png";
+import profile5 from "./assets/3.png";
+import profile6 from "./assets/4.png";
+import profile7 from "./assets/5.png";
+import profile8 from "./assets/6.png";
+import profile9 from "./assets/7.png";
+import profile10 from "./assets/8.png";
+import profile11 from "./assets/9.png";
+import profile12 from "./assets/10.png";
+
 // Tech stack images
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
@@ -41,7 +51,7 @@ import udemy from "./assets/techstack/icons8-udemy.com-is-an-online-learning-and
 import google from "./assets/techstack/icons8-google.svg";
 import libf from "./assets/techstack/LIBF.jpg";
 import aefe from "./assets/techstack/aefe.png";
-import ielts from "./assets/techstack/IELTS_logo.png";  
+import ielts from "./assets/techstack/IELTS_logo.png";
 import brevet from "./assets/techstack/Ministère de la Culture.svg";
 import redcross from "./assets/techstack/malt.png";
 // Porject Images
@@ -61,8 +71,17 @@ export const personalDetails = {
   tagline: "I am a future Mechanical and Electrical Engineer",
   img: profile,
   img1: profile1,
-  img2: profile2,
-  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and currently living in London. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
+  img3: profile3,
+  img4: profile4,
+  img5: profile5,
+  img6: profile6,
+  img7: profile7,
+  img8: profile8,
+  img9: profile9,
+  img10: profile10,
+  img11: profile11,
+  img12: profile12,
+  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and now living in London since 2017. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
 
   about1: `In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
   
@@ -77,7 +96,7 @@ export const socialMediaUrl = {
   github: "https://github.com/amgb20/",
 };
 
- 
+
 export const languageDetails = [
   {
     Position: "French 🇫🇷",
@@ -216,7 +235,7 @@ export const charitiesDetails = [
 ];
 
 export const hobbiesDetails = [
-  
+
 
 ];
 
@@ -304,10 +323,10 @@ export const eduDetails = [
     Duration: "Sept 2019 - Present",
     Grade: (
       <>
-        <span className="name-logo1">Predicted First Class</span>. <br/>
-        <b>1st year</b>: Upper 2.1 – 66% - GPA: 3.7. <br/>
-        <b>2nd year</b>: Upper 2.1 – 66% - GPA: 3.7. <br/>
-        <b>3rd year</b>: First 1.0 – 74% - GPA 4.0.<br/>
+        <span className="name-logo1">Predicted First Class</span>. <br />
+        <b>1st year</b>: Upper 2.1 – 66% - GPA: 3.7. <br />
+        <b>2nd year</b>: Upper 2.1 – 66% - GPA: 3.7. <br />
+        <b>3rd year</b>: First 1.0 – 74% - GPA 4.0.<br />
       </>
     ),
   },
@@ -320,7 +339,7 @@ export const eduDetails = [
     Duration: "Sept 2017 - July 2019",
     Grade: (
       <>
-        <span className="name-logo1">French Scientific Bac with Honours</span>. <br/>
+        <span className="name-logo1">French Scientific Bac with Honours</span>. <br />
         Lower 6th in Science section, focusing on Maths (A), Physics (A), Chemistry (A)
       </>
     ),
@@ -334,7 +353,7 @@ export const eduDetails = [
     Duration: "Sept 2012 - July 2017",
     Grade: (
       <>
-        <span className="name-logo1">French Brevet with Honours</span>. <br/>
+        <span className="name-logo1">French Brevet with Honours</span>. <br />
       </>
     ),
   },

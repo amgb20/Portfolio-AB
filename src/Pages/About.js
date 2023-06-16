@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Work from "../Components/Work";
 import Language from "../Components/Language";
@@ -7,9 +7,28 @@ import { personalDetails, workDetails, eduDetails, languageDetails, charitiesDet
 import "../index.css";
 import { Link } from "react-router-dom";
 
+
 function About() {
 
+  const [currentImg, setCurrentImg] = useState(personalDetails.img);
   const elementsRef = useRef([]);
+
+  useEffect(() => {
+    const images = [personalDetails.img, personalDetails.img1, personalDetails.img3, personalDetails.img4, personalDetails.img5,
+      personalDetails.img6, personalDetails.img7, personalDetails.img8, personalDetails.img9, personalDetails.img10, personalDetails.img11, personalDetails.img12];
+    let i = 0;
+
+    const changeImage = () => {
+      setCurrentImg(images[i]);
+      i = (i + 1) % images.length; // Cycle i between 0, 1, and 2
+    };
+
+    // Change image every 3 seconds
+    const intervalId = setInterval(changeImage, 1500);
+
+    return () => clearInterval(intervalId); // Clean up on component unmount
+  }, []);
+
   const addToRefs = el => {
     if (el && !elementsRef.current.includes(el)) {
       elementsRef.current.push(el);
@@ -45,7 +64,7 @@ function About() {
             <p ref={addToRefs} className="text-content lg:max-w-xl mb-4 text-justify">{personalDetails.about}</p>
             <p ref={addToRefs} className="text-content lg:max-w-xl text-justify">{personalDetails.about1}</p>
           </div>
-          <img ref={addToRefs}  className="md:w-1/2 md:ml-8 rounded-lg" src={personalDetails.img1} alt="About me" />
+          <img ref={addToRefs}  className="md:w-1/2 md:ml-8 rounded-lg" src={currentImg} alt="About me" />
         </div>
 
       </section>
