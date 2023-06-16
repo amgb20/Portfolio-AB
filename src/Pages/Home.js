@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { personalDetails } from "../Details";
 
 function Home() {
-  const { name, tagline, img } = personalDetails;
+  const { name, tagline, img, img2 } = personalDetails;
   const h11 = useRef();
   const h12 = useRef();
   const h13 = useRef();
@@ -54,11 +54,12 @@ function Home() {
         },
         "<"
       );
+      return () => tl.kill();
   }, []);
 
   return (
-    <main className="container mx-auto max-width section md:flex justify-between items-center">
-      <div>
+    <main className="container mx-auto max-width section md:flex justify-between items-start flex-row">
+      <div className="text-center md:w-1/2 mr-5">
         <h1
           ref={h11}
           className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold"
@@ -77,12 +78,15 @@ function Home() {
         >
           {tagline}
         </h2>
+        <img ref={myimageref} className="w-1/2 mx-auto rounded-l" src={img2} alt="uob" />
       </div>
-      <div className="mt-5 md:mt-0">
-        <img ref={myimageref} className="w-1/2 md:ml-auto" src={img} alt="Pavan MG" />
+      <div className="md:w-1/2">
+        <img ref={myimageref} className="w-full md:ml-auto rounded-2xl" src={img} alt="Alexandre Benoit" />
       </div>
     </main>
-  );
+);
+
+
 }
 
 export default Home;

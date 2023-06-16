@@ -3,7 +3,9 @@
 import logogradient from "./assets/logo.svg";
 import logo from "./assets/logo2.svg";
 // Profile Image
-import profile from "./assets/profile.jpg";
+import profile from "./assets/profile1.png";
+import profile1 from "./assets/aboutme.png";
+import profile2 from "./assets/uoblogo.png";
 // Tech stack images
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
@@ -30,22 +32,23 @@ import projectImage6 from "./assets/projects/project6.jpg";
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Alexandre Benoit",
-  tagline: "I build things for web",
+  tagline: "I am future Mechanical and Electrical Engineer",
   img: profile,
-  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and currently living in London. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.
+  img1: profile1,
+  img2: profile2,
+  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and currently living in London. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
 
-  In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
+  about1: `In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
   
   On this portfolio website, you will discover my projects, my different skillset, as well as my accomplishments. Feel free to reach out to me to discuss your projects or to learn more about my experiences and passions.
   
-  Welcome to my portfolio! `, };
+  Welcome to my portfolio!`,
+};
 
 // Enter your Social Media URLs here
 export const socialMediaUrl = {
-  linkdein: "https://www.linkedin.com/",
-  github: "https://www.github.com/",
-  twitter: "https://twitter.com/",
-  instagram: "https://www.instagram.com/",
+  linkdein: "https://www.linkedin.com/in/alexandre-benoit-belieth/",
+  github: "https://github.com/amgb20/",
 };
 
 // Enter your Work Experience here
@@ -169,6 +172,6 @@ project lorem ipsum generator for dummy content`,
 
 // Enter your Contact Details here
 export const contactDetails = {
-  email: "hi@example.com",
-  phone: "+91 12345 67890",
+  email: "amgb20@bath.ac.uk",
+  phone: "+33631045318",
 };
