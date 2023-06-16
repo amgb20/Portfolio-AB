@@ -49,12 +49,12 @@ function About() {
           Accreditations
         </h1>
         {React.Children.toArray(
-          accreditationsDetails.map(({ Position, Company, Img }) => (
+          accreditationsDetails.map(({ Position, Company, Img, Duration }) => (
             <Accreditations
             position={Position}
             company={Company}
             accreditation={Img}
-
+            duration={Duration}
             />
           ))
         )}

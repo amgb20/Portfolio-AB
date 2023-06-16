@@ -36,7 +36,14 @@ import python from "./assets/techstack/python.png";
 import solidity from "./assets/techstack/solidity.png";
 
 // Accreditations Images
-import img1 from "./assets/techstack/ffh.svg";
+import ffh from "./assets/techstack/ffh.svg";
+import udemy from "./assets/techstack/icons8-udemy.com-is-an-online-learning-and-teaching-platform.-32.png";
+import google from "./assets/techstack/icons8-google.svg";
+import libf from "./assets/techstack/LIBF.jpg";
+import aefe from "./assets/techstack/aefe.png";
+import ielts from "./assets/techstack/IELTS_logo.png";  
+import brevet from "./assets/techstack/Ministère de la Culture.svg";
+import redcross from "./assets/techstack/malt.png";
 // Porject Images
 import projectImage1 from "./assets/projects/project1.jpg";
 import projectImage2 from "./assets/projects/project2.jpg";
@@ -215,9 +222,75 @@ export const hobbiesDetails = [
 
 export const accreditationsDetails = [
   {
+    Position: "Hill Climbing and Simulated Annealing AI Algorithms",
+    Company: "Udemy",
+    Img: udemy,
+    Duration: "Apr 2023",
+  },
+  {
+    Position: "ROS2 For Beginners (ROS Foxy, Humble - 2023",
+    Company: "Udemy",
+    Img: udemy,
+
+    Duration: "Apr 2023",
+
+  },
+  {
+    Position: "ROS2 Nav2 [Navigation 2 Stack] - with SLAM and Navigation",
+    Company: "Udemy",
+    Img: udemy,
+
+    Duration: "Apr 2023",
+
+  },
+  {
+    Position: "Google Machine Learning Foundational courses",
+    Company: "Google Developers Student Club",
+    Img: google,
+    Duration: "Mars 2023",
+
+  },
+  {
+    Position: "Advanced Level 6 Diplima in Tradiing and Financial Market Analysis",
+    Company: "The London Institute of Banking & Finance",
+    Img: libf,
+    Duration: "Sept 2020",
+
+  },
+  {
+    Position: "French Scientific Baccalauréat - Honors",
+    Company: "AEFE - Agence pour l'enseignement français à l'étranger",
+    Img: aefe,
+    Duration: "Jun 2019",
+
+  },
+  {
+    Position: "IETS Official Diploma",
+    Company: "IELTS",
+    Img: ielts,
+    Duration: "Nov 2017",
+
+  },
+  {
+    Position: "Brevet des Colleges - Honors",
+    Company: "France's Minister of national education Cabinet",
+    Img: brevet,
+    Duration: "Jun 2016",
+
+  },
+  {
+    Position: "First Aid Certificate",
+    Company: "French Red Cross Foundation",
+    Img: redcross,
+    Duration: "Apr 2016",
+
+  },
+  {
     Position: "Handball Referee",
     Company: "Federation Francaise de Handball 🇫🇷",
-    Img: img1,
+    Img: ffh,
+    Duration: "Sep 2013",
+
   },
 ];
 
