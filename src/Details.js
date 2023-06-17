@@ -15,6 +15,7 @@ import profile9 from "./assets/7.png";
 import profile10 from "./assets/8.png";
 import profile11 from "./assets/9.png";
 import profile12 from "./assets/10.png";
+import uob from "./assets/uoblogo.png";
 
 // Tech stack images
 import html from "./assets/techstack/html.png";
@@ -44,6 +45,7 @@ import pandas from "./assets/techstack/Pandas_logo.png";
 import pycharm from "./assets/techstack/PyCharm_Icon.png";
 import python from "./assets/techstack/python.png";
 import solidity from "./assets/techstack/solidity.png";
+import overleaf from "./assets/techstack/Overleaf.png";
 
 // Accreditations Images
 import ffh from "./assets/techstack/ffh.svg";
@@ -55,12 +57,26 @@ import ielts from "./assets/techstack/IELTS_logo.png";
 import brevet from "./assets/techstack/Ministère de la Culture.svg";
 import redcross from "./assets/techstack/malt.png";
 // Porject Images
-import projectImage1 from "./assets/projects/project1.jpg";
-import projectImage2 from "./assets/projects/project2.jpg";
-import projectImage3 from "./assets/projects/project3.jpg";
-import projectImage4 from "./assets/projects/project4.jpg";
-import projectImage5 from "./assets/projects/project5.jpg";
-import projectImage6 from "./assets/projects/project6.jpg";
+import belieth from "./assets/projects/belieth.png";
+import stc from "./assets/projects/stc.png";
+import dcmotor from "./assets/projects/DC motor.png";
+import state from "./assets/projects/state.png";
+import prop from "./assets/projects/prop.png";
+import airjet from "./assets/projects/airjet.png";
+import harvester from "./assets/projects/harvester.png";
+import converter from "./assets/projects/converter.png";
+import venus from "./assets/projects/venus.png";
+import modulation from "./assets/projects/modulation.png";
+import heatshield from "./assets/projects/heatshield.png";
+import mouse from "./assets/projects/mouse.png";
+import em from "./assets/projects/em.png";
+import shaft from "./assets/projects/shaft.png";
+import endeavour from "./assets/projects/endeavour.png";
+import coming from "./assets/projects/coming.png";
+import fan  from "./assets/projects/fan.png";
+import ai from "./assets/projects/ai.png";
+import cr from "./assets/projects/cr.png";
+import romie from "./assets/projects/website.gif";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 import "./index.css";
@@ -68,9 +84,10 @@ import "./index.css";
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Alexandre Benoit",
-  tagline: "I am a future Mechanical and Electrical Engineer",
+  tagline: "I am a future Mechanical and Electrical Engineer, self-taught software developer, web developer and entrepreneur.",
   img: profile,
   img1: profile1,
+  img2: uob,
   img3: profile3,
   img4: profile4,
   img5: profile5,
@@ -234,11 +251,6 @@ export const charitiesDetails = [
   },
 ];
 
-export const hobbiesDetails = [
-
-
-];
-
 export const accreditationsDetails = [
   {
     Position: "Hill Climbing and Simulated Annealing AI Algorithms",
@@ -388,64 +400,255 @@ export const techStackDetails = {
   pycharm: pycharm,
   python: python,
   solidity: solidity,
+  overleaf: overleaf,
 };
 
 // Enter your Project Details here
-export const projectDetails = [
+export const projectDetailsUni1 = [
   {
-    title: "Project title 1",
-    image: projectImage1,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Robotic Design - DC motor control on Arduino",
+    image: dcmotor,
+    description: `An experiment was conducted using a Micro metal gear DC motor with a magnetic encoder, along with an H-Bridge circuit, all connected and tested using an Arduino. The objective was to develop an Arduino program that measures voltage variations and controls the speed of the DC motor.`,
+    techstack: "Arduino",
+    previewLink: "https://drive.google.com/file/d/1lsAxlZuUWlgzRfnnc_2ev2VCg5M10HMX/view?usp=sharing",
+    githubLink: "https://drive.google.com/file/d/1lsAxlZuUWlgzRfnnc_2ev2VCg5M10HMX/view?usp=sharing",
   },
   {
-    title: "Project title 2",
-    image: projectImage2,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Robotics & Mechatronic Systems: Propeller Stability Challenge",
+    image: state,
+    description: `Process to design a Finite State Machine (FSM)`,
+    techstack: "None",
+    previewLink: "https://drive.google.com/file/d/1pqE7aMGYEESQdnteuDWkSeh_8-7BQcZI/view?usp=sharing",
+    githubLink: "",
   },
   {
-    title: "Project title 3",
-    image: projectImage3,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Digital Electronics: Finite State Machine",
+    image: prop,
+    description: `This report illustrates the theory, results and the manufacturing of a specific
+    control system. It put forward three tasks in order to achieve the control challenge:
+    
+    - It shows the functioning of an MPU-6050
+    
+    - It shows the control of a DC motor by controlling its speed and rotation
+    - It shows the control of a propeller which stays at a given position and levitates`,
+    techstack: "C++, Arduino",
+    previewLink: "https://drive.google.com/file/d/1BxxKjN1YiL5hY_oVnbLkWEhxFjpH58rR/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/EE10170-Robotics-Mechatronic-Systems-Propeller-Stability-Challenge",
   },
   {
-    title: "Project title 4",
-    image: projectImage4,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Fluid Dynamics - Air Jet Functioning",
+    image: airjet,
+    description: `This report highlights the velocity distribution of a circular air jet at several stations along
+    the length to reveal how a uniform jet interacts with its surroundings. The experience is conducted thanks to a pitot-static probe linked to a manometer. The local velocity was measured,
+    and the height of the fluid moving along an inclined manometer allows us to have the velocity
+    values at different position of the pitot-static tube positioned either in an x or y-axis. The volumetric flow rate is computed by increasing the downstream of the jet.`,
+    techstack: "None",
+    previewLink: "https://drive.google.com/file/d/1l8PsnIqrUjLmMmMKIJCI0EZpo5D-XU6X/view?usp=sharing",
+    githubLink: "none",
+  },
+];
+
+// Enter your Project Details here
+export const projectDetailsUni2 = [
+  {
+    title: "Design and manufacture of electromechanical systems - PCB of an energy harvester",
+    image: harvester,
+    description: `An experiment was conducted using a Micro metal gear DC motor with a magnetic encoder, along with an H-Bridge circuit, all connected and tested using an Arduino. The objective was to develop an Arduino program that measures voltage variations and controls the speed of the DC motor.`,
+    techstack: "OrCAD, Autodesk Inventor", 
+    previewLink: "https://drive.google.com/file/d/1Idb_Ey_EATDszTLaMFTcDqn1vIxndTg0/view?usp=sharing",
+    githubLink: "",
   },
   {
-    title: "Project title 5",
-    image: projectImage5,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Design and Manufacture of Electromechanical Systems: Thermal Management of a DC-DC converter",
+    image: converter,
+    description: `This lab aims to design a PCB that manages the thermal behavior of a DC-DC converter installed in an electronic control system for a fuel tank. Heat dissipation and the role of a DC-DC converter are explained, highlighting their relevance in real-life applications such as phones and computers. The lab involves using tools like Orcad, PCB Orcad Design, and Padstack to create the final PCB design. The report provides a description of the design process and a discussion of the findings..`,
+    techstack: "OrCAD, Autodesk Inventor", 
+    previewLink: "https://drive.google.com/file/d/1lhBMB5whaipRIuu7sRi1x8aXihQbDeYN/view?usp=sharing",
+    githubLink: "",
   },
   {
-    title: "Project title 6",
-    image: projectImage6,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    title: "Numerical Modelling of Aerocapture for a Scientific Mission to Venus",
+    image: venus,
+    description: `This report covers the modelling of the aerocapture method of space travel on MATLAB. The position
+    at which a spacecraft would have to enter Venus’ atmosphere in order to loop around the planet was
+    determined by running a series of functions which solved the underlying boundary value problem through
+    a shooting method. The task was taken further, attempting to put the spacecraft in orbit. Furthermore,
+    a GUI application was generated for optimised user experience.`,
+    techstack: "Matlab", 
+    previewLink: "https://drive.google.com/file/d/1PvzXmXBFEjzHZcATGY2hMh6EO-5FDGxs/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/Modelling-Techniques-Numerical-Modelling-of-Aerocapture-for-a-Scienti-c-Mission-to-Venus",
   },
+  {
+    title: "Amplitude Modulation/Demodulation",
+    image: modulation,
+    description: `This lab will go through a various range of modulation operation to simulate certain properties of communication system. Several graphs will be shown to illustrate the idea of AM
+    modulation and demodulation. We will therefore use Matlab Simulink that will help us simulate modulation, demodulation and noise issues.`,
+    techstack: "Matlab", 
+    previewLink: "https://drive.google.com/file/d/1wGa9pvHVJHOK_zwk9IGCbe1JBwkNYxPA/view?usp=sharing",
+    githubLink: "",
+  },
+  {
+    title: "Modelling of a spacecraft heat shield tile ",
+    image: heatshield,
+    description: `The report highlights the simulation of heat equations that define the heat flow through a
+    space shuttle’s insulation tile. Matlab was used to implement 4 different methods relying on
+    Fourier’s heat equations.
+    The program showed that the best method is Crank-Nicolson as it has the smallest inaccuracies (O(∆x
+    2
+    , ∆t
+    2
+    )). We could conclude that this method is unconditionally stable [4] and
+    has the smallest divergence from the given temperature of 450 Kelvin. Therefore, the time
+    step stability nt and spatial step stability nx were found being respectively 941 number of
+    timesteps and 4 number of spatial steps. A shooting method, studied during the first semester,
+    was created to have the maximum thickness required for the desired temperature; a maximum
+    thickness of 0.568mm was computed for a temperature of 450K which is the one we are not
+    allowed to exceed.`,
+    techstack: "Matlab", 
+    previewLink: "https://drive.google.com/file/d/1dFO8TGxsjVa1j0Apulb_v81wew8PO6He/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/Modelling-of-a-spacecraft-heat-shield-tile",
+  },
+  {
+    title: "Mouse Design",
+    image: mouse,
+    description: `This report focuses on the design of an electronic control system for an AGV (automated guided vehicle), commonly known as a "mouse". The AGV follows a taped-down wire as a guide. Due to the pandemic, physical construction of the mouse was not possible, so a detailed circuit simulation and mechanical analysis will be provided instead. In the past, students would run their mouse in a real-life environment and participate in a race with other teams. However, for this project, the emphasis is on simulating the mouse's performance, recognizing the importance of cost-effective testing in real-life applications. The mouse relies on two magnetic sensors to steer and follow the track. Its objective is to successfully complete the course.`,
+    techstack: "OrCAD", 
+    previewLink: "https://drive.google.com/file/d/1Sg4Nd7n21684VQCeQa4YX0xzS-LA4eMO/view?usp=sharing",
+    githubLink: "",
+  },
+  {
+    title: "Electromagnetic eld behavior of simple current carrying wires and interacting charges",
+    image: em,
+    description: `This report details the use of electromagnetic modelling using the finite element program pdetool
+    in Matlab. Most electrical and electromagnetic devices are designed using numerical modelling techniques such as that of finite elements. An outline of how this technique is implemented for different
+    electromagnetic applications is presented and discussed.`,
+    techstack: "Matlab", 
+    previewLink: "https://drive.google.com/file/d/1VIJIECT57VnQNQcCKKmi0zlbclLX_fKS/view?usp=sharing",
+    githubLink: "",
+  },
+  {
+    title: "SHAFT DESIGN: Design and Manufacture of Electromechanical Systems",
+    image: shaft,
+    description: `This report details the design process undertaken in creating a solution for a wind turbine
+    shaft assembly. The task involved a preliminary loading analysis, following an iterative
+    design process and finally technical drawings of the proposed design solution on CAD.`,
+    techstack: "Inventor", 
+    previewLink: "https://drive.google.com/file/d/1w9QMZDM6OgtQWDrQXD__ORGZQTOnlZ-f/view?usp=sharing",
+    githubLink: "",
+  },
+];
+
+export const projectDetailsUni3 = [
+  {
+    title: "Endeavour Mining Business Case Study",
+    image: endeavour,
+    description: `This year, COP 27 and COP 15 addressed environmental and biodiversity decisions, including financial assistance from developed nations and conservation efforts. Industries, including mining, are embracing ESG initiatives aligned with UNEP/COP 15 principles. Despite some perceptions, the mining sector shows progress in climate strategies and data disclosure. This essay focuses on the environmental dimension of the mining industry's ESG plan, evaluating Endeavour Mining's performance and identifying improvement areas. It concludes with the industry's overall mindset towards environmental progress.`,
+    techstack: "None", 
+    previewLink: "https://drive.google.com/file/d/1vr2tvY04tQHvPofuIx55ZLN3ZaMxoKAH/view?usp=sharing",
+    githubLink: "",
+  },
+  {
+    title: "Fan Control Design Document",
+    image: fan,
+    description: `This design document highlights a strategy for developing a variable speed fan control
+    software. The software is written in C on the MBED IDE. An executable file (.exe) is provided
+    to run the fan. The code is imported to an ST Nucleo board F070RB with an STM32. The
+    user is able to interact with the fan via the extension board and the Nucleo Board. Further
+    instructions or input from the user are communicated via the LCD. The use is able to choose
+    the pre-set fan speed (open-loop control) or rotate the encoder and potentiometer to vary the
+    fan’s speed (closed-loop control). Optimization of the fan response and precision in user input
+    1
+    and error feedback constitutes the main challenge of this product. A minimal viable product
+    (MVP) and prioritization diagrams is presented, determining our fallback.`,
+    techstack: "Mbed, C++, KiCAD", 
+    previewLink: "https://drive.google.com/file/d/1gWpS9EzCWez_HmLEPss8VjdJIzaudpGX/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/fan-control/tree/main",
+  },
+  {
+    title: "AI Formula Student DDT Car API Software Integration",
+    image: ai,
+    description: `TBReAI test platform for the DDT car.`,
+    techstack: "C, Python ", 
+    previewLink: "https://drive.google.com/file/d/1vr2tvY04tQHvPofuIx55ZLN3ZaMxoKAH/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/DDT",
+  },
+  {
+    title: "Clearpath Robotics Business Case Study",
+    image: cr,
+    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
+    techstack: "None ", 
+    previewLink: "https://drive.google.com/file/d/1Al1tniYjOkmM-vN3TJLMxD0DvSmIt-_k/view?usp=sharing",
+    githubLink: "",
+  },
+  {
+    title: "Global Path Planning for ROMIE an autonomous sampling robot",
+    image: romie,
+    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
+    previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+  },
+  {
+    title: "Prospector Robotics - ROMIE Feasibility Study",
+    image: romie,
+    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
+    previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+  },
+  {
+    title: "Prospector Robotics - ROMIE Commercial Viability",
+    image: romie,
+    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
+    previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
+    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+  },
+]
+
+// Enter your Project Details here
+export const projectDetailsPP = [
+  {
+    title: "A novel way to apply global path planning for an autonomous sampling robot: Reinfocement Learning - Q-Leaning",
+    image: coming,
+    description: `Coming soon...`,
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook, Machine Learning, Reinforcement Learning, Q-Learning",
+    previewLink: "",
+    githubLink: "",
+  },
+];
+
+export const projectDetailsSTC = [
+  {
+    title: "STC: Second Thoughts Club",
+    image: stc,
+    description: `The objective is to develop an AI generative arts algorithm and establish a 
+    community around the project by offering the generated artworks as NFTs. The concept revolves 
+    around merging renowned political figures with high fashion garments inspired by different eras. 
+    A dedicated landing page has been designed to promote the project and facilitate the sale of NFTs 
+    using our custom ERC721 contract, which I personally coded. Additionally, a DAO 
+    (Decentralized Autonomous Organization) has been established to oversee the management of community 
+    funds and determine the future direction of the project. `,
+    techstack: "HTML/CSS, JavaScript, Solidity, ERC721",
+    githubLink: "https://github.com/amgb20/websiteSTC",
+  },
+]
+
+// Enter your Project Details here
+export const projectDetailsBelieth = [
+  {
+    title: "Belieth - NFT for Good",
+    image: belieth,
+    description: `Belieth solves many of the problems facing modern charities today. 
+    NFTs represent a donation through investment, creating a potentially profitable donation. 
+    A win-win for charities and donors. Community building in the Metaverse builds donor-to-charity 
+    trust and makes the participants feel included. NFT owners can also allocate the community fund 
+    within the charity, giving owners a real impact on the beneficiaries. `,
+    techstack: "HTML/CSS, JavaScript, Solidity, ERC721",
+    previewLink: "https://www.linkedin.com/company/belieth",
+    pitchdecklink: "https://drive.google.com/file/d/1gmGHIL5GyYJ8Yw6X2HMpiyDMdc6sy9Jt/view?usp=sharing",
+  },
+
 ];
 
 // Enter your Contact Details here

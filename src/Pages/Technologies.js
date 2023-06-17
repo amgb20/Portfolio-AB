@@ -67,6 +67,7 @@ function Technologies() {
     pycharm,
     python,
     solidity,
+    overleaf,
   } = techStackDetails;
   return (
     <main className="container mx-auto max-width pt-10 pb-20 ">
@@ -113,6 +114,7 @@ function Technologies() {
           <img ref={addTech} src={matlab} title="Matlab" alt="Matlab" />
           <img ref={addTech} src={orcad} title="Orcad" alt="Orcad" />
           <img ref={addTech} src={pycharm} title="Pycharm" alt="Pycharm" />
+          <img ref={addTech} src={overleaf} title="Overleaf" alt="Overleaf" />
         </section>
       </section>
     </main>

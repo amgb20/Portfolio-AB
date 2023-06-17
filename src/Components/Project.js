@@ -1,12 +1,14 @@
 import React from "react";
+import "../index.css";
+
 
 function Project({ title, image, description, techstack, previewLink, githubLink }) {
   return (
-    <article className="rounded-xl mt-10 overflow-hidden shadow-xl shadow-slate-300 dark:shadow-slate-900">
+    <article className="rounded-xl mt-10 overflow-hidden shadow-xl shadow-slate-300 dark:shadow-slate-900 project-card">
       <img src={image} alt="" loading="lazy" />
       <div className="dark:bg-dark-card p-4">
         <h1 className="dark:text-light-heading font-semibold text-lg pt-1">{title}</h1>
-        <p className="text-content pt-4 font-light">{description}</p>
+        <p className="text-content pt-4 font-light text-justify">{description}</p>
         <h3 className="text-dark-heading dark:text-light-heading font-medium pt-4">
           Tech Stack : <span className="font-light">{techstack}</span>
         </h3>
@@ -39,7 +41,7 @@ function Project({ title, image, description, techstack, previewLink, githubLink
               rel="noreferrer noopener"
               className="underline pl-2 font-light dark:text-white"
             >
-              Live Preview
+              Report
             </a>
           </div>
           <div className="flex items-center">

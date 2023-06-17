@@ -46,7 +46,8 @@ function About() {
       
       <section>
         <h1 ref={addaccre} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Accreditations
+        <span ref={addaccre} className="name-logo2">Accreditations</span>
+          
         </h1>
         {React.Children.toArray(
           accreditationsDetails.map(({ Position, Company, Img, Duration }) => (

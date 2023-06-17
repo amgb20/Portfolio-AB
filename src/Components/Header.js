@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { logos, socialMediaUrl } from "../Details";
+import ScrollToTop from "./ScrollToTop";
 import "../index.css";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProjectMenuOpen, setIsProjectMenuOpen] = useState(false);
+  const projectMenuRef = useRef(null);
   const { linkdein, github } = socialMediaUrl;
+
   const toggleClass = () => {
     setIsOpen(!isOpen);
   };
 
+  const showProjectMenu = () => {
+    setIsProjectMenuOpen(true);
+    if (projectMenuRef.current) {
+      clearTimeout(projectMenuRef.current);
+    }
+  };
+
+  const hideProjectMenu = () => {
+    projectMenuRef.current = setTimeout(() => {
+      setIsProjectMenuOpen(false);
+    }, 3000); // 3 seconds delay
+  };
+
   return (
+    <>
+    <ScrollToTop />
     <header className="container mx-auto md:flex justify-between py-2 max-width">
       <div className="flex justify-between items-center py-2 md:py-10">
       <NavLink to="/">
@@ -56,10 +75,45 @@ function Header() {
               Accreditations
             </NavLink>
           </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/projects" onClick={toggleClass}>
-              Projects
-            </NavLink>
+          <li
+            className="pb-1 md:pb-0 relative"
+            onMouseEnter={showProjectMenu}
+            onMouseLeave={hideProjectMenu}
+          >
+          <NavLink 
+            to="/projects" 
+            onClick={toggleClass}
+          >
+            Projects
+          </NavLink>
+            <div
+              className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-heading z-10 
+                ${isProjectMenuOpen ? 'visible' : 'invisible'}`}
+            >
+              <div className="py-1">
+              <NavLink
+                to="/projects#university_projects"
+                onClick={toggleClass}
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 hover:text-gray-900"
+              >
+                University Projects
+              </NavLink>
+              <NavLink
+                to="/projects#start_ups"
+                onClick={toggleClass}
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 hover:text-gray-900"
+              >
+                Start-Ups
+              </NavLink>
+              <NavLink
+                to="/projects#personal_projects"
+                onClick={toggleClass}
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 hover:text-gray-900"
+              >
+                Personal Projects
+              </NavLink>
+              </div>
+            </div>
           </li>
           <li>
             <NavLink to="/contact" onClick={toggleClass}>
@@ -103,6 +157,8 @@ function Header() {
         </ul>
       </nav>
     </header>
+    </>
+    
   );
 }
 
