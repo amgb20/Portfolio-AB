@@ -1,7 +1,4 @@
 // Enter all your detials in this file
-// Logo images
-import logogradient from "./assets/logo.svg";
-import logo from "./assets/logo2.svg";
 // Profile Image
 import profile from "./assets/profile1.png";
 import profile1 from "./assets/aboutme.png";
@@ -80,6 +77,11 @@ import romie from "./assets/projects/website.gif";
 import romie1 from "./assets/projects/romie1.png";
 import romie2 from "./assets/projects/romie2.png";
 import poster from "./assets/projects/poster.png";
+import cctvcar from "./assets/projects/cctvcar.png";
+import cctvpeople from "./assets/projects/cctvpeople.png";
+import coco from "./assets/projects/coco.png";
+import romiepeople from "./assets/projects/romiepeople.png";
+import romiestone from "./assets/projects/romiestone.png";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 import "./index.css";
@@ -638,6 +640,44 @@ export const projectDetailsPP = [
     githubLink: "",
   },
 ];
+
+export const projectDetailsCV = [
+  {
+    title: "CCTV Vehicle Counter and Speed Limiter",
+    image: cctvcar,
+    description: `This project aims to count the different types of vehicles present in traffic (motorcycle, bus, truck, or cars) and also determine the speed of each vehicle.`,
+    techstack: "Computer Vision, Python, YOLOv8, cvsonze",
+    githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+  {
+    title: "CCTV People Counter",
+    image: cctvpeople,
+    description: `This project aim to count how many people are you going down or up an escalator.`,
+    techstack: "Computer Vision, Python, YOLOv8, cvsonze",
+    githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+  {
+    title: "COCO dataset YOLO object detection",
+    image: coco,
+    description: `This project aim to analyse all the 80 default classes trained by YOLOv8.`,
+    techstack: "Computer Vision, Python, YOLOv8, cvsonze",
+    githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+  {
+    title: "ROMIE detecting mining workers",
+    image: romiepeople,
+    description: `This project was built for a part of the vision recognition for the autonomous software pipeline of ROMIE ROMIE is now able to detect the staff around him and determine if they are wearing or NOT: - protective helmet - protective mask - construction flashy jacket.`,
+    techstack: "Computer Vision, Python, YOLOv8, cvsonze",
+    githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+  {
+    title: "ROMIE detecting rocks/stone",
+    image: romiestone,
+    description: `ROMIE is also able to detect different types of rocks/stones during its journey. This was performed by training the data from (source) using the training function from YOLOv8. You can see the different results obtained on the github link below.`,
+    techstack: "Computer Vision, Python, YOLOv8, cvsonze",
+    githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+]
 
 export const projectDetailsSTC = [
   {

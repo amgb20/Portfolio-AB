@@ -3,7 +3,7 @@ import gsap from "gsap";
 import Project from "../Components/Project";
 import ProjectBelieth from "../Components/ProjectBeliethLayout";
 import ProjectSTC from "../Components/ProjectSTC";
-import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsUni4  } from "../Details";
+import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsCV  } from "../Details";
 import ProjectVideo from "../Components/ProjectVideo";
 
 function Projects() {
@@ -54,7 +54,7 @@ function Projects() {
         </p>
            
         </h1>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
             projectDetailsUni1.map(
               ({ title, image, description, techstack, previewLink, githubLink }) => (
@@ -75,7 +75,7 @@ function Projects() {
         <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
           <span className="name-logo1">Year 2 </span>
         </p>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
             projectDetailsUni2.map(
               ({ title, image, description, techstack, previewLink, githubLink }) => (
@@ -96,7 +96,7 @@ function Projects() {
         <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
           <span className="name-logo1">Year 3 </span>
         </p>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
             projectDetailsUni3.map(
               ({ title, image, description, techstack, previewLink, githubLink }) => (
@@ -125,7 +125,7 @@ function Projects() {
         </p>
           
         </h1>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
             projectDetailsPP.map(
               ({ title, image, description, techstack, previewLink, githubLink }) => (
@@ -146,11 +146,11 @@ function Projects() {
         <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
           <span className="name-logo1">Computer Vision  </span>🏫 
         </p>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
-            projectDetailsPP.map(
+            projectDetailsCV.map(
               ({ title, image, description, techstack, previewLink, githubLink }) => (
-                <Project
+                <ProjectSTC
                   title={title}
                   image={image}
                   description={description}
@@ -170,7 +170,7 @@ function Projects() {
         <span ref={addTech} className="name-logo2">Personal Start-Ups</span>
            
         </h1>
-        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
           {React.Children.toArray(
             projectDetailsBelieth.map(
               ({ title, image, description, techstack, previewLink, pitchdecklink }) => (

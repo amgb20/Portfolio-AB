@@ -125,7 +125,8 @@ function About() {
       
       <section>
         <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Work Experience
+          
+          <span className="name-logo2">Work Experience</span>
         </h1>
         {React.Children.toArray(
           workDetails.map(({ Position, Company, Location, Type, Duration }) => (
@@ -142,7 +143,7 @@ function About() {
       
       <section>
         <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Charities
+          <span className="name-logo2">Charities</span>
         </h1>
         {React.Children.toArray(
           charitiesDetails.map(({ Position, Company, Location, Type, Duration }) => (
