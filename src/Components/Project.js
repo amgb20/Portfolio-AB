@@ -12,7 +12,7 @@ function Project({ title, image, description, techstack, previewLink, githubLink
         <h3 className="text-dark-heading dark:text-light-heading font-medium pt-4">
           Tech Stack : <span className="font-light">{techstack}</span>
         </h3>
-        <div className="flex justifay-between items-center mt-5">
+        <div className="flex justify-between items-center mt-5">
           <div className="flex items-center">
             <svg
               className="stroke-dark-heading dark:stroke-white inline-block min-w-fit"
