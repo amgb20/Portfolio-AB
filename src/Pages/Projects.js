@@ -3,7 +3,8 @@ import gsap from "gsap";
 import Project from "../Components/Project";
 import ProjectBelieth from "../Components/ProjectBeliethLayout";
 import ProjectSTC from "../Components/ProjectSTC";
-import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3  } from "../Details";
+import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsUni4  } from "../Details";
+import ProjectVideo from "../Components/ProjectVideo";
 
 function Projects() {
   const elementsRef = useRef([]);
@@ -124,6 +125,27 @@ function Projects() {
         </p>
           
         </h1>
+        <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+          {React.Children.toArray(
+            projectDetailsPP.map(
+              ({ title, image, description, techstack, previewLink, githubLink }) => (
+                <Project
+                  title={title}
+                  image={image}
+                  description={description}
+                  techstack={techstack}
+                  previewLink={previewLink}
+                  githubLink={githubLink}
+                />
+              )
+            )
+          )}
+        </div>
+        <br/>
+
+        <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
+          <span className="name-logo1">Computer Vision  </span>🏫 
+        </p>
         <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
           {React.Children.toArray(
             projectDetailsPP.map(

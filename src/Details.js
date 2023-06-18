@@ -77,6 +77,9 @@ import fan  from "./assets/projects/fan.png";
 import ai from "./assets/projects/ai.png";
 import cr from "./assets/projects/cr.png";
 import romie from "./assets/projects/website.gif";
+import romie1 from "./assets/projects/romie1.png";
+import romie2 from "./assets/projects/romie2.png";
+import poster from "./assets/projects/poster.png";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 import "./index.css";
@@ -583,27 +586,45 @@ export const projectDetailsUni3 = [
   {
     title: "Global Path Planning for ROMIE an autonomous sampling robot",
     image: romie,
-    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
+    description: `This report examines the global path planning subsystem within the autonomous software pipeline
+
+    of PR’s cutting-edge robot, ROMIE . We dive into a comprehensive analysis of several methodolo-
+    gies for tackling the renowned computational challenge, the Travelling Salesman Problem (TSP).
+    
+    Our focus centers on three primary solution strategies: traditional algorithms, meta-heuristics, and
+    machine learning techniques.`,
     techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
     previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
     githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
   },
   {
     title: "Prospector Robotics - ROMIE Feasibility Study",
-    image: romie,
-    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
-    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
-    previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
-    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+    image: romie1,
+    description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
+    mining industry with cutting-edge autonomous robotic solutions.`,
+    techstack: "None",  
+    previewLink: "https://drive.google.com/file/d/1txg8kE3X87f7v4lWhgMc5u7F7_FSDQxM/view?usp=sharing",
+    githubLink: "",
   },
   {
     title: "Prospector Robotics - ROMIE Commercial Viability",
-    image: romie,
-    description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
-    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
-    previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
-    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+    image: romie2,
+    description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
+    mining industry with cutting-edge autonomous robotic solutions.`,
+    techstack: "None", 
+    previewLink: "https://drive.google.com/file/d/121U_yFT-wGYO1wBdlO935tlNEDSIyh5i/view?usp=sharing",
+    githubLink: "",
   },
+  {
+    title: "Prospector Robotics - ROMIE Poster",
+    image: poster,
+    description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
+    mining industry with cutting-edge autonomous robotic solutions.`,
+    techstack: "Publisher", 
+    previewLink: "https://drive.google.com/file/d/1HvaDMtRq_7k44bPHkVRS-SXYCOl33X1e/view?usp=sharing",
+    githubLink: "",
+  },
+
 ]
 
 // Enter your Project Details here
