@@ -43,6 +43,8 @@ import pycharm from "./assets/techstack/PyCharm_Icon.png";
 import python from "./assets/techstack/python.png";
 import solidity from "./assets/techstack/solidity.png";
 import overleaf from "./assets/techstack/Overleaf.png";
+import tensorflow from "./assets/techstack/tensorflow.png";
+import pytorch from "./assets/techstack/pytorch.png";
 
 // Accreditations Images
 import ffh from "./assets/techstack/ffh.svg";
@@ -89,7 +91,7 @@ import "./index.css";
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Alexandre Benoit",
-  tagline: "I am a future Mechanical and Electrical Engineer, self-taught software developer, web developer and entrepreneur.",
+  tagline: "I am a future Mechanical and Electrical and self-taught Machine Learning Engineer, web and software developer and entrepreneur.",
   img: profile,
   img1: profile1,
   img2: uob,
@@ -103,7 +105,7 @@ export const personalDetails = {
   img10: profile10,
   img11: profile11,
   img12: profile12,
-  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and now living in London since 2017. I have a strong passion for software development, the automotive industry, robotics and Machine Learning. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
+  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and now living in London since 2017. I have a strong passion for the automotive industry, robotics, Machine Learning and web/software development. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
 
   about1: `In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
   
@@ -135,6 +137,11 @@ export const languageDetails = [
     Type: "Advanced",
     Company: "B2",
   },
+  {
+    Position: "Greek 🇬🇷",
+    Type: "Just Started",
+    Company: "",
+  }
 ]
 
 // Enter your Work Experience here
@@ -406,6 +413,8 @@ export const techStackDetails = {
   python: python,
   solidity: solidity,
   overleaf: overleaf,
+  tensorflow: tensorflow,
+  pytorch: pytorch,
 };
 
 // Enter your Project Details here

@@ -68,6 +68,8 @@ function Technologies() {
     python,
     solidity,
     overleaf,
+    tensorflow,
+    pytorch,
   } = techStackDetails;
   return (
     <main className="container mx-auto max-width pt-10 pb-20 ">
@@ -95,6 +97,8 @@ function Technologies() {
           <img ref={addTech} src={numpy} title="Numpy" alt="" />
           <img ref={addTech} src={pandas} title="Pandas" alt="" />
           <img ref={addTech} src={npm} title="NPM" alt="NPM" />
+          <img ref={addTech} src={tensorflow} title="Tensorflow" alt="Tensorflow" />
+          <img ref={addTech} src={pytorch} title="Pytorch" alt="Pytorch" />
         </section>
         <br/>
         <div className="border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20"></div> {/* This line will add a border */}
