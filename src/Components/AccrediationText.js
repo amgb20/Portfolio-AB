@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-function Work({ position, company, accreditation, duration }) {
+function Work({ position, company, credential, accreditation, duration, hyperlink }) {
   const elementsRef = useRef([]);
   const refsLan = el => {
     if (el && !elementsRef.current.includes(el)) {
@@ -26,12 +26,12 @@ function Work({ position, company, accreditation, duration }) {
     });
     return () => tl.kill();
   }, []);
-  
+
   return (
     <article ref={refsLan} className="pt-8 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
       <div className="flex justify-between items-center">
         <h1 className="text-content md:text-lg lg:text-xl">{position}</h1>
-        <img src={accreditation} alt={accreditation} style={{height: "64px", width: "64px"}}/>
+        <img src={accreditation} alt={accreditation} style={{ height: "64px", width: "64px" }} />
       </div>
       <div className="flex justify-between pt-2">
         <div className="flex flex-col md:flex-row">
@@ -50,6 +50,12 @@ function Work({ position, company, accreditation, duration }) {
           </div>
         </div>
         <p className="text-content text-xs md:text-sm font-light pl-1 min-w-fit">{duration}</p>
+      </div>
+      <div className="flex flex-col md:flex-row">
+        <div className="flex items-center pr-5">
+          <p className="text-content text-xs md:text-sm font-light pl-1 min-w-fit font-bold">Click to see credential:</p>
+        </div>
+        <p className="text-content text-xs md:text-sm font-light pl-1"><a href={hyperlink} style={{color: 'rgba(86,255,37,255)'}}>{credential}</a></p>
       </div>
     </article>
   );

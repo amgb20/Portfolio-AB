@@ -6,29 +6,59 @@
 .max-width {
   @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
 }
+
 .bg-gradient {
   @apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-600;
 }
+
 .text-gradient {
   @apply bg-clip-text bg-gradient text-transparent;
 }
+
 .section {
   @apply pt-28 xl:pt-28 2xl:pt-44;
 }
+
 .text-content {
   @apply dark:text-light-content text-dark-content;
 }
+
 body {
   overflow-x: hidden;
 }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
 }
 
+/* For unhovered state */
+nav ul li a {
+  display: inline-block;
+  text-shadow: none;
+  transform: scale(1);
+  z-index: 1;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease;
+  font-size: 16px;
+  padding: 0 4px;
+}
+
+/* For hovered state */
+nav ul li a:hover {
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transform: scale(1.2); /* Increase the size slightly */
+  z-index: 2; /* Bring the hovered element to the front */
+  font-size: 18px;
+
+}
+
+
 .name-logo {
   font-size: 2.5rem;
-  background: linear-gradient(to right, rgba(19,163,234,255) 0%, rgba(176,51,145,255) 100%);
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -36,14 +66,14 @@ body::-webkit-scrollbar {
 
 .name-logo1 {
   font-size: 1.5rem;
-  background: linear-gradient(to right, rgba(19,163,234,255) 0%, rgba(176,51,145,255) 100%);
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 
 .name-logo2 {
-  background: linear-gradient(to right, rgba(19,163,234,255) 0%, rgba(86,255,37,255) 100%);
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -54,7 +84,7 @@ body::-webkit-scrollbar {
   padding: 10px 20px;
   color: white;
   border-radius: 25px;
-  background: linear-gradient(to right, rgba(19,163,234,255) 0%, rgba(176,51,145,255) 100%);
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -64,7 +94,7 @@ body::-webkit-scrollbar {
 }
 
 .gradient-button:hover {
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -93,7 +123,8 @@ body::-webkit-scrollbar {
 }
 
 .slideshow {
-  width: 50%; /* Adjust as needed */
+  width: 50%;
+  /* Adjust as needed */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -110,24 +141,200 @@ body::-webkit-scrollbar {
 }
 
 .project-card {
-  transition: all 0.3s ease; /* This is to make the changes happen smoothly */
+  transition: all 0.3s ease;
+  /* This is to make the changes happen smoothly */
 }
 
 .project-card:hover {
-  transform: scale(1.05); /* This makes the card slightly larger */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This adds a deeper shadow */
+  transform: scale(1.05);
+  /* This makes the card slightly larger */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* This adds a deeper shadow */
 }
 
-.flex-wrap > .project-card {
+.flex-wrap>.project-card {
   display: flex;
   flex-direction: column;
 }
 
-.flex-wrap > .project-card > .dark\:bg-dark-card {
+.flex-wrap>.project-card>.dark\:bg-dark-card {
   flex-grow: 1;
 }
 
+/* CSS for the Projects scrolling menu */
+#countrySelection {
+  position: relative;
+  
+}
+
+#yearSelection {
+  position: relative;
+  
+}
+
+#countrySelection::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
+  z-index: 1;
+}
+
+#yearSelection::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  /* background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%); */
+  z-index: 1;
+}
 
 
+#countrySelection-wrapper {
+  display: flex; /* Add this */
+  align-items: center; /* Add this */
+  justify-content: center; /* Add this */
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  padding: 0 100px;
+}
+
+#yearSelection-wrapper {
+  display: flex; /* Add this */
+  align-items: center; /* Add this */
+  justify-content: center; /* Add this */
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  padding: 0 100px;
+}
+
+
+#countrySelector {
+  position: absolute; /* Add this */
+  left: 50%; /* Add this */
+  top:50%;
+  transform: translateX(-50%, -50%); /* Add this */
+  /* rest of the properties */
+}
+
+#yearSelector {
+  position: absolute; /* Add this */
+  left: 50%; /* Add this */
+  top:50%;
+  transform: translateX(-50%, -50%); /* Add this */
+  /* rest of the properties */
+}
+
+
+#countrySelector {
+  position: relative;
+  margin-left: -5px;
+  top: -1px;
+  width: 20px;  /* or however wide you want the SVG to be */
+  height: 20px; /* or however tall you want the SVG to be */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#yearSelector {
+  position: relative;
+  margin-left: -5px;
+  top: -1px;
+  width: 20px;  /* or however wide you want the SVG to be */
+  height: 20px; /* or however tall you want the SVG to be */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.active p, .active a{
+  color: #fff !important;
+}
+
+.active {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.non-active {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+
+#countrySelection ul li {
+  display: inline-block;
+  margin: 16px 24px;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+#yearSelection ul li {
+  display: inline-block;
+  margin: 16px 24px;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.slick-prev, .icon-chevronleft {
+  transform: rotate(180deg);
+}
+.icon-chevronleft, .icon-chevronright {
+  background-image: url('http://www.res-testing.com/images/arrow.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.countrySelection-paddle-left, .countrySelection-paddle-right {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+}
+.yearSelection-paddle-left, .yearSelection-paddle-right {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+}
+.slick-prev, .countrySelection-paddle-left {
+  left: 0;
+}
+.slick-prev, .yearSelection-paddle-left {
+  left: 0;
+}
+.arrow {
+  width: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-next, .countrySelection-paddle-right {
+  right: 0;
+}
+.slick-next, .yearSelection-paddle-right {
+  right: 0;
+}
 
 

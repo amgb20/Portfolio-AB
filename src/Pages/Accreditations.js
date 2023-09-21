@@ -50,10 +50,12 @@ function About() {
           
         </h1>
         {React.Children.toArray(
-          accreditationsDetails.map(({ Position, Company, Img, Duration }) => (
+          accreditationsDetails.map(({ Position, Company , Credential_ID, Img, Duration, Hyperlink }) => (
             <Accreditations
             position={Position}
             company={Company}
+            credential={Credential_ID}
+            hyperlink = {Hyperlink}
             accreditation={Img}
             duration={Duration}
             />

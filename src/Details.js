@@ -48,7 +48,10 @@ import pytorch from "./assets/techstack/pytorch.png";
 
 // Accreditations Images
 import ffh from "./assets/techstack/ffh.svg";
-import udemy from "./assets/techstack/icons8-udemy.com-is-an-online-learning-and-teaching-platform.-32.png";
+import deeplearningai from "./assets/techstack/deeplearningai.png";
+import udemy from "./assets/techstack/udemy.png";
+import harvardcs50 from "./assets/techstack/harvardcs50.png";
+import harvardx from "./assets/techstack/harvardx.jpeg";
 import google from "./assets/techstack/icons8-google.svg";
 import libf from "./assets/techstack/LIBF.jpg";
 import aefe from "./assets/techstack/aefe.png";
@@ -265,26 +268,82 @@ export const charitiesDetails = [
 
 export const accreditationsDetails = [
   {
+    Position: "Harvard CS50's - Web Programming with Python and JavaScript, including 6 projects",
+    Company: "Harvard Computer Science Departement",
+    Img: harvardcs50,
+    Duration: "June 2023",
+    Credential_ID: "6652fa39-4234-4f78-910b-aa388a37a675",
+    Hyperlink: "https://cs50.harvard.edu/certificates/6652fa39-4234-4f78-910b-aa388a37a675"
+  },
+
+  {
+    Position: "Convolutions Neural Networks Theory",
+    Company: "DeepLearning.AI",
+    Img: deeplearningai,
+    Duration: "Aug 2023",
+    Credential_ID: "TA27A2WN5XSP",
+    Hyperlink: "https://coursera.org/verify/TA27A2WN5XSP"
+  },
+
+  {
+    Position: "Data Science: Machine Learning",
+    Company: "HarvardX",
+    Img: harvardx,
+    Duration: "Aug 2023",
+    Credential_ID: "861747a8bf3d48e3965678ca0b6bf4f3",
+    Hyperlink: "https://courses.edx.org/certificates/861747a8bf3d48e3965678ca0b6bf4f3",
+  },
+
+  {
+    Position: "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
+    Company: "DeepLearning.AI",
+    Img: deeplearningai,
+    Duration: "Aug 2023",
+    Credential_ID: "J9HJ4M63K5V4",
+    Hyperlink: "https://coursera.org/share/fbc3f40dded89cc8c181926726b97988"
+  },
+
+  {
+    Position: "Neural Networks and Deep Learning",
+    Company: "DeepLearning.AI",
+    Img: deeplearningai,
+    Duration: "Aug 2023",
+    Credential_ID: "T23U4VZRSH7M",
+    Hyperlink: "https://coursera.org/verify/T23U4VZRSH7M",
+  },
+
+  {
+    Position: "Convolutional Neural Networks in TensorFlow",
+    Company: "DeepLearning.AI",
+    Img: deeplearningai,
+    Duration: "Jul 2023",
+    Credential_ID: "ZG79GLZMBHTC",
+    Hyperlink: "https://coursera.org/verify/ZG79GLZMBHTC",
+  },
+
+  {
     Position: "Hill Climbing and Simulated Annealing AI Algorithms",
     Company: "Udemy",
     Img: udemy,
     Duration: "Apr 2023",
+    Credential_ID: "UC-1de9dfdd-1103-4099-befb-f2acc4803fe9",
+    Hyperlink: "https://ude.my/UC-1de9dfdd-1103-4099-befb-f2acc4803fe9",
   },
   {
     Position: "ROS2 For Beginners (ROS Foxy, Humble - 2023",
     Company: "Udemy",
     Img: udemy,
-
     Duration: "Apr 2023",
-
+    Credential_ID: "UC-9a036c6b-7519-47a2-8cd9-42d2f0b940ab",
+    Hyperlink: "https://www.udemy.com/certificate/UC-9a036c6b-7519-47a2-8cd9-42d2f0b940ab/",
   },
   {
     Position: "ROS2 Nav2 [Navigation 2 Stack] - with SLAM and Navigation",
     Company: "Udemy",
     Img: udemy,
-
     Duration: "Apr 2023",
-
+    Credential_ID: "UC-b8f8136f-9f3a-4065-9d3f-c694d75bc8cc",
+    Hyperlink: "https://ude.my/UC-b8f8136f-9f3a-4065-9d3f-c694d75bc8cc", 
   },
   {
     Position: "Google Machine Learning Foundational courses",
@@ -428,7 +487,7 @@ export const projectDetailsUni1 = [
     githubLink: "https://drive.google.com/file/d/1lsAxlZuUWlgzRfnnc_2ev2VCg5M10HMX/view?usp=sharing",
   },
   {
-    title: "Robotics & Mechatronic Systems: Propeller Stability Challenge",
+    title: "Digital Electronics: Finite State Machine",
     image: state,
     description: `Process to design a Finite State Machine (FSM)`,
     techstack: "None",
@@ -436,7 +495,7 @@ export const projectDetailsUni1 = [
     githubLink: "",
   },
   {
-    title: "Digital Electronics: Finite State Machine",
+    title: "Robotics & Mechatronic Systems: Propeller Stability Challenge ",
     image: prop,
     description: `This report illustrates the theory, results and the manufacturing of a specific
     control system. It put forward three tasks in order to achieve the control challenge:
@@ -648,6 +707,15 @@ export const projectDetailsPP = [
     previewLink: "",
     githubLink: "",
   },
+
+  {
+    title: "Development of intelligent energy management in a hybrid charging station for commercial electric vehicles using Multi-Agent Reinforcement Learning Actor-Critic Network",
+    image: coming,
+    description: `Coming soon...`,
+    techstack: "Python, Machine Learning, Reinforcement Learning, Multi-Agent Reinforcement Learning, Actor-Critic Network, Neural Network, Simulink, Matlab",
+    previewLink: "",
+    githubLink: "",
+  },
 ];
 
 export const projectDetailsCV = [
@@ -685,6 +753,16 @@ export const projectDetailsCV = [
     description: `ROMIE is also able to detect different types of rocks/stones during its journey. This was performed by training the data from (source) using the training function from YOLOv8. You can see the different results obtained on the github link below.`,
     techstack: "Computer Vision, Python, YOLOv8, cvsonze",
     githubLink: "https://github.com/amgb20/Computer-Vision-Projects",
+  },
+]
+
+export const projectDetailsGym = [
+  {
+    title: "Ateri Games",
+    image: coming,
+    description: ``,
+    techstack: "",
+    githubLink: "",
   },
 ]
 
