@@ -1,8 +1,12 @@
 import React from "react";
 import "../index.css";
 
-
 function Project({ title, image, description, techstack, previewLink, githubLink }) {
+  const fileName = image.split('/').pop();
+  const isVideo = fileName.endsWith('.mp4');
+
+  console.log("Is Video: ", isVideo);
+
   return (
     <article className="rounded-xl mt-10 overflow-hidden shadow-xl shadow-slate-300 dark:shadow-slate-900 project-card">
       <img src={image} alt="" loading="lazy" />
@@ -18,23 +22,21 @@ function Project({ title, image, description, techstack, previewLink, githubLink
               className="stroke-dark-heading dark:stroke-white inline-block min-w-fit"
               width="20"
               height="20"
-              viewBox="0 0 20 20"
+              viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M11.2867 8.7133C10.6041 8.031 9.67846 7.64771 8.71334 7.64771C7.74821 7.64771 6.82259 8.031 6.14 8.7133L3.56584 11.2866C2.88324 11.9692 2.49976 12.895 2.49976 13.8604C2.49976 14.8257 2.88324 15.7515 3.56584 16.4341C4.24844 17.1167 5.17424 17.5002 6.13959 17.5002C7.10493 17.5002 8.03074 17.1167 8.71334 16.4341L10 15.1475"
-                strokeWidth="1.66667"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M8.71338 11.2867C9.39597 11.969 10.3216 12.3523 11.2867 12.3523C12.2518 12.3523 13.1775 11.969 13.86 11.2867L16.4342 8.71334C17.1168 8.03074 17.5003 7.10493 17.5003 6.13959C17.5003 5.17424 17.1168 4.24844 16.4342 3.56584C15.7516 2.88324 14.8258 2.49976 13.8605 2.49976C12.8951 2.49976 11.9693 2.88324 11.2867 3.56584L10 4.8525"
-                strokeWidth="1.66667"
+                d="M81.7,50A31.7,31.7,0,0,1,50,81.7M81.7,50A31.7,31.7,0,0,0,50,18.3M81.7,50H18.3M50,81.7A31.7,31.7,0,0,1,18.3,50M50,81.7c5.8,0,10.6-14.2,10.6-31.7S55.8,18.3,50,18.3m0,63.4c-5.8,0-10.6-14.2-10.6-31.7S44.2,18.3,50,18.3M18.3,50A31.7,31.7,0,0,1,50,18.3"
+                fill="none"
+                stroke="white"
+                strokeWidth="8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
+
+
             <a
               href={previewLink}
               target="_blank"

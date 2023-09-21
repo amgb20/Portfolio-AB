@@ -3,14 +3,17 @@ import gsap from "gsap";
 import Project from "../Components/Project";
 import ProjectBelieth from "../Components/ProjectBeliethLayout";
 import ProjectSTC from "../Components/ProjectSTC";
-import ScrollSpySidebar from '../Components/ScrollSpySidebar'; // make sure to import ScrollSpySidebar here
+import ProjectWebsite from "../Components/ProjectWebsite";
+// import ScrollSpySidebar from '../Components/ScrollSpySidebar'; // make sure to import ScrollSpySidebar here
 
-import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsCV, projectDetailsGym } from "../Details";
+import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsCV, projectDetailsGym, projectDetailsWebPortfolio, projectDetailsWeb } from "../Details";
 
 function Projects() {
   const [activeSection, setActiveSection] = useState('university_project');
 
   const [activeYear, setActiveYear] = useState('year1');
+
+  const [activePP, setActivePP] = useState('gym');
 
   const yearSections = [
     { id: 'year1', label: 'Year 1' },
@@ -24,6 +27,12 @@ function Projects() {
     { id: 'personal_projects', label: 'Personal Projects' },
     { id: 'publications', label: 'Publications' },
     { id: 'start_ups', label: 'Start-up' },
+  ];
+
+  const PPsections = [
+    { id: 'gym', label: 'Machine Learning' },
+    { id: 'cv', label: 'Computer Vision' },
+    { id: 'website', label: 'Website' }
   ];
 
   const elementsRef = useRef([]);
@@ -62,16 +71,19 @@ function Projects() {
     return () => tl.kill();
   }, []);
 
-  // useEffect(() => {
-  //   updateSectionOpacity();
-  //   // updateSectionOpacityUP(); // call initially to set the class of the sections
-  // }, []); // Empty dependency array means it will run once at the beginning
+  useEffect(() => {
+    // updateSectionOpacity();
+    handleSectionClick(activeSection);
+  }, [activeSection]);
 
-  // useEffect(() => {
-  //   updateSectionOpacity();
-  //   handleSectionClick(activeSection);
-  //   handleYearClick(activeYear);
-  // }, [activeSection, activeYear]);
+  useEffect(() => {
+    // updateSectionOpacity();
+    handleYearClick(activeYear);
+  }, [activeYear]);
+
+  useEffect(() => {
+    handlePPClick(activePP);
+  }, [activePP]);
 
   const handleSectionClick = (id) => {
     setActiveSection(id);
@@ -113,31 +125,26 @@ function Projects() {
     gsap.to(pointer, { duration: 1, left: `${totalelement + parentScroll}px`, ease: "easeOutQuad" });
   };
 
-  // const updateSectionOpacity = () => {
-  //   sections.forEach(({ id }) => {
-  //     const elem = document.getElementById(id);
-  //     if (id === activeSection) {
-  //       elem.classList.add("active");
-  //       elem.classList.remove("non-active");
-  //     } else {
-  //       elem.classList.remove("active");
-  //       elem.classList.add("non-active");
-  //     }
-  //   });
-  // };
+  const handlePPClick = (id) => {
+    setActivePP(id);
+    // updateSectionOpacityUP(); // call the opacity update function
 
-  // const updateSectionOpacityUP = () => {
-  //   sections.forEach(({ id }) => {
-  //     const elem = document.getElementById(id);
-  //     if (id === activeYear) {
-  //       elem.classList.add("active");
-  //       elem.classList.remove("non-active");
-  //     } else {
-  //       elem.classList.remove("active");
-  //       elem.classList.add("non-active");
-  //     }
-  //   });
-  // };
+
+    const pointer = document.getElementById("PPSelector");
+    const button = document.querySelector(`li[id='${id}']`);
+    if (!button) return 1;
+    const rect = button.getBoundingClientRect();
+    const parentRect = button.parentElement.getBoundingClientRect();
+    const wrapper = document.getElementById("PPSelection-wrapper");
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const parentScroll = button.parentElement.scrollLeft;
+
+    // Calculate the position relative to the parent scrolling container
+    const totalelement = rect.left - parentRect.left + (rect.width / 2);
+
+    // GSAP animation to move the pointer
+    gsap.to(pointer, { duration: 1, left: `${totalelement + parentScroll}px`, ease: "easeOutQuad" });
+  };
 
   // useEffect to handle the changes when activeSection or activeYear changes
   useEffect(() => {
@@ -173,11 +180,34 @@ function Projects() {
       });
     };
 
+    // Function to update the opacity for year sections
+    const updatePPOpacity = () => {
+      PPsections.forEach(({ id }) => {
+        const elem = document.getElementById(id);
+        if (elem) { // Check if the element exists
+          if (id === activePP) {
+            elem.classList.add("active");
+            elem.classList.remove("non-active");
+          } else {
+            elem.classList.remove("active");
+            elem.classList.add("non-active");
+          }
+        }
+      });
+    };
+
     // Updating the opacity
     updateSectionOpacity();
     updateYearOpacity();
+    updatePPOpacity();
 
-  }, [activeSection, activeYear]); // Dependencies
+  }, [activeSection, activeYear, activePP]); // Dependencies
+
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
 
   return (
@@ -186,6 +216,26 @@ function Projects() {
 
         {/* Updated Horizontal scrolling menu */}
         <div id="countrySelection">
+          <div className="cursor-pointer hamburger-menu" onClick={toggleMobileMenu}>
+            <div className="centerHam ">
+              <svg
+                className="stroke-dark-heading dark:stroke-white "
+                width="25"
+                height="20"
+                viewBox="0 0 16 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.4375 1.3125H14.5625M1.4375 11.3125H14.5625H1.4375ZM1.4375 6.3125H14.5625H1.4375Z"
+                  strokeWidth="1.875"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+          </div>
           <div id="countrySelection-wrapper">
             <ul id="countrySelection-items">
               <div id="countrySelector">
@@ -216,9 +266,18 @@ function Projects() {
               <button className="countrySelection-paddle-right icon-chevronright"></button>
             </div>
           </div>
+          {isMobileMenuOpen && (
+            <div className="mobile-menu">
+              <ul >
+                {sections.map(({ id, label }) => (
+                  <li key={id} onClick={() => handleSectionClick(id)}>
+                    {label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-
-        <br />
 
         {activeSection === 'university_project' && (
           <section id="university_project">
@@ -258,7 +317,7 @@ function Projects() {
 
             {activeYear === 'year1' && (
               <>
-                <div ref={addTech} id="year1" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
+                <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
                   {React.Children.toArray(
                     projectDetailsUni1.map(({ title, image, description, techstack, previewLink, githubLink }) => (
                       <Project title={title} image={image} description={description} techstack={techstack} previewLink={previewLink} githubLink={githubLink} />
@@ -299,61 +358,129 @@ function Projects() {
           </section>
         )}
 
-        <br />
-
         {activeSection === 'personal_projects' && (
           <section id="personal_projects">
-            <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
-              <span className="name-logo1">Computer Vision  </span>👁️
-            </p>
-            <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
-              {React.Children.toArray(
-                projectDetailsCV.map(
-                  ({ title, image, description, techstack, previewLink, githubLink }) => (
-                    <ProjectSTC
-                      title={title}
-                      image={image}
-                      description={description}
-                      techstack={techstack}
-                      previewLink={previewLink}
-                      githubLink={githubLink}
-                    />
-                  )
-                )
-              )}
+            {/* New Horizontal Scrolling Menu for Years */}
+            <div id="PPSelection">
+              <div id="PPSelection-wrapper">
+                <ul id="PPSelection-items">
+                  <div id="PPSelector">
+                    <svg viewBox="0 0 10 10" width="20px" height="20px">
+                      <defs>
+                        <linearGradient id="gradient" gradientTransform="rotate(90)">
+                          <stop offset="0%" stop-color="rgba(19, 163, 234, 255)" />
+                          <stop offset="100%" stop-color="rgba(176, 51, 145, 255)" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,1 h10 L5,9.66Z" fill="url('#gradient')" />
+                    </svg>
+
+                  </div>
+                  {PPsections.map(({ id, label }) => (
+                    <li
+                      id={id}
+                      key={id}
+                      className={`text-xl ${id === activeYear ? "active" : ""}`}
+                      onClick={() => handlePPClick(id)}
+                    >
+                      <a href="#">{label}</a>
+                    </li>
+                  ))}
+                </ul>
+                <div className="PPSelection-paddles">
+                  <button className="PPSelection-paddle-left icon-chevronleft"></button>
+                  <button className="PPSelection-paddle-right icon-chevronright"></button>
+                </div>
+              </div>
             </div>
 
-            <br />
+            {activePP === 'gym' && (
+              <>
+                <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
+                  {React.Children.toArray(
+                    projectDetailsGym.map(
+                      ({ title, image, description, techstack, previewLink, githubLink }) => (
+                        <ProjectSTC
+                          title={title}
+                          image={image}
+                          description={description}
+                          techstack={techstack}
+                          previewLink={previewLink}
+                          githubLink={githubLink}
+                        />
+                      )
+                    )
+                  )}
+                </div>
+              </>
+            )}
 
-            <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
-              <span className="name-logo1">Gymanisum Machine Learning Projects  </span> 🏋️‍♀️
-            </p>
-            <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
-              {React.Children.toArray(
-                projectDetailsGym.map(
-                  ({ title, image, description, techstack, previewLink, githubLink }) => (
-                    <ProjectSTC
-                      title={title}
-                      image={image}
-                      description={description}
-                      techstack={techstack}
-                      previewLink={previewLink}
-                      githubLink={githubLink}
-                    />
-                  )
-                )
-              )}
-            </div>
+            {activePP === 'cv' && (
+              <>
+                <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
+                  {React.Children.toArray(
+                    projectDetailsCV.map(
+                      ({ title, image, description, techstack, previewLink, githubLink }) => (
+                        <ProjectSTC
+                          title={title}
+                          image={image}
+                          description={description}
+                          techstack={techstack}
+                          previewLink={previewLink}
+                          githubLink={githubLink}
+                        />
+                      )
+                    )
+                  )}
+                </div>
+              </>
+            )}
+
+            {activePP === 'website' && (
+              <>
+                <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
+                  {React.Children.toArray(
+                    projectDetailsWebPortfolio.map(
+                      ({ title, image, description, techstack, previewLink, githubLink }) => (
+                        <ProjectSTC
+                          title={title}
+                          image={image}
+                          description={description}
+                          techstack={techstack}
+                          previewLink={previewLink}
+                          githubLink={githubLink}
+                        />
+                      )
+                    )
+                  )}
+
+                  {React.Children.toArray(
+                    projectDetailsWeb.map(
+                      ({ title, image, description, techstack, previewLink, website }) => (
+                        <ProjectWebsite
+                          title={title}
+                          image={image}
+                          description={description}
+                          techstack={techstack}
+                          previewLink={previewLink}
+                          website={website}
+                        />
+                      )
+                    )
+                  )}
+                </div>
+              </>
+            )}
+
+
+
+
+
           </section>
         )}
 
-        <br />
-
         {activeSection === 'publications' && (
           <section id="personal_projects">
-            <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
-              <span className="name-logo1">Publications  </span> ✍
-            </p>
             <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
               {React.Children.toArray(
                 projectDetailsPP.map(

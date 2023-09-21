@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.centerHam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .max-width {
   @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
 }
@@ -32,6 +39,18 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+/* For active state */
+.active-nav-link {
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transform: scale(1.2);
+  z-index: 2;
+  font-size: 18px;
+}
+
+
 /* For unhovered state */
 nav ul li a {
   display: inline-block;
@@ -49,8 +68,10 @@ nav ul li a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  transform: scale(1.2); /* Increase the size slightly */
-  z-index: 2; /* Bring the hovered element to the front */
+  transform: scale(1.2);
+  /* Increase the size slightly */
+  z-index: 2;
+  /* Bring the hovered element to the front */
   font-size: 18px;
 
 }
@@ -161,15 +182,43 @@ nav ul li a:hover {
   flex-grow: 1;
 }
 
-/* CSS for the Projects scrolling menu */
-#countrySelection {
-  position: relative;
-  
+/* Initially hide the hamburger menu */
+.hamburger-menu {
+  display: none;
 }
 
-#yearSelection {
+/* CSS for the Projects scrolling menu */
+@media (max-width: 1569px) {
+  #countrySelection-wrapper {
+    padding: 0 20px; /* reduce padding */
+  }
+  #countrySelection ul li {
+    margin: 16px 12px; /* reduce margin */
+    font-size: 14px; /* reduce font-size */
+  }
+  /* Additional styles for the hamburger menu */
+  .hamburger-menu {
+    display: block; /* show hamburger */
+  }
+  /* Hide your existing menu */
+  #countrySelection-items {
+    display: none; /* hide existing menu */
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#countrySelection {
   position: relative;
-  
+
 }
 
 #countrySelection::before {
@@ -181,6 +230,76 @@ nav ul li a:hover {
   height: 1px;
   background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
   z-index: 1;
+}
+
+#countrySelection-wrapper {
+  display: flex;
+  /* Add this */
+  align-items: center;
+  /* Add this */
+  justify-content: center;
+  /* Add this */
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  padding: 0 100px;
+}
+
+#countrySelector {
+  position: absolute;
+  /* Add this */
+  left: 50%;
+  /* Add this */
+  top: 50%;
+  transform: translateX(-50%, -50%);
+  /* Add this */
+  /* rest of the properties */
+}
+
+#countrySelector {
+  position: relative;
+  margin-left: -5px;
+  top: -1px;
+  width: 20px;
+  /* or however wide you want the SVG to be */
+  height: 20px;
+  /* or however tall you want the SVG to be */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+#countrySelection ul li {
+  display: inline-block;
+  margin: 16px 24px;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.countrySelection-paddle-left,
+.countrySelection-paddle-right {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+}
+
+.slick-prev,
+.countrySelection-paddle-left {
+  left: 0;
+}
+
+#yearSelection {
+  position: relative;
+
 }
 
 #yearSelection::before {
@@ -195,20 +314,94 @@ nav ul li a:hover {
 }
 
 
-#countrySelection-wrapper {
-  display: flex; /* Add this */
-  align-items: center; /* Add this */
-  justify-content: center; /* Add this */
-  position: relative;
-  overflow: hidden;
-  height: 100px;
-  padding: 0 100px;
-}
-
 #yearSelection-wrapper {
-  display: flex; /* Add this */
-  align-items: center; /* Add this */
-  justify-content: center; /* Add this */
+  display: flex;
+  /* Add this */
+  align-items: center;
+  /* Add this */
+  justify-content: center;
+  /* Add this */
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  padding: 0 100px;
+}
+
+#yearSelector {
+  position: absolute;
+  /* Add this */
+  left: 50%;
+  /* Add this */
+  top: 50%;
+  transform: translateX(-50%, -50%);
+  /* Add this */
+  /* rest of the properties */
+}
+
+#yearSelector {
+  position: relative;
+  margin-left: -5px;
+  top: -1px;
+  width: 20px;
+  /* or however wide you want the SVG to be */
+  height: 20px;
+  /* or however tall you want the SVG to be */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#yearSelection ul li {
+  display: inline-block;
+  margin: 16px 24px;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+
+.yearSelection-paddle-left,
+.yearSelection-paddle-right {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+}
+
+#PPSelection {
+  position: relative;
+
+}
+
+
+#PPSelection::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  /* background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%); */
+  z-index: 1;
+}
+
+
+
+
+#PPSelection-wrapper {
+  display: flex;
+  /* Add this */
+  align-items: center;
+  /* Add this */
+  justify-content: center;
+  /* Add this */
   position: relative;
   overflow: hidden;
   height: 100px;
@@ -216,45 +409,32 @@ nav ul li a:hover {
 }
 
 
-#countrySelector {
-  position: absolute; /* Add this */
-  left: 50%; /* Add this */
-  top:50%;
-  transform: translateX(-50%, -50%); /* Add this */
+#PPSelector {
+  position: absolute;
+  /* Add this */
+  left: 50%;
+  /* Add this */
+  top: 50%;
+  transform: translateX(-50%, -50%);
+  /* Add this */
   /* rest of the properties */
 }
 
-#yearSelector {
-  position: absolute; /* Add this */
-  left: 50%; /* Add this */
-  top:50%;
-  transform: translateX(-50%, -50%); /* Add this */
-  /* rest of the properties */
-}
-
-
-#countrySelector {
+#PPSelector {
   position: relative;
   margin-left: -5px;
   top: -1px;
-  width: 20px;  /* or however wide you want the SVG to be */
-  height: 20px; /* or however tall you want the SVG to be */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#yearSelector {
-  position: relative;
-  margin-left: -5px;
-  top: -1px;
-  width: 20px;  /* or however wide you want the SVG to be */
-  height: 20px; /* or however tall you want the SVG to be */
+  width: 20px;
+  /* or however wide you want the SVG to be */
+  height: 20px;
+  /* or however tall you want the SVG to be */
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 
-.active p, .active a{
+.active p,
+.active a {
   color: #fff !important;
 }
 
@@ -269,7 +449,10 @@ nav ul li a:hover {
 }
 
 
-#countrySelection ul li {
+
+
+
+#PPSelection ul li {
   display: inline-block;
   margin: 16px 24px;
   background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
@@ -278,63 +461,60 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
-#yearSelection ul li {
-  display: inline-block;
-  margin: 16px 24px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+.PPSelection-paddle-left,
+.yearSelection-paddle-right {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
 }
 
-.slick-prev, .icon-chevronleft {
+
+.slick-prev,
+.yearSelection-paddle-left {
+  left: 0;
+}
+
+.slick-prev,
+.PPSelection-paddle-left {
+  left: 0;
+}
+
+.slick-prev,
+.icon-chevronleft {
   transform: rotate(180deg);
 }
-.icon-chevronleft, .icon-chevronright {
+
+.icon-chevronleft,
+.icon-chevronright {
   background-image: url('http://www.res-testing.com/images/arrow.png');
   background-repeat: no-repeat;
   background-size: 20px;
 }
-.countrySelection-paddle-left, .countrySelection-paddle-right {
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
-}
-.yearSelection-paddle-left, .yearSelection-paddle-right {
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
-}
-.slick-prev, .countrySelection-paddle-left {
-  left: 0;
-}
-.slick-prev, .yearSelection-paddle-left {
-  left: 0;
-}
+
 .arrow {
   width: 25px;
   margin-left: auto;
   margin-right: auto;
 }
-.slick-next, .countrySelection-paddle-right {
-  right: 0;
-}
-.slick-next, .yearSelection-paddle-right {
+
+.slick-next,
+.countrySelection-paddle-right {
   right: 0;
 }
 
+.slick-next,
+.yearSelection-paddle-right {
+  right: 0;
+}
 
+.slick-next,
+.PPSelection-paddle-right {
+  right: 0;
+}

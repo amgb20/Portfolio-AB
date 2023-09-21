@@ -75,7 +75,7 @@ import em from "./assets/projects/em.png";
 import shaft from "./assets/projects/shaft.png";
 import endeavour from "./assets/projects/endeavour.png";
 import coming from "./assets/projects/coming.png";
-import fan  from "./assets/projects/fan.png";
+import fan from "./assets/projects/fan.png";
 import ai from "./assets/projects/ai.png";
 import cr from "./assets/projects/cr.png";
 import romie from "./assets/projects/website.gif";
@@ -87,6 +87,11 @@ import cctvpeople from "./assets/projects/cctvpeople.png";
 import coco from "./assets/projects/coco.png";
 import romiepeople from "./assets/projects/romiepeople.png";
 import romiestone from "./assets/projects/romiestone.png";
+import moonlander from "./assets/projects/moonlander.gif";
+import atari from "./assets/projects/atari.gif";
+import taxi from "./assets/projects/taxi.gif";
+import website from "./assets/projects/website.png";
+import cs5050 from "./assets/projects/cs5050.png";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 import "./index.css";
@@ -343,7 +348,7 @@ export const accreditationsDetails = [
     Img: udemy,
     Duration: "Apr 2023",
     Credential_ID: "UC-b8f8136f-9f3a-4065-9d3f-c694d75bc8cc",
-    Hyperlink: "https://ude.my/UC-b8f8136f-9f3a-4065-9d3f-c694d75bc8cc", 
+    Hyperlink: "https://ude.my/UC-b8f8136f-9f3a-4065-9d3f-c694d75bc8cc",
   },
   {
     Position: "Google Machine Learning Foundational courses",
@@ -527,7 +532,7 @@ export const projectDetailsUni2 = [
     title: "Design and manufacture of electromechanical systems - PCB of an energy harvester",
     image: harvester,
     description: `An experiment was conducted using a Micro metal gear DC motor with a magnetic encoder, along with an H-Bridge circuit, all connected and tested using an Arduino. The objective was to develop an Arduino program that measures voltage variations and controls the speed of the DC motor.`,
-    techstack: "OrCAD, Autodesk Inventor", 
+    techstack: "OrCAD, Autodesk Inventor",
     previewLink: "https://drive.google.com/file/d/1Idb_Ey_EATDszTLaMFTcDqn1vIxndTg0/view?usp=sharing",
     githubLink: "",
   },
@@ -535,7 +540,7 @@ export const projectDetailsUni2 = [
     title: "Design and Manufacture of Electromechanical Systems: Thermal Management of a DC-DC converter",
     image: converter,
     description: `This lab aims to design a PCB that manages the thermal behavior of a DC-DC converter installed in an electronic control system for a fuel tank. Heat dissipation and the role of a DC-DC converter are explained, highlighting their relevance in real-life applications such as phones and computers. The lab involves using tools like Orcad, PCB Orcad Design, and Padstack to create the final PCB design. The report provides a description of the design process and a discussion of the findings..`,
-    techstack: "OrCAD, Autodesk Inventor", 
+    techstack: "OrCAD, Autodesk Inventor",
     previewLink: "https://drive.google.com/file/d/1lhBMB5whaipRIuu7sRi1x8aXihQbDeYN/view?usp=sharing",
     githubLink: "",
   },
@@ -547,7 +552,7 @@ export const projectDetailsUni2 = [
     determined by running a series of functions which solved the underlying boundary value problem through
     a shooting method. The task was taken further, attempting to put the spacecraft in orbit. Furthermore,
     a GUI application was generated for optimised user experience.`,
-    techstack: "Matlab", 
+    techstack: "Matlab",
     previewLink: "https://drive.google.com/file/d/1PvzXmXBFEjzHZcATGY2hMh6EO-5FDGxs/view?usp=sharing",
     githubLink: "https://github.com/amgb20/Modelling-Techniques-Numerical-Modelling-of-Aerocapture-for-a-Scienti-c-Mission-to-Venus",
   },
@@ -556,7 +561,7 @@ export const projectDetailsUni2 = [
     image: modulation,
     description: `This lab will go through a various range of modulation operation to simulate certain properties of communication system. Several graphs will be shown to illustrate the idea of AM
     modulation and demodulation. We will therefore use Matlab Simulink that will help us simulate modulation, demodulation and noise issues.`,
-    techstack: "Matlab", 
+    techstack: "Matlab",
     previewLink: "https://drive.google.com/file/d/1wGa9pvHVJHOK_zwk9IGCbe1JBwkNYxPA/view?usp=sharing",
     githubLink: "",
   },
@@ -577,7 +582,7 @@ export const projectDetailsUni2 = [
     was created to have the maximum thickness required for the desired temperature; a maximum
     thickness of 0.568mm was computed for a temperature of 450K which is the one we are not
     allowed to exceed.`,
-    techstack: "Matlab", 
+    techstack: "Matlab",
     previewLink: "https://drive.google.com/file/d/1dFO8TGxsjVa1j0Apulb_v81wew8PO6He/view?usp=sharing",
     githubLink: "https://github.com/amgb20/Modelling-of-a-spacecraft-heat-shield-tile",
   },
@@ -585,7 +590,7 @@ export const projectDetailsUni2 = [
     title: "Mouse Design",
     image: mouse,
     description: `This report focuses on the design of an electronic control system for an AGV (automated guided vehicle), commonly known as a "mouse". The AGV follows a taped-down wire as a guide. Due to the pandemic, physical construction of the mouse was not possible, so a detailed circuit simulation and mechanical analysis will be provided instead. In the past, students would run their mouse in a real-life environment and participate in a race with other teams. However, for this project, the emphasis is on simulating the mouse's performance, recognizing the importance of cost-effective testing in real-life applications. The mouse relies on two magnetic sensors to steer and follow the track. Its objective is to successfully complete the course.`,
-    techstack: "OrCAD", 
+    techstack: "OrCAD",
     previewLink: "https://drive.google.com/file/d/1Sg4Nd7n21684VQCeQa4YX0xzS-LA4eMO/view?usp=sharing",
     githubLink: "",
   },
@@ -595,7 +600,7 @@ export const projectDetailsUni2 = [
     description: `This report details the use of electromagnetic modelling using the finite element program pdetool
     in Matlab. Most electrical and electromagnetic devices are designed using numerical modelling techniques such as that of finite elements. An outline of how this technique is implemented for different
     electromagnetic applications is presented and discussed.`,
-    techstack: "Matlab", 
+    techstack: "Matlab",
     previewLink: "https://drive.google.com/file/d/1VIJIECT57VnQNQcCKKmi0zlbclLX_fKS/view?usp=sharing",
     githubLink: "",
   },
@@ -605,7 +610,7 @@ export const projectDetailsUni2 = [
     description: `This report details the design process undertaken in creating a solution for a wind turbine
     shaft assembly. The task involved a preliminary loading analysis, following an iterative
     design process and finally technical drawings of the proposed design solution on CAD.`,
-    techstack: "Inventor", 
+    techstack: "Inventor",
     previewLink: "https://drive.google.com/file/d/1w9QMZDM6OgtQWDrQXD__ORGZQTOnlZ-f/view?usp=sharing",
     githubLink: "",
   },
@@ -616,7 +621,7 @@ export const projectDetailsUni3 = [
     title: "Endeavour Mining Business Case Study",
     image: endeavour,
     description: `This year, COP 27 and COP 15 addressed environmental and biodiversity decisions, including financial assistance from developed nations and conservation efforts. Industries, including mining, are embracing ESG initiatives aligned with UNEP/COP 15 principles. Despite some perceptions, the mining sector shows progress in climate strategies and data disclosure. This essay focuses on the environmental dimension of the mining industry's ESG plan, evaluating Endeavour Mining's performance and identifying improvement areas. It concludes with the industry's overall mindset towards environmental progress.`,
-    techstack: "None", 
+    techstack: "None",
     previewLink: "https://drive.google.com/file/d/1vr2tvY04tQHvPofuIx55ZLN3ZaMxoKAH/view?usp=sharing",
     githubLink: "",
   },
@@ -633,7 +638,7 @@ export const projectDetailsUni3 = [
     1
     and error feedback constitutes the main challenge of this product. A minimal viable product
     (MVP) and prioritization diagrams is presented, determining our fallback.`,
-    techstack: "Mbed, C++, KiCAD", 
+    techstack: "Mbed, C++, KiCAD",
     previewLink: "https://drive.google.com/file/d/1gWpS9EzCWez_HmLEPss8VjdJIzaudpGX/view?usp=sharing",
     githubLink: "https://github.com/amgb20/fan-control/tree/main",
   },
@@ -641,7 +646,7 @@ export const projectDetailsUni3 = [
     title: "AI Formula Student DDT Car API Software Integration",
     image: ai,
     description: `TBReAI test platform for the DDT car.`,
-    techstack: "C, Python ", 
+    techstack: "C, Python ",
     previewLink: "https://drive.google.com/file/d/1vr2tvY04tQHvPofuIx55ZLN3ZaMxoKAH/view?usp=sharing",
     githubLink: "https://github.com/amgb20/DDT",
   },
@@ -649,7 +654,7 @@ export const projectDetailsUni3 = [
     title: "Clearpath Robotics Business Case Study",
     image: cr,
     description: `Clearpath Robotics ("CR") is a leading autonomous robotics company founded in 2009 in Kitchener, Ontario. With 300 employees, it is the world's first robotic research platform. CR is recognized as one of the top 50 influential companies in robotics. They manufacture robots for various applications by integrating multiple OEM technologies. CR also offers their own mapping software for outdoor GPS navigation and provides customizable platforms and software tools to assist robotics developers. Their goal is to enable autonomous mobile robotics and support developers in achieving their objectives.`,
-    techstack: "None ", 
+    techstack: "None ",
     previewLink: "https://drive.google.com/file/d/1Al1tniYjOkmM-vN3TJLMxD0DvSmIt-_k/view?usp=sharing",
     githubLink: "",
   },
@@ -663,7 +668,7 @@ export const projectDetailsUni3 = [
     
     Our focus centers on three primary solution strategies: traditional algorithms, meta-heuristics, and
     machine learning techniques.`,
-    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ", 
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook ",
     previewLink: "https://drive.google.com/file/d/1fSQ5WVSkfPHMhnmsKh10vxncjEJYJSJ8/view?usp=sharing",
     githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
   },
@@ -672,7 +677,7 @@ export const projectDetailsUni3 = [
     image: romie1,
     description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
     mining industry with cutting-edge autonomous robotic solutions.`,
-    techstack: "None",  
+    techstack: "None",
     previewLink: "https://drive.google.com/file/d/1txg8kE3X87f7v4lWhgMc5u7F7_FSDQxM/view?usp=sharing",
     githubLink: "",
   },
@@ -681,7 +686,7 @@ export const projectDetailsUni3 = [
     image: romie2,
     description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
     mining industry with cutting-edge autonomous robotic solutions.`,
-    techstack: "None", 
+    techstack: "None",
     previewLink: "https://drive.google.com/file/d/121U_yFT-wGYO1wBdlO935tlNEDSIyh5i/view?usp=sharing",
     githubLink: "",
   },
@@ -690,7 +695,7 @@ export const projectDetailsUni3 = [
     image: poster,
     description: `Prospector Robotics Limited (PRltd) is a UK-based start-up revolutionizing the
     mining industry with cutting-edge autonomous robotic solutions.`,
-    techstack: "Publisher", 
+    techstack: "Publisher",
     previewLink: "https://drive.google.com/file/d/1HvaDMtRq_7k44bPHkVRS-SXYCOl33X1e/view?usp=sharing",
     githubLink: "",
   },
@@ -758,13 +763,46 @@ export const projectDetailsCV = [
 
 export const projectDetailsGym = [
   {
-    title: "Ateri Games",
-    image: coming,
+    title: "Atari Game with DQN",
+    image: atari,
+    description: ``,
+    techstack: "",
+    githubLink: "",
+  },
+  {
+    title: "Moon-Lander",
+    image: moonlander,
+    description: `Achieved a score of 200`,
+    techstack: "",
+    githubLink: "",
+  },
+  {
+    title: "Moon-Lander",
+    image: taxi,
     description: ``,
     techstack: "",
     githubLink: "",
   },
 ]
+
+export const projectDetailsWebPortfolio = [
+  {
+    title: "This portfolio",
+    image: website,
+    description: `This portfolio represents a complex design task with multiple css animations and a responsive design. It was built using React and deployed on Netlify.`,
+    techstack: "React, HTML, CSS, JavaScript",
+    githubLink: "https://github.com/amgb20/Portfolio-AB",
+  },
+]
+
+export const projectDetailsWeb = [{
+  title: "CS50 Projects",
+  image: cs5050,
+  description: `Successfully rebuilt the user interfaces and functionalities for six major platforms: Google, Wikipedia, eBay, Twitter, an email service, and a personal project`,
+  techstack: "Django, HTML, CSS, JavaScript, Python and SQL",
+  website: "https://www.youtube.com/watch?v=mmppEF4Gkbw&list=PLeUc4fopb8YN-3fRlRJRMKxDlF4lKjUt8&pp=gAQBiAQB",
+}]
+
 
 export const projectDetailsSTC = [
   {
