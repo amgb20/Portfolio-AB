@@ -75,6 +75,11 @@ import em from "./assets/projects/em.png";
 import shaft from "./assets/projects/shaft.png";
 import endeavour from "./assets/projects/endeavour.png";
 import coming from "./assets/projects/coming.png";
+import tokyo from "./assets/projects/tokyo.jpg";
+import GOT from "./assets/projects/ROMIE__Portfolio_version.pdf"
+import MARL from "./assets/projects/MARL___Smart_grid_porfolio_version.pdf"
+import architecture from "./assets/projects/overall architecutre.png";
+import robot from "./assets/projects/robot.png";
 import fan from "./assets/projects/fan.png";
 import ai from "./assets/projects/ai.png";
 import cr from "./assets/projects/cr.png";
@@ -155,6 +160,13 @@ export const languageDetails = [
 // Enter your Work Experience here
 export const workDetails = [
   {
+    Position: "Academic Representative",
+    Company: `Student Union of the University of Bath`,
+    Location: "University of Bath, Bath, UK",
+    Type: "Full Time",
+    Duration: "September 2023 - Present",
+  },
+  {
     Position: "Software Autonomous Pipeline Engineer",
     Company: `Team Bath Racing Electric Artificial Intelliegence`,
     Location: "University of Bath, Bath, UK",
@@ -190,7 +202,7 @@ export const workDetails = [
     Duration: "Sep 2020 - Mars 2021",
   },
   {
-    Position: "Race Engineer for FunCup France and Belgium",
+    Position: "Race Engineer for FunCup championship in France and Belgium",
     Company: `Motorsports-Marketing-Management M3M`,
     Location: "French GP – Paul Ricard, Magny-Cours, Belgium GP – Spa-Francorchamps",
     Type: "Part Time",
@@ -219,7 +231,7 @@ export const workDetails = [
   },
   {
     Position: "Research Assistant",
-    Company: `Imperial College`,
+    Company: `Imperial College Department of Computing `,
     Location: "Imperial College, Dpt of Electrical and Robotics Engineering, South Kensington, London, UK",
     Type: "Intership",
     Duration: "Jul 2018 ",
@@ -335,7 +347,7 @@ export const accreditationsDetails = [
     Hyperlink: "https://ude.my/UC-1de9dfdd-1103-4099-befb-f2acc4803fe9",
   },
   {
-    Position: "ROS2 For Beginners (ROS Foxy, Humble - 2023",
+    Position: "ROS2 For Beginners (ROS Foxy, Humble - 2023)",
     Company: "Udemy",
     Img: udemy,
     Duration: "Apr 2023",
@@ -358,7 +370,7 @@ export const accreditationsDetails = [
 
   },
   {
-    Position: "Advanced Level 6 Diplima in Tradiing and Financial Market Analysis",
+    Position: "Advanced Level 6 Diploma in Tradiing and Financial Market Analysis",
     Company: "The London Institute of Banking & Finance",
     Img: libf,
     Duration: "Sept 2020",
@@ -705,21 +717,30 @@ export const projectDetailsUni3 = [
 // Enter your Project Details here
 export const projectDetailsPP = [
   {
-    title: "A novel way to apply global path planning for an autonomous sampling robot: Reinfocement Learning - Q-Leaning",
-    image: coming,
-    description: `Coming soon...`,
+    title: "V3 - An evaluative comparison of google or-tools and machine learning algorithms for global path planning in unmanned ground vehicles",
+    image: robot,
+    description: `A.Benoit, P.Asef under review by the IEEE Transactions on emerging topics in computational intelligence, 2023`,
     techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook, Machine Learning, Reinforcement Learning, Q-Learning",
-    previewLink: "",
+    previewLink: GOT,
+    githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
+  },
+
+  {
+    title: "V2 - Intelligent energy management system using multi-agent reinforcement learning within an actor-critic proximal policy optimization with a value decompostion network method for commercial ev charging stations scheduling,",
+    image: architecture,
+    description: `A.Benoit, K.Chan and P.Asef under review by the IEEE Transactions on Smart Grid, 2023`,
+    techstack: "Python, Machine Learning, Reinforcement Learning, Multi-Agent Reinforcement Learning, Actor-Critic Network, Neural Network, Simulink, Matlab",
+    previewLink: MARL,
     githubLink: "",
   },
 
   {
-    title: "Development of intelligent energy management in a hybrid charging station for commercial electric vehicles using Multi-Agent Reinforcement Learning Actor-Critic Network",
-    image: coming,
-    description: `Coming soon...`,
+    title: "Colloquium and Seminar Presentations - University of Tokyo - Presentation of: An evaluative comparison of google or-tools and machine learning algorithms for global path planning in unmanned ground vehicles",
+    image: tokyo,
+    description: `A.Benoit, P.Asef - University of Tokyo, 2023`,
     techstack: "Python, Machine Learning, Reinforcement Learning, Multi-Agent Reinforcement Learning, Actor-Critic Network, Neural Network, Simulink, Matlab",
-    previewLink: "",
-    githubLink: "",
+    previewLink: "https://1drv.ms/p/s!AmHRT2msrAMArf1MtlZUSpuPhfjCGw?e=sHcTBG",
+    githubLink: "https://1drv.ms/p/s!AmHRT2msrAMArf1MtlZUSpuPhfjCGw?e=sHcTBG",
   },
 ];
 
