@@ -738,9 +738,18 @@ export const projectDetailsPP = [
     title: "Colloquium and Seminar Presentations - University of Tokyo - Presentation of: An evaluative comparison of google or-tools and machine learning algorithms for global path planning in unmanned ground vehicles",
     image: tokyo,
     description: `A.Benoit, P.Asef - University of Tokyo, 2023`,
-    techstack: "Python, Machine Learning, Reinforcement Learning, Multi-Agent Reinforcement Learning, Actor-Critic Network, Neural Network, Simulink, Matlab",
+    techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook, Machine Learning, Reinforcement Learning, Q-Learning",
     previewLink: "https://1drv.ms/p/s!AmHRT2msrAMArf1MtlZUSpuPhfjCGw?e=sHcTBG",
     githubLink: "https://1drv.ms/p/s!AmHRT2msrAMArf1MtlZUSpuPhfjCGw?e=sHcTBG",
+  },
+
+  {
+    title: "In progress of research and writing: Using deep learning to estimate lithium-ion battery health",
+    image: coming,
+    description: `A.Benoit and Dr. Hao Yuan, 2024`,
+    techstack: "Python, Machine Learning, Neural Network, Deep Learning",
+    previewLink: "",
+    githubLink: "",
   },
 ];
 
