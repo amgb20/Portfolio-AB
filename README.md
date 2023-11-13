@@ -8,3 +8,5 @@ npm install in the root directory
 npm start
 
 # This is the deploy on netflyss
+npm run build
+firebase deploy
