@@ -12,7 +12,19 @@ import profile9 from "./assets/7.png";
 import profile10 from "./assets/8.png";
 import profile11 from "./assets/9.png";
 import profile12 from "./assets/10.png";
+// import uob from "./assets/uoblogo.png";
+import uoc from "./assets/uoc.png";
 import uob from "./assets/uoblogo.png";
+import fypabstract from "./assets/fypabstract.png";
+import goldmining from "./assets/goldminings.png";
+import mnist from "./assets/mnist.png";
+import ga from "./assets/ga.png";
+import skinpic from "./assets/skinpic.png";
+import rl from "./assets/rl.png";
+import gat from "./assets/GAT.png"
+import graphrewiring from "./assets/graphrewiring.png"
+import graphsage from "./assets/GraphSage.jpg"
+import flicker from "./assets/flicker.png"
 
 // Tech stack images
 import html from "./assets/techstack/html.png";
@@ -21,6 +33,7 @@ import js from "./assets/techstack/js.png";
 import react from "./assets/techstack/react.png";
 import vscode from "./assets/techstack/vscode.png";
 import github from "./assets/techstack/github.png";
+import googlescholar from "./assets/techstack/googlescholar.png";
 import git from "./assets/techstack/git.png";
 import npm from "./assets/techstack/npm.png";
 import figma from "./assets/techstack/figma.png";
@@ -103,11 +116,11 @@ import "./index.css";
 
 // Enter your Personal Details here
 export const personalDetails = {
-  name: "Alexandre Benoit",
-  tagline: "I am a future Mechanical and Electrical and self-taught Machine Learning Engineer, web and software developer and entrepreneur.",
+  name: "Alexandre Benoit (MEng)",
+  tagline: "I am a Mechanical and Electrical and future Machine Learning Engineer/Scientist from the University of Cambridge (MPhil). I am a self-taught web and software developer.",
   img: profile,
   img1: profile1,
-  img2: uob,
+  img2: uoc,
   img3: profile3,
   img4: profile4,
   img5: profile5,
@@ -118,7 +131,7 @@ export const personalDetails = {
   img10: profile10,
   img11: profile11,
   img12: profile12,
-  about: `I am a Mechanical and Electrical Engineering student at the University of Bath, originally from France and now living in London since 2017. I have a strong passion for the automotive industry, robotics, Machine Learning and web/software development. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
+  about: `I am studying Machine Learning and Machine Intelligence (MPhil) at the University of Cambridge and I have a Master (MEng) in Mechanical and Electrical Engineering from the University of Bath. I am originally from France and now living in London since 2017. I am deeply passionate about developing efficient Machine Learning models for Energy Management Systems - such as batteries and charging stations - and equally committed to model interpretability, particularly in understanding how specific inference decisions are made. My current research interests include Graph Neural Networks and inference efficiency. I find great joy in exploring new ideas within the field of engineering and related areas that I am working on during my free time and challenging myself to transform them into viable business ventures.`,
 
   about1: `In addition to my technical interests, I am also a very active and sporty person. Tennis is my primary sport, and I actively compete in the British University Karting Championship. Additionally, I engage in a diverse range of activities, including handball, golf, surfing, snowboarding, boxing, callisthenics, and triathlons. Playing the guitar is another one of my hobbies, and I am a huge fan of jazz music.
   
@@ -131,6 +144,7 @@ export const personalDetails = {
 export const socialMediaUrl = {
   linkdein: "https://www.linkedin.com/in/alexandre-benoit-belieth/",
   github: "https://github.com/amgb20/",
+  googlescholar: "https://scholar.google.com/citations?user=jiiTDvcAAAAJ&hl=en",
 };
 
 
@@ -416,19 +430,36 @@ export const accreditationsDetails = [
 // Enter your Education Details here
 export const eduDetails = [
   {
+    Position: "MPhil in Machine Learning and Machine Intelligence",
+    Company: "University of Cambridge - Clare College",
+    Location: "University of Cambridge, Cambridge, UK",
+    Type: "Full Time",
+    Duration: "October 2024 - September 2024",
+    Grade: (
+      <>
+        <span className="name-logo1">Results Pending</span>. <br />
+      </>
+    ),
+    Logo: uoc,
+  },
+
+  {
     Position: "Meng in Integrated Mechanical & Electrical Engineering",
     Company: "University of Bath",
     Location: "University of Bath, Bath, UK",
     Type: "Full Time",
-    Duration: "Sept 2019 - Present",
+    Duration: "Sept 2019 - June 2024",
     Grade: (
       <>
-        <span className="name-logo1">Predicted First Class</span>. <br />
+        <span className="name-logo1">First Class - Ranked 2nd of my cohort</span>. <br />
         <b>1st year</b>: Upper 2.1 – 66% - GPA: 3.7. <br />
         <b>2nd year</b>: Upper 2.1 – 66% - GPA: 3.7. <br />
         <b>3rd year</b>: First 1.0 – 74% - GPA 4.0.<br />
+        <b>4rd year</b>: First 1.0 – 73% - GPA 4.0.<br />
       </>
     ),
+    Logo: uob,
+    LogoSize: "h-12",
   },
 
   {
@@ -469,6 +500,7 @@ export const techStackDetails = {
   npm: npm,
   git: git,
   github: github,
+  googlescholar: googlescholar,
   figma: figma,
   anaconda: anaconda,
   arduino: arduino,
@@ -714,23 +746,139 @@ export const projectDetailsUni3 = [
 
 ]
 
+export const projectDetailsUni4 = [
+  {
+    title: "Master's Thesis - A Deep Learning Approach for Lithium-Ion Battery State of Health Estimation - A Data-driven Inductive Semi-Supervised Deep Kernel learning Machine Learning Model",
+    image: fypabstract,
+    description: `This thesis proposes a semi-supervised deep kernel learning approach for accurately estimating Lithium-ion battery State of Health under dynamic conditions—outperforming state-of-the-art methods using minimal labeled data and advanced models like bi-GRU, Transformers, and TCNs—while offering interpretable insights via SHAP and gradient-based analysis.`,
+    techstack: "Python, Machine Learning, Matlab, Jupyter Notebook, Deep Learning, Neural Network",
+    previewLink: "https://drive.google.com/file/d/1tFR-VUoPFBXxIdMz16cviU8nvCNToBOj/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/FYP",
+  },
+
+  {
+    title: "Energy and Environment: Decarbonizing the Gold Mining Industry",
+    image: goldmining,
+    description: `Understanding the energy and environmental challenges in the gold mining industry is crucial for achieving sustainability goals. This report explores the industry's carbon footprint, energy consumption, and environmental impact, while proposing strategies for decarbonization and sustainable practices. By addressing these challenges, the gold mining sector can contribute to a greener future.`,
+    techstack: "",
+    previewLink: "https://drive.google.com/file/d/10jiFqyWCRchEf-jzOQpXEssg4VMc-8kB/view?usp=drive_link",
+    githubLink: "",
+  },
+
+    {
+    title: "Introduction to Machine Learning - MNIST Dataset",
+    image: mnist,
+    description: `This project aims to classify handwritten digits using the MNIST dataset. The dataset consists of 70,000 images of handwritten digits (0-9) and is widely used for training various image processing systems. The project involves data preprocessing, feature extraction, and applying machine learning algorithms to achieve accurate digit recognition.`,
+    techstack: "Python, Machine Learning, Jupyter Notebook",
+    previewLink: "https://drive.google.com/file/d/1BqNyIVIwV2alOeWu8oq8PjTVLggKZB_6/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/EE40098-Computational-Intelligence",
+  },
+
+    {
+    title: "Computational Intelligence - Exploring the Genetic Algorithm",
+    image: ga,
+    description: `A comprehensive exploration of Genetic Algorithms as adaptive, nature-inspired optimizers designed to efficiently navigate complex search spaces, avoid local optima, and solve diverse optimization problems—from basic numerical targets to advanced neural network hyperparameter tuning—through systematic analysis of selection, crossover, mutation, and encoding strategies.`,
+    techstack: "",
+    previewLink: "https://drive.google.com/file/d/1ududlfypjSCEDZI56LTFfiQ6C2qPDarr/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/EE40098-Computational-Intelligence",
+  },
+
+    {
+    title: "Static MATLAB-Based FEM Modelling",
+    image: skinpic,
+    description: `This report applies the Finite Element Method to solve the transient diffusion-reaction equation for modeling drug delivery through skin, enabling precise dosage estimation by discretizing complex skin geometry into finite elements.`,
+    techstack: "",
+    previewLink: "https://drive.google.com/file/d/1uKz1DdsNb4PonddW7OXTrJk68fXI0ixx/view?usp=drive_link",
+    githubLink: "",
+  },
+
+  // // Here we can put the Half car model when submitted L48
+  // {
+  //   title: "",
+  //   image: ,
+  //   description: ``,
+  //   techstack: "",
+  //   previewLink: "",
+  //   githubLink: "",
+  // },
+
+]
+
+export const projectDetailsUni5 = [
+    {
+    title: "Reinforcement Learning and Decision Making:",
+    image: rl,
+    description: `This work implements and evaluates foundational Reinforcement Learning algorithms—Value Iteration, Policy Iteration, SARSA, Expected-SARSA, and Q-Learning—on discrete grid-world tasks, analyzing their performance, hyperparameter sensitivity, and the potential of neural networks for scaling to more complex problems.`,
+    techstack: "Python",
+    previewLink: "https://drive.google.com/file/d/1nKHmCfQGtKqgRx3ldgP19nsgrpQyDRK_/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/MLMI7-Reinforcement-Learning---University-of-Cambridge/tree/main",
+  },
+
+    {
+    title: "Graph Attention Network - Replication Paper",
+    image: gat,
+    description: `This work replicates and extends the evaluation of Graph Attention Networks by comparing GAT and GATv2 across multiple benchmarks, revealing that while GATv2 offers slight performance gains, GAT remains more computationally efficient on large-scale datasets, highlighting key trade-offs between attention complexity and efficiency.`,
+    techstack: "Python, GPyTorch",
+    previewLink: "https://drive.google.com/file/d/14-I1q7fyFhCsTiU2KPKsfWQi7lL57cum/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/MLMI7-Reinforcement-Learning---University-of-Cambridge",
+  },
+
+  {
+    title: "Role of Structural Invariance in GNNs and Graph Transformers",
+    image: graphrewiring,
+    description: `This paper investigates how graph rewiring techniques impact structural properties and GNN performance, revealing that successful methods typically preserve local structure while altering global connectivity to mitigate over-squashing.`,
+    techstack: "Python, GNNs, Rewiring",
+    previewLink: "https://drive.google.com/file/d/15DKfm_eUdcWSWm5kwwQn4wp5B7he3ucK/view?usp=drive_link",
+    githubLink: "https://github.com/amgb20/L65-Mini-Project",
+  },
+
+  {
+    title: "  Exploratory Paper Analysis on Graph Neural Networks Use Graphs When They Shouldn’t",
+    image: graphsage,
+    description: `This article highlights two essential practices for approaching a new research topic—understanding its historical context through backward-thinking and identifying future directions through forward-thinking—using the paper *Graph Neural Networks Use Graphs When They Shouldn’t* as a case study to illustrate how researchers can critically engage with both the origins and potential of a study.`,
+    techstack: "Python, GPyTorch",
+    previewLink: "https://drive.google.com/file/d/1tSIYPBaePfWZt0F8zrKBylZU2-GvrjH0/view?usp=drive_link",
+    githubLink: "https://github.com/mayabechlerspeicher/Graph_Neural_Networks_Overfit_Graphs",
+  },
+
+  // // Template
+  // {
+  //   title: "",
+  //   image: ,
+  //   description: ``,
+  //   techstack: "",
+  //   previewLink: "",
+  //   githubLink: "",
+  // },
+
+]
+
 // Enter your Project Details here
 export const projectDetailsPP = [
   {
-    title: "V3 - An evaluative comparison of google or-tools and machine learning algorithms for global path planning in unmanned ground vehicles",
+    title: "Navigating Intelligence: A Survey of Google OR-Tools and Machine Learning for Global Path Planning in Autonomous Vehicles",
     image: robot,
-    description: `A.Benoit, P.Asef under review by the IEEE Transactions on emerging topics in computational intelligence, 2023`,
+    description: `A.Benoit, P.Asef, Advanced Intelligent Systems - Wiley Library - DOI: https://doi.org/10.1002/aisy.202300840`,
     techstack: "HTML/CSS, JavaScript, Python, Jupyter Notebook, Machine Learning, Reinforcement Learning, Q-Learning",
-    previewLink: GOT,
+    previewLink: "https://doi.org/10.1002/aisy.202300840",
     githubLink: "https://github.com/amgb20/ROMIE---Global-Path-Planning",
   },
 
   {
-    title: "V2 - Intelligent energy management system using multi-agent reinforcement learning within an actor-critic proximal policy optimization with a value decompostion network method for commercial ev charging stations scheduling,",
+    title: "Intelligent Energy Management Using Multi - Agent Dynamic Learning for Scheduling Commercial Electric Vehicle Charging Stations",
     image: architecture,
-    description: `A.Benoit, K.Chan and P.Asef under review by the IEEE Transactions on Smart Grid, 2023`,
+    description: `A.Benoit, K.Chan and P.Asef, Conference: 59th International Universities Power Engineering ConferenceAt: Cardiff, UK - DOI: 10.1109/UPEC61344.2024.10892506`,
     techstack: "Python, Machine Learning, Reinforcement Learning, Multi-Agent Reinforcement Learning, Actor-Critic Network, Neural Network, Simulink, Matlab",
-    previewLink: MARL,
+    previewLink: "http://dx.doi.org/10.1109/UPEC61344.2024.10892506",
+    githubLink: "",
+  },
+
+  {
+    title: "A Novel AI-driven Hybrid Method for Flicker Estimation in Power Systems",
+    image: flicker,
+    description: `Javad Enayati, Pedram Asef, Aliakbar Yousefi, M. B. Asadpourahmadchali, Alexandre Benoit, Conference: 2024 International Conference on Smart Energy Systems and Technologies (SEST) - DOI: 10.1109/SEST61601.2024.10694472`,
+    techstack: "Python, Machine Learning, ANN, Simulink, Matlab",
+    previewLink: "https://doi.org/10.1109/SEST61601.2024.10694472",
     githubLink: "",
   },
 
@@ -748,6 +896,15 @@ export const projectDetailsPP = [
     image: coming,
     description: `A.Benoit and Dr. Hao Yuan, 2024`,
     techstack: "Python, Machine Learning, Neural Network, Deep Learning",
+    previewLink: "",
+    githubLink: "",
+  },
+
+  {
+    title: "In progress of research and writing: Role of Structural Invariance in GNNs and Graph Transformers",
+    image: coming,
+    description: `A.Benoit, Catherine Aitken, He Yu and Pietro Lio`,
+    techstack: "Python, Machine Learning, Neural Network, Deep Learning, GNNs, Graph Rewiring",
     previewLink: "",
     githubLink: "",
   },
@@ -869,6 +1026,6 @@ export const projectDetailsBelieth = [
 
 // Enter your Contact Details here
 export const contactDetails = {
-  email: "amgb20@bath.ac.uk",
-  phone: "+33631045318",
+  email: "ab3149@cam.ac.uk",
+  email_2: "alexandre.benoit4000@gmail.com",
 };

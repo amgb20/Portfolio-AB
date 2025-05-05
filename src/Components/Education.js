@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-function Work({ position, company, location, type, duration, grade }) {
+function Work({ position, company, location, type, duration, grade, logo, logoSize }) {
   const elementsRef = useRef([]);
   const refsEduc = el => {
     if (el && !elementsRef.current.includes(el)) {
@@ -66,7 +66,18 @@ function Work({ position, company, location, type, duration, grade }) {
             <p className="text-content text-xs md:text-sm font-light pl-1">{location}</p>
           </div>
         </div>
-        <p className="text-content text-xs md:text-sm font-light pl-1 min-w-fit">{duration}</p>
+        <div className="flex flex-col items-end">
+          <p className="text-content text-xs md:text-sm font-light pl-1 min-w-fit">{duration}</p>
+          {logo && (
+            <div className="pt-2">
+              <img
+                src={logo}
+                alt={`${company} logo`}
+                className={`${logoSize} w-auto object-contain max-w-[150px]`}
+              />
+            </div>
+          )}
+        </div>
       </div>
       <div className="flex justify-between pt-2">
         <div className="flex flex-col md:flex-row">

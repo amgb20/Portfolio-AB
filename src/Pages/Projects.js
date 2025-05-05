@@ -6,7 +6,7 @@ import ProjectSTC from "../Components/ProjectSTC";
 import ProjectWebsite from "../Components/ProjectWebsite";
 // import ScrollSpySidebar from '../Components/ScrollSpySidebar'; // make sure to import ScrollSpySidebar here
 
-import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3, projectDetailsCV, projectDetailsGym, projectDetailsWebPortfolio, projectDetailsWeb } from "../Details";
+import { projectDetailsUni1, projectDetailsSTC, projectDetailsBelieth, projectDetailsPP, projectDetailsUni2, projectDetailsUni3,projectDetailsUni4,projectDetailsUni5, projectDetailsCV, projectDetailsGym, projectDetailsWebPortfolio, projectDetailsWeb } from "../Details";
 
 function Projects() {
   const [activeSection, setActiveSection] = useState('university_project');
@@ -19,12 +19,14 @@ function Projects() {
     { id: 'year1', label: 'Year 1' },
     { id: 'year2', label: 'Year 2' },
     { id: 'year3', label: 'Year 3' },
+    { id: 'year4', label: 'Year 4' }
   ]
 
   // Define the sections here
   const sections = [
-    { id: 'university_project', label: 'University Projects' },
-    { id: 'personal_projects', label: 'Personal Projects' },
+    { id: 'university_project', label: 'Univ of Bath' },
+    { id: 'university_project_cam', label: 'Univ of Cambridge' },
+    { id: 'personal_projects', label: 'Personal' },
     { id: 'publications', label: 'Publications' },
     { id: 'start_ups', label: 'Start-up' },
   ];
@@ -354,9 +356,51 @@ function Projects() {
               </>
             )}
 
+            {activeYear === 'year4' && (
+              <>
+                <div ref={addTech} id="year4" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
+                  {React.Children.toArray(
+                    projectDetailsUni4.map(({ title, image, description, techstack, previewLink, githubLink }) => (
+                      <Project title={title} image={image} description={description} techstack={techstack} previewLink={previewLink} githubLink={githubLink} />
+                    ))
+                  )}
+                </div>
+                <br />
+              </>
+            )}
+
 
           </section>
         )}
+
+        {activeSection === 'university_project_cam' && (
+          <section id="university_project_cam">
+            {/* Render all projects directly without year selection */}
+            <>
+              <div
+                ref={addTech}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap"
+              >
+                {React.Children.toArray(
+                  projectDetailsUni5.map(
+                    ({ title, image, description, techstack, previewLink, githubLink }) => (
+                      <Project
+                        title={title}
+                        image={image}
+                        description={description}
+                        techstack={techstack}
+                        previewLink={previewLink}
+                        githubLink={githubLink}
+                      />
+                    )
+                  )
+                )}
+              </div>
+              <br />
+            </>
+          </section>
+        )}
+
 
         {activeSection === 'personal_projects' && (
           <section id="personal_projects">
@@ -480,7 +524,7 @@ function Projects() {
         )}
 
         {activeSection === 'publications' && (
-          <section id="personal_projects">
+          <section id="publications">
             <div ref={addTech} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 flex flex-wrap">
               {React.Children.toArray(
                 projectDetailsPP.map(

@@ -90,7 +90,7 @@ function Home() {
         >
           {tagline}
         </h2>
-        <img ref={myimageref2} className="w-1/2 mx-auto rounded-l" src={img2} alt="uob" />
+        <img ref={myimageref2} className="w-1/2 mx-auto rounded-l mt-[1cm]" src={img2} alt="uoc" />
       </div>
       <div className="md:w-1/2">
         <img ref={myimageref} className="w-full md:ml-auto rounded-2xl" src={img} alt="Alexandre Benoit" />
