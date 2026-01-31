@@ -157,10 +157,6 @@ nav ul li a:hover {
   width: 100%;
 }
 
-.md\:w-1\/2 {
-  width: 100%;
-}
-
 .project-card {
   transition: all 0.3s ease;
   /* This is to make the changes happen smoothly */
@@ -187,22 +183,55 @@ nav ul li a:hover {
   display: none;
 }
 
-/* CSS for the Projects scrolling menu */
-@media (max-width: 1569px) {
+/* CSS for the Projects scrolling menu - tablet screens */
+@media (max-width: 1024px) {
+  #countrySelection-wrapper,
+  #yearSelection-wrapper,
+  #PPSelection-wrapper {
+    padding: 0 20px;
+    height: 80px;
+  }
+  #countrySelection ul li,
+  #yearSelection ul li,
+  #PPSelection ul li {
+    margin: 16px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Phone screens only - show hamburger menu */
+@media (max-width: 640px) {
   #countrySelection-wrapper {
-    padding: 0 20px; /* reduce padding */
+    padding: 0 10px;
+    height: 60px;
   }
   #countrySelection ul li {
-    margin: 16px 12px; /* reduce margin */
-    font-size: 14px; /* reduce font-size */
+    margin: 12px 8px;
+    font-size: 12px;
   }
-  /* Additional styles for the hamburger menu */
+  /* Show hamburger menu */
   .hamburger-menu {
-    display: block; /* show hamburger */
+    display: block;
+    padding: 10px 0;
   }
-  /* Hide your existing menu */
+  /* Hide horizontal menu on phones */
   #countrySelection-items {
-    display: none; /* hide existing menu */
+    display: none;
+  }
+  /* Year and PP selection responsive */
+  #yearSelection-wrapper,
+  #PPSelection-wrapper {
+    padding: 0 10px;
+    height: 60px;
+  }
+  #yearSelection ul li,
+  #PPSelection ul li {
+    margin: 12px 8px;
+    font-size: 12px;
+  }
+  /* Grid adjustments for phones */
+  .grid {
+    gap: 1rem;
   }
 }
 
@@ -210,9 +239,37 @@ nav ul li a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: transparent;
   width: 100%;
+  background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  padding: 10px 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.dark .mobile-menu {
+  background-color: #191919;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  padding: 12px 20px;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mobile-menu ul li:hover {
+  background-color: rgba(19, 163, 234, 0.1);
 }
 
 

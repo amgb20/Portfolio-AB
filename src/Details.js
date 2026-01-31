@@ -21,6 +21,7 @@ import mnist from "./assets/mnist.png";
 import ga from "./assets/ga.png";
 import skinpic from "./assets/skinpic.png";
 import rl from "./assets/rl.png";
+import halfcarmodel from "./assets/halfcardmodel.png";
 import gat from "./assets/GAT.png"
 import graphrewiring from "./assets/graphrewiring.png"
 import graphsage from "./assets/GraphSage.jpg"
@@ -117,7 +118,7 @@ import "./index.css";
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Alexandre Benoit (MEng)",
-  tagline: "I am a Mechanical and Electrical and future Machine Learning Engineer/Scientist from the University of Cambridge (MPhil). I am a self-taught web and software developer.",
+  tagline: "I am a Machine Learning Engineer/Scientist from the University of Cambridge (MPhil) working on Agentic System and Physical world problems.",
   img: profile,
   img1: profile1,
   img2: uoc,
@@ -173,6 +174,13 @@ export const languageDetails = [
 
 // Enter your Work Experience here
 export const workDetails = [
+  {
+    Position: "Machine Learning Engineer — Research Assistant",
+    Company: "University of Bath & UCL",
+    Location: "Bath, Somerset, UK",
+    Type: "Full Time",
+    Duration: "Jun 2023 – Present",
+  },
   {
     Position: "Academic Representative",
     Company: `Student Union of the University of Bath`,
@@ -437,7 +445,8 @@ export const eduDetails = [
     Duration: "October 2024 - September 2024",
     Grade: (
       <>
-        <span className="name-logo1">Results Pending</span>. <br />
+        <span className="name-logo1">GPA A-</span>. <br />
+        <b> Thesis: Speeding UP MACE: Low-Precision Tricks for Equivarient Force Fields</b>
       </>
     ),
     Logo: uoc,
@@ -805,6 +814,15 @@ export const projectDetailsUni4 = [
 ]
 
 export const projectDetailsUni5 = [
+    {
+      title: "Bayesian Optimization of Nonlinear Half-Car Models for Passenger Comfort over Road Disturbances",
+      image: halfcarmodel, // Be sure to define/import an appropriate image (e.g., halfcarmodel) at the top of your file
+      description: `Used Bayesian Optimization and Simulink modeling to optimize half-car suspension design for maximizing passenger comfort over realistic road disturbances.`,
+      techstack: "Simulink, Matlab, Control Systems, Machine Learning (Bayesian Optimization)",
+      previewLink: "/pdf/L48___ICML2025_Version.pdf", // PDF link
+      githubLink: "", // add a link if available
+    },
+
     {
     title: "Reinforcement Learning and Decision Making:",
     image: rl,

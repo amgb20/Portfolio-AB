@@ -70,8 +70,8 @@ function Home() {
   }, []);
 
   return (
-    <main className="container mx-auto max-width section md:flex justify-between items-start flex-row">
-      <div className="text-center md:w-1/2 mr-5">
+    <main className="container mx-auto max-width pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-12 md:flex justify-between items-start flex-row">
+      <div className="text-center md:w-1/2 md:mr-5">
         <h1
           ref={h11}
           className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-3xl xl:leading-tight font-bold"
@@ -90,7 +90,12 @@ function Home() {
         >
           {tagline}
         </h2>
-        <img ref={myimageref2} className="w-1/2 mx-auto rounded-l mt-[1cm]" src={img2} alt="uoc" />
+        <img
+          ref={myimageref2}
+          className="w-20 md:w-24 lg:w-28 mx-auto mt-4 md:mt-5"
+          src={img2}
+          alt="University of Cambridge crest"
+        />
       </div>
       <div className="md:w-1/2">
         <img ref={myimageref} className="w-full md:ml-auto rounded-2xl" src={img} alt="Alexandre Benoit" />
