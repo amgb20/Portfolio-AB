@@ -73,137 +73,19 @@ function Projects() {
     return () => tl.kill();
   }, []);
 
-  useEffect(() => {
-    // updateSectionOpacity();
-    handleSectionClick(activeSection);
-  }, [activeSection]);
-
-  useEffect(() => {
-    // updateSectionOpacity();
-    handleYearClick(activeYear);
-  }, [activeYear]);
-
-  useEffect(() => {
-    handlePPClick(activePP);
-  }, [activePP]);
 
   const handleSectionClick = (id) => {
     setActiveSection(id);
-    // updateSectionOpacity(); // call the opacity update function
-
-
-    const pointer = document.getElementById("countrySelector");
-    const button = document.querySelector(`li[id='${id}']`);
-    const rect = button.getBoundingClientRect();
-    const parentRect = button.parentElement.getBoundingClientRect();
-    const wrapper = document.getElementById("countrySelection-wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const parentScroll = button.parentElement.scrollLeft;
-
-    // Calculate the position relative to the parent scrolling container
-    const totalelement = rect.left - parentRect.left + (rect.width / 2);
-
-    // GSAP animation to move the pointer
-    gsap.to(pointer, { duration: 1, left: `${totalelement + parentScroll}px`, ease: "easeOutQuad" });
   };
 
   const handleYearClick = (id) => {
     setActiveYear(id);
-    // updateSectionOpacityUP(); // call the opacity update function
-
-
-    const pointer = document.getElementById("yearSelector");
-    const button = document.querySelector(`li[id='${id}']`);
-    const rect = button.getBoundingClientRect();
-    const parentRect = button.parentElement.getBoundingClientRect();
-    const wrapper = document.getElementById("yearSelection-wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const parentScroll = button.parentElement.scrollLeft;
-
-    // Calculate the position relative to the parent scrolling container
-    const totalelement = rect.left - parentRect.left + (rect.width / 2);
-
-    // GSAP animation to move the pointer
-    gsap.to(pointer, { duration: 1, left: `${totalelement + parentScroll}px`, ease: "easeOutQuad" });
   };
 
   const handlePPClick = (id) => {
     setActivePP(id);
-    // updateSectionOpacityUP(); // call the opacity update function
-
-
-    const pointer = document.getElementById("PPSelector");
-    const button = document.querySelector(`li[id='${id}']`);
-    if (!button) return 1;
-    const rect = button.getBoundingClientRect();
-    const parentRect = button.parentElement.getBoundingClientRect();
-    const wrapper = document.getElementById("PPSelection-wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const parentScroll = button.parentElement.scrollLeft;
-
-    // Calculate the position relative to the parent scrolling container
-    const totalelement = rect.left - parentRect.left + (rect.width / 2);
-
-    // GSAP animation to move the pointer
-    gsap.to(pointer, { duration: 1, left: `${totalelement + parentScroll}px`, ease: "easeOutQuad" });
   };
 
-  // useEffect to handle the changes when activeSection or activeYear changes
-  useEffect(() => {
-    // Function to update the opacity for main sections
-    const updateSectionOpacity = () => {
-      sections.forEach(({ id }) => {
-        const elem = document.getElementById(id);
-        if (elem) { // Check if the element exists
-          if (id === activeSection) {
-            elem.classList.add("active");
-            elem.classList.remove("non-active");
-          } else {
-            elem.classList.remove("active");
-            elem.classList.add("non-active");
-          }
-        }
-      });
-    };
-
-    // Function to update the opacity for year sections
-    const updateYearOpacity = () => {
-      yearSections.forEach(({ id }) => {
-        const elem = document.getElementById(id);
-        if (elem) { // Check if the element exists
-          if (id === activeYear) {
-            elem.classList.add("active");
-            elem.classList.remove("non-active");
-          } else {
-            elem.classList.remove("active");
-            elem.classList.add("non-active");
-          }
-        }
-      });
-    };
-
-    // Function to update the opacity for year sections
-    const updatePPOpacity = () => {
-      PPsections.forEach(({ id }) => {
-        const elem = document.getElementById(id);
-        if (elem) { // Check if the element exists
-          if (id === activePP) {
-            elem.classList.add("active");
-            elem.classList.remove("non-active");
-          } else {
-            elem.classList.remove("active");
-            elem.classList.add("non-active");
-          }
-        }
-      });
-    };
-
-    // Updating the opacity
-    updateSectionOpacity();
-    updateYearOpacity();
-    updatePPOpacity();
-
-  }, [activeSection, activeYear, activePP]); // Dependencies
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
