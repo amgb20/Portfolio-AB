@@ -214,106 +214,90 @@ function Projects() {
 
   return (
     <div>
-      <main className="container mx-auto max-width pt-10 mb-20">
-
-        {/* Updated Horizontal scrolling menu */}
-        <div id="countrySelection">
-          <div className="cursor-pointer hamburger-menu" onClick={toggleMobileMenu}>
-            <div className="centerHam ">
-              <svg
-                className="stroke-dark-heading dark:stroke-white "
-                width="25"
-                height="20"
-                viewBox="0 0 16 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+      <main className="container mx-auto max-width pt-8 pb-20">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-dark-heading dark:text-light-heading font-bold">
+            My <span className="text-gradient">Projects</span>
+          </h1>
+        </div>
+        
+        {/* Category Selection */}
+        <div className="mb-8">
+          {/* Mobile Dropdown */}
+          <div className="md:hidden relative">
+            <button 
+              onClick={toggleMobileMenu}
+              className="w-full flex items-center justify-between px-4 py-3 bg-white dark:bg-dark-card rounded-xl shadow-md text-dark-heading dark:text-light-heading font-medium"
+            >
+              <span>{sections.find(s => s.id === activeSection)?.label || 'Select Category'}</span>
+              <svg 
+                className={`w-5 h-5 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
               >
-                <path
-                  d="M1.4375 1.3125H14.5625M1.4375 11.3125H14.5625H1.4375ZM1.4375 6.3125H14.5625H1.4375Z"
-                  strokeWidth="1.875"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </div>
-
-          </div>
-          <div id="countrySelection-wrapper">
-            <ul id="countrySelection-items">
-              <div id="countrySelector">
-                <svg viewBox="0 0 10 10" width="20px" height="20px">
-                  <defs>
-                    <linearGradient id="gradient" gradientTransform="rotate(90)">
-                      <stop offset="0%" stop-color="rgba(19, 163, 234, 255)" />
-                      <stop offset="100%" stop-color="rgba(176, 51, 145, 255)" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,1 h10 L5,9.66Z" fill="url('#gradient')" />
-                </svg>
-
-              </div>
-              {sections.map(({ id, label }) => (
-                <li
-                  id={id}
-                  key={id}
-                  className={`text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-2xl xl:leading-tight font-bold countrySelection-item ${id === activeSection ? "active" : ""}`}
-                  onClick={() => handleSectionClick(id)}
-                >
-                  <a href="#">{label}</a>
-                </li>
-              ))}
-            </ul>
-            <div className="countrySelection-paddles">
-              <button className="countrySelection-paddle-left icon-chevronleft"></button>
-              <button className="countrySelection-paddle-right icon-chevronright"></button>
-            </div>
-          </div>
-          {isMobileMenuOpen && (
-            <div className="mobile-menu">
-              <ul >
+            </button>
+            {isMobileMenuOpen && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-dark-card rounded-xl shadow-xl z-50 overflow-hidden">
                 {sections.map(({ id, label }) => (
-                  <li key={id} onClick={() => handleSectionClick(id)}>
+                  <button
+                    key={id}
+                    onClick={() => { handleSectionClick(id); setMobileMenuOpen(false); }}
+                    className={`w-full px-4 py-3 text-left transition-colors duration-200 ${
+                      id === activeSection 
+                        ? 'bg-gradient text-white font-semibold' 
+                        : 'text-dark-heading dark:text-light-heading hover:bg-gray-100 dark:hover:bg-gray-700'
+                    }`}
+                  >
                     {label}
-                  </li>
+                  </button>
                 ))}
-              </ul>
+              </div>
+            )}
+          </div>
+          
+          {/* Desktop Tabs */}
+          <div className="hidden md:flex justify-center">
+            <div className="inline-flex flex-wrap justify-center gap-2 p-2 bg-white dark:bg-dark-card rounded-2xl shadow-md">
+              {sections.map(({ id, label }) => (
+                <button
+                  key={id}
+                  id={id}
+                  onClick={() => handleSectionClick(id)}
+                  className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 ${
+                    id === activeSection
+                      ? 'bg-gradient text-white shadow-md transform scale-105'
+                      : 'text-dark-heading dark:text-light-heading hover:bg-gray-100 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
-          )}
+          </div>
         </div>
 
         {activeSection === 'university_project' && (
           <section id="university_project">
-            {/* New Horizontal Scrolling Menu for Years */}
-            <div id="yearSelection">
-              <div id="yearSelection-wrapper">
-                <ul id="yearSelection-items">
-                  <div id="yearSelector">
-                    <svg viewBox="0 0 10 10" width="20px" height="20px">
-                      <defs>
-                        <linearGradient id="gradient" gradientTransform="rotate(90)">
-                          <stop offset="0%" stop-color="rgba(19, 163, 234, 255)" />
-                          <stop offset="100%" stop-color="rgba(176, 51, 145, 255)" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,1 h10 L5,9.66Z" fill="url('#gradient')" />
-                    </svg>
-
-                  </div>
-                  {yearSections.map(({ id, label }) => (
-                    <li
-                      id={id}
-                      key={id}
-                      className={`text-xl ${id === activeYear ? "active" : ""}`}
-                      onClick={() => handleYearClick(id)}
-                    >
-                      <a href="#">{label}</a>
-                    </li>
-                  ))}
-                </ul>
-                <div className="yearSelection-paddles">
-                  <button className="yearSelection-paddle-left icon-chevronleft"></button>
-                  <button className="yearSelection-paddle-right icon-chevronright"></button>
-                </div>
+            {/* Year Selection */}
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 bg-gray-100 dark:bg-gray-800 rounded-xl">
+                {yearSections.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    id={id}
+                    onClick={() => handleYearClick(id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      id === activeYear
+                        ? 'bg-white dark:bg-dark-card text-dark-heading dark:text-light-heading shadow-md'
+                        : 'text-dark-content dark:text-light-content hover:bg-white/50 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -404,37 +388,23 @@ function Projects() {
 
         {activeSection === 'personal_projects' && (
           <section id="personal_projects">
-            {/* New Horizontal Scrolling Menu for Years */}
-            <div id="PPSelection">
-              <div id="PPSelection-wrapper">
-                <ul id="PPSelection-items">
-                  <div id="PPSelector">
-                    <svg viewBox="0 0 10 10" width="20px" height="20px">
-                      <defs>
-                        <linearGradient id="gradient" gradientTransform="rotate(90)">
-                          <stop offset="0%" stop-color="rgba(19, 163, 234, 255)" />
-                          <stop offset="100%" stop-color="rgba(176, 51, 145, 255)" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,1 h10 L5,9.66Z" fill="url('#gradient')" />
-                    </svg>
-
-                  </div>
-                  {PPsections.map(({ id, label }) => (
-                    <li
-                      id={id}
-                      key={id}
-                      className={`text-xl ${id === activeYear ? "active" : ""}`}
-                      onClick={() => handlePPClick(id)}
-                    >
-                      <a href="#">{label}</a>
-                    </li>
-                  ))}
-                </ul>
-                <div className="PPSelection-paddles">
-                  <button className="PPSelection-paddle-left icon-chevronleft"></button>
-                  <button className="PPSelection-paddle-right icon-chevronright"></button>
-                </div>
+            {/* Personal Projects Category Selection */}
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 bg-gray-100 dark:bg-gray-800 rounded-xl">
+                {PPsections.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    id={id}
+                    onClick={() => handlePPClick(id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      id === activePP
+                        ? 'bg-white dark:bg-dark-card text-dark-heading dark:text-light-heading shadow-md'
+                        : 'text-dark-content dark:text-light-content hover:bg-white/50 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
 
