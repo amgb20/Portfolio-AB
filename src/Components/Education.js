@@ -73,7 +73,7 @@ function Work({ position, company, location, type, duration, grade, logo, logoSi
               <img
                 src={logo}
                 alt={`${company} logo`}
-                className={`${logoSize} w-auto object-contain max-w-[150px]`}
+                className={`${logoSize || "h-10"} w-auto object-contain max-w-[150px]`}
               />
             </div>
           )}

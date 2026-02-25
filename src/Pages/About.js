@@ -74,7 +74,7 @@ function About() {
         <span className="name-logo2">Education</span>
         </h1>
         {React.Children.toArray(
-          eduDetails.map(({ Position, Company, Location, Type, Duration, Grade, Logo }) => (
+          eduDetails.map(({ Position, Company, Location, Type, Duration, Grade, Logo, LogoSize }) => (
             <Education
               position={Position}
               company={Company}
@@ -83,6 +83,7 @@ function About() {
               duration={Duration}
               grade={Grade}
               logo={Logo}
+              logoSize={LogoSize}
             />
           ))
         )}
