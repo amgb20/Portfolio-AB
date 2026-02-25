@@ -54,25 +54,43 @@ function About() {
   }, []);
 
   return (
-    <main className="container mx-auto max-width pt-10 pb-20 ">
-      <section>
-        <h1 ref={addToRefs} className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-      <span className="name-logo2">About Me</span>
+    <main className="container mx-auto max-width py-12 pb-20">
+      <section className="mb-16">
+        <h1 ref={addToRefs} className="text-3xl sm:text-4xl md:text-5xl text-dark-heading dark:text-light-heading font-bold mb-8">
+          <span className="text-gradient">About Me</span>
         </h1>
-        <div className="md:flex justify-between items-center py-8">
-        <div>
-            <p ref={addToRefs} className="text-content lg:max-w-xl mb-4 text-justify">{personalDetails.about}</p>
-            <p ref={addToRefs} className="text-content lg:max-w-xl text-justify">{personalDetails.about1}</p>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="md:w-1/2 space-y-4">
+            <p ref={addToRefs} className="text-dark-content dark:text-light-content text-base md:text-lg leading-relaxed">
+              {personalDetails.about}
+            </p>
+            <p ref={addToRefs} className="text-dark-content dark:text-light-content text-base md:text-lg leading-relaxed">
+              {personalDetails.about1}
+            </p>
           </div>
-          <img ref={addToRefs}  className="md:w-1/2 md:ml-8 rounded-lg" src={currentImg} alt="About me" />
+          <div ref={addToRefs} className="md:w-1/2">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+              <img 
+                className="relative w-full rounded-xl shadow-xl transition-transform duration-500 group-hover:scale-[1.02]" 
+                src={currentImg} 
+                alt="About me" 
+              />
+            </div>
+          </div>
         </div>
-
       </section>
 
-      <section>
-        <h1 ref={addToRefs} className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Education</span>
-        </h1>
+      <section className="mb-12">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6 flex items-center gap-3">
+          <span className="p-2 bg-gradient rounded-lg">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </span>
+          Education
+        </h2>
         {React.Children.toArray(
           eduDetails.map(({ Position, Company, Location, Type, Duration, Grade, Logo }) => (
             <Education
@@ -88,21 +106,35 @@ function About() {
         )}
       </section>
 
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 mb-5 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Projects</span>
-        </h1>
-        <center ref={addToRefs}>
-          <Link to="/projects" className="gradient-button">View My Projects</Link>
-        </center>
+      <section className="mb-12 py-8 text-center">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6">
+          View My <span className="text-gradient">Projects</span>
+        </h2>
+        <p ref={addToRefs} className="text-dark-content dark:text-light-content mb-6 max-w-2xl mx-auto">
+          Explore my work across various domains including machine learning, web development, and more.
+        </p>
+        <Link 
+          to="/projects" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+        >
+          View Projects
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </section>
 
    
       
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Language</span>
-        </h1>
+      <section className="mb-12">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6 flex items-center gap-3">
+          <span className="p-2 bg-gradient rounded-lg">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          </span>
+          Languages
+        </h2>
         {React.Children.toArray(
           languageDetails.map(({ Position, Type, Company }) => (
             <Language
@@ -114,21 +146,34 @@ function About() {
         )}
       </section>      
       
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 mb-5 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Technologies</span>
-        </h1>
-        <center ref={addToRefs}>
-          <Link to="/technologies" className="gradient-button">Technologies that I have used</Link>
-        </center>
+      <section className="mb-12 py-8 text-center">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6">
+          My <span className="text-gradient">Tech Stack</span>
+        </h2>
+        <p ref={addToRefs} className="text-dark-content dark:text-light-content mb-6 max-w-2xl mx-auto">
+          Discover the technologies and tools I use to bring ideas to life.
+        </p>
+        <Link 
+          to="/technologies" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+        >
+          View Technologies
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </section>
       
       
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          
-          <span className="name-logo2">Work Experience</span>
-        </h1>
+      <section className="mb-12">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6 flex items-center gap-3">
+          <span className="p-2 bg-gradient rounded-lg">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+          Work Experience
+        </h2>
         {React.Children.toArray(
           workDetails.map(({ Position, Company, Location, Type, Duration }) => (
             <Work
@@ -142,10 +187,15 @@ function About() {
         )}
       </section>      
       
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          <span className="name-logo2">Charities</span>
-        </h1>
+      <section className="mb-12">
+        <h2 ref={addToRefs} className="text-2xl sm:text-3xl md:text-4xl text-dark-heading dark:text-light-heading font-bold mb-6 flex items-center gap-3">
+          <span className="p-2 bg-gradient rounded-lg">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </span>
+          Charities
+        </h2>
         {React.Children.toArray(
           charitiesDetails.map(({ Position, Company, Location, Type, Duration }) => (
             <Work

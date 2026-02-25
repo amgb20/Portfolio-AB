@@ -72,54 +72,110 @@ function Technologies() {
     pytorch,
   } = techStackDetails;
   return (
-    <main className="container mx-auto max-width pt-10 pb-20 ">
-            <section>
-      <h1 ref={addTech} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span ref={addTech} className="name-logo2">Technologies</span>
-      </h1>
-      <br/>
-      <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
-        <span className="name-logo1">Programming</span>
-      </p>
-        <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-          <img ref={addTech} src={html} title="html" alt="" />
-          <img ref={addTech} src={css} title="CSS" alt="" />
-          <img ref={addTech} src={js} title="JavaScript" alt="" />
-          <img ref={addTech} src={react} title="React" alt="" />
-          <img ref={addTech} src={anaconda} title="Anaconda" alt="" />
-          <img ref={addTech} src={arduino} title="Arduino" alt="" />
-          <img ref={addTech} src={arm} title="ARM" alt="" />
-          <img ref={addTech} src={c} title="C" alt="" />
-          <img ref={addTech} src={cplusplus} title="C++" alt="" />
-          <img ref={addTech} src={python} title="Python" alt="" />
-          <img ref={addTech} src={solidity} title="Solidity" alt="" />
-          <img ref={addTech} src={django} title="Django" alt="" />
-          <img ref={addTech} src={numpy} title="Numpy" alt="" />
-          <img ref={addTech} src={pandas} title="Pandas" alt="" />
-          <img ref={addTech} src={npm} title="NPM" alt="NPM" />
-          <img ref={addTech} src={tensorflow} title="Tensorflow" alt="Tensorflow" />
-          <img ref={addTech} src={pytorch} title="Pytorch" alt="Pytorch" />
-        </section>
-        <br/>
-        <div className="border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20"></div> {/* This line will add a border */}
-          <p ref={addTech} className="text-content py-2 lg:max-w-3xl text-xl font-bold">
-            <span className="name-logo1">Software</span>
+    <main className="container mx-auto max-width py-12 pb-20">
+      <section>
+        <div className="text-center mb-12">
+          <h1 ref={addTech} className="text-3xl sm:text-4xl md:text-5xl text-dark-heading dark:text-light-heading font-bold">
+            <span className="text-gradient">Technologies</span>
+          </h1>
+          <p ref={addTech} className="text-dark-content dark:text-light-content mt-4 text-lg max-w-2xl mx-auto">
+            Tools and technologies I work with
           </p>
-          <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-          <img ref={addTech} src={vscode} title="Visual Studio Code" alt="" />
-          <img ref={addTech} src={git} title="Git" alt="Git" />
-          <img ref={addTech} src={github} title="Github" alt="Github" />
-          <img ref={addTech} src={figma} title="Figma" alt="Figma" />
-          <img ref={addTech} src={autodesk} title="Autodesk" alt="Autodesk" />
-          <img ref={addTech} src={comsol} title="COMSOL" alt="COMSOL" />
-          <img ref={addTech} src={googlecolab} title="Google Colab" alt="Google Colab" />
-          <img ref={addTech} src={microsoft} title="Microsoft" alt="Microsoft" />
-          <img ref={addTech} src={jupyter} title="Jupyter" alt="Jupyter" />
-          <img ref={addTech} src={matlab} title="Matlab" alt="Matlab" />
-          <img ref={addTech} src={orcad} title="Orcad" alt="Orcad" />
-          <img ref={addTech} src={pycharm} title="Pycharm" alt="Pycharm" />
-          <img ref={addTech} src={overleaf} title="Overleaf" alt="Overleaf" />
-        </section>
+        </div>
+        
+        <div className="space-y-12">
+          <div>
+            <h2 ref={addTech} className="text-xl md:text-2xl font-bold text-dark-heading dark:text-light-heading mb-6 flex items-center gap-3">
+              <span className="p-2 bg-gradient rounded-lg">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </span>
+              Programming Languages & Frameworks
+            </h2>
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6">
+              {[
+                { src: html, title: "HTML" },
+                { src: css, title: "CSS" },
+                { src: js, title: "JavaScript" },
+                { src: react, title: "React" },
+                { src: anaconda, title: "Anaconda" },
+                { src: arduino, title: "Arduino" },
+                { src: arm, title: "ARM" },
+                { src: c, title: "C" },
+                { src: cplusplus, title: "C++" },
+                { src: python, title: "Python" },
+                { src: solidity, title: "Solidity" },
+                { src: django, title: "Django" },
+                { src: numpy, title: "NumPy" },
+                { src: pandas, title: "Pandas" },
+                { src: npm, title: "NPM" },
+                { src: tensorflow, title: "TensorFlow" },
+                { src: pytorch, title: "PyTorch" },
+              ].map((tech, index) => (
+                <div 
+                  key={tech.title}
+                  ref={addTech}
+                  className="group flex flex-col items-center p-3 md:p-4 bg-white dark:bg-dark-card rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img 
+                    src={tech.src} 
+                    title={tech.title} 
+                    alt={tech.title}
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <span className="mt-2 text-xs md:text-sm text-dark-content dark:text-light-content font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {tech.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-200 dark:border-gray-700 pt-12">
+            <h2 ref={addTech} className="text-xl md:text-2xl font-bold text-dark-heading dark:text-light-heading mb-6 flex items-center gap-3">
+              <span className="p-2 bg-gradient rounded-lg">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </span>
+              Software & Tools
+            </h2>
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6">
+              {[
+                { src: vscode, title: "VS Code" },
+                { src: git, title: "Git" },
+                { src: github, title: "GitHub" },
+                { src: figma, title: "Figma" },
+                { src: autodesk, title: "Autodesk" },
+                { src: comsol, title: "COMSOL" },
+                { src: googlecolab, title: "Colab" },
+                { src: microsoft, title: "Microsoft" },
+                { src: jupyter, title: "Jupyter" },
+                { src: matlab, title: "MATLAB" },
+                { src: orcad, title: "OrCAD" },
+                { src: pycharm, title: "PyCharm" },
+                { src: overleaf, title: "Overleaf" },
+              ].map((tech, index) => (
+                <div 
+                  key={tech.title}
+                  ref={addTech}
+                  className="group flex flex-col items-center p-3 md:p-4 bg-white dark:bg-dark-card rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img 
+                    src={tech.src} 
+                    title={tech.title} 
+                    alt={tech.title}
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <span className="mt-2 text-xs md:text-sm text-dark-content dark:text-light-content font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {tech.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
