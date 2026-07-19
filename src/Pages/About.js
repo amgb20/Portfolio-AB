@@ -1,81 +1,119 @@
 import React, { useRef, useEffect, useState } from "react";
-import gsap from "gsap";
 import Work from "../Components/Work";
 import Language from "../Components/Language";
 import Education from "../Components/Education";
-import { personalDetails, workDetails, eduDetails, languageDetails, charitiesDetails } from "../Details";
+import {
+  personalDetails,
+  workDetails,
+  eduDetails,
+  languageDetails,
+  charitiesDetails,
+} from "../Details";
 import "../index.css";
 import { Link } from "react-router-dom";
+import { fadeIn } from "../utils/gsapReducedMotion";
 
-
+function SectionHeading({ label, title }) {
+  return (
+    <div className="mb-6">
+      <p className="section-label">{label}</p>
+      <h2 className="section-heading">{title}</h2>
+    </div>
+  );
+}
 function About() {
-
   const [currentImg, setCurrentImg] = useState(personalDetails.img);
+  const [imgIndex, setImgIndex] = useState(0);
   const elementsRef = useRef([]);
 
-  useEffect(() => {
-    const images = [personalDetails.img, personalDetails.img1, personalDetails.img3, personalDetails.img4, personalDetails.img5,
-      personalDetails.img6, personalDetails.img7, personalDetails.img8, personalDetails.img9, personalDetails.img10, personalDetails.img11, personalDetails.img12];
-    let i = 0;
+  const images = useRef([
+    personalDetails.img,
+    personalDetails.img1,
+    personalDetails.img3,
+    personalDetails.img4,
+    personalDetails.img5,
+    personalDetails.img6,
+    personalDetails.img7,
+    personalDetails.img8,
+    personalDetails.img9,
+    personalDetails.img10,
+    personalDetails.img11,
+    personalDetails.img12,
+  ]).current;
 
+  useEffect(() => {
+    let i = 0;
     const changeImage = () => {
       setCurrentImg(images[i]);
-      i = (i + 1) % images.length; // Cycle i between 0, 1, and 2
+      setImgIndex(i);
+      i = (i + 1) % images.length;
     };
-
-    // Change image every 3 seconds
     const intervalId = setInterval(changeImage, 1500);
+    return () => clearInterval(intervalId);
+  }, [images]);
 
-    return () => clearInterval(intervalId); // Clean up on component unmount
-  }, []);
-
-  const addToRefs = el => {
+  const addToRefs = (el) => {
     if (el && !elementsRef.current.includes(el)) {
       elementsRef.current.push(el);
     }
   };
 
   useEffect(() => {
-    const tl = gsap.timeline();
-    elementsRef.current.forEach((el, i) => {
-      tl.from(
-        el,
-        {
-          x: i % 2 === 0 ? "-100%" : "200%",
-          delay: 0.5,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      )
-    });
-    return () => tl.kill();
+    const tl = fadeIn(elementsRef.current);
+    return () => tl?.kill();
   }, []);
 
   return (
-    <main className="container mx-auto max-width pt-10 pb-20 ">
-      <section>
-        <h1 ref={addToRefs} className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-      <span className="name-logo2">About Me</span>
-        </h1>
-        <div className="md:flex justify-between items-center py-8">
-        <div>
-            <p ref={addToRefs} className="text-content lg:max-w-xl mb-4 text-justify">{personalDetails.about}</p>
-            <p ref={addToRefs} className="text-content lg:max-w-xl text-justify">{personalDetails.about1}</p>
-          </div>
-          <img ref={addToRefs}  className="md:w-1/2 md:ml-8 rounded-lg" src={currentImg} alt="About me" />
+    <main className="container mx-auto max-width pt-10 pb-20">
+      <section className="mb-16">
+        <div ref={addToRefs}>
+          <SectionHeading label="// about" title="About Me" />
         </div>
-
+        <div className="md:flex justify-between items-start gap-8">
+          <div>
+            <p
+              ref={addToRefs}
+              className="text-content lg:max-w-xl mb-4 text-justify leading-relaxed"
+            >
+              {personalDetails.about}
+            </p>
+            <p
+              ref={addToRefs}
+              className="text-content lg:max-w-xl text-justify leading-relaxed"
+            >
+              {personalDetails.about1}
+            </p>
+          </div>
+          <div ref={addToRefs} className="md:w-1/2 shrink-0">
+            <div className="card-engineering p-2">
+              <img
+                className="w-full rounded-md"
+                src={currentImg}
+                alt="About me"
+              />
+            </div>
+            <div className="flex justify-center gap-1.5 mt-3">
+              {images.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                    idx === imgIndex ? "bg-accent-cyan" : "bg-bg-elevated"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h1 ref={addToRefs} className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Education</span>
-        </h1>
-        {React.Children.toArray(
-          eduDetails.map(({ Position, Company, Location, Type, Duration, Grade, Logo }) => (
+      <section className="mb-16">
+        <div ref={addToRefs}>
+          <SectionHeading label="// education" title="Education" />
+        </div>
+        {eduDetails.map(
+          ({ Position, Company, Location, Type, Duration, Grade, Logo }) => (
             <Education
+              key={`${Position}-${Company}`}
               position={Position}
               company={Company}
               location={Location}
@@ -84,79 +122,72 @@ function About() {
               grade={Grade}
               logo={Logo}
             />
-          ))
+          )
         )}
       </section>
 
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 mb-5 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Projects</span>
-        </h1>
-        <center ref={addToRefs}>
-          <Link to="/projects" className="gradient-button">View My Projects</Link>
-        </center>
+      <section className="mb-16 text-center">
+        <div ref={addToRefs}>
+          <SectionHeading label="// projects" title="Projects" />
+        </div>
+        <Link to="/projects" className="btn-primary">
+          View My Projects
+        </Link>
       </section>
 
-   
-      
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Language</span>
-        </h1>
-        {React.Children.toArray(
-          languageDetails.map(({ Position, Type, Company }) => (
-            <Language
-              position={Position}
-              type={Type}
-              company={Company}
-            />
-          ))
-        )}
-      </section>      
-      
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 mb-5 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-        <span className="name-logo2">Technologies</span>
-        </h1>
-        <center ref={addToRefs}>
-          <Link to="/technologies" className="gradient-button">Technologies that I have used</Link>
-        </center>
+      <section className="mb-16">
+        <div ref={addToRefs}>
+          <SectionHeading label="// languages" title="Language" />
+        </div>
+        {languageDetails.map(({ Position, Type, Company }) => (
+          <Language
+            key={Position}
+            position={Position}
+            type={Type}
+            company={Company}
+          />
+        ))}
       </section>
-      
-      
+
+      <section className="mb-16 text-center">
+        <div ref={addToRefs}>
+          <SectionHeading label="// stack" title="Technologies" />
+        </div>
+        <Link to="/technologies" className="btn-primary">
+          Technologies I Use
+        </Link>
+      </section>
+
+      <section className="mb-16">
+        <div ref={addToRefs}>
+          <SectionHeading label="// experience" title="Work Experience" />
+        </div>
+        {workDetails.map(({ Position, Company, Location, Type, Duration }) => (
+          <Work
+            key={`${Position}-${Company}-${Duration}`}
+            position={Position}
+            company={Company}
+            location={Location}
+            type={Type}
+            duration={Duration}
+          />
+        ))}
+      </section>
+
       <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          
-          <span className="name-logo2">Work Experience</span>
-        </h1>
-        {React.Children.toArray(
-          workDetails.map(({ Position, Company, Location, Type, Duration }) => (
-            <Work
-              position={Position}
-              company={Company}
-              location={Location}
-              type={Type}
-              duration={Duration}
-            />
-          ))
-        )}
-      </section>      
-      
-      <section>
-        <h1 ref={addToRefs} className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          <span className="name-logo2">Charities</span>
-        </h1>
-        {React.Children.toArray(
-          charitiesDetails.map(({ Position, Company, Location, Type, Duration }) => (
-            <Work
-              position={Position}
-              company={Company}
-              location={Location}
-              type={Type}
-              duration={Duration}
-            />
-          ))
-        )}
+        <div ref={addToRefs}>
+          <SectionHeading label="// volunteer" title="Charities" />
+        </div>
+        {charitiesDetails.map(({ Position, Company, Location, Type, Duration }) => (
+          <Work
+            key={`${Position}-${Company}`}
+            position={Position}
+            company={Company}
+            location={Location}
+            type={Type}
+            duration={Duration}
+          />
+        ))}
       </section>
     </main>
   );

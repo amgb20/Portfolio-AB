@@ -1,577 +1,232 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.centerHam {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@layer base {
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-accent-cyan ring-offset-2 ring-offset-bg-primary;
+  }
 }
 
+@layer components {
+  .max-width {
+    @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
+  }
 
-.max-width {
-  @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
+  .section {
+    @apply pt-28 xl:pt-28 2xl:pt-44;
+  }
+
+  .text-content {
+    @apply text-text-muted;
+  }
+
+  .section-label {
+    @apply font-mono text-sm text-accent-cyan tracking-wide uppercase;
+  }
+
+  .section-heading {
+    @apply font-heading text-2xl md:text-4xl xl:text-5xl font-bold text-text-primary mt-2;
+  }
+
+  .card-engineering {
+    @apply bg-bg-card border border-border-subtle rounded-lg transition-colors duration-200;
+  }
+
+  .card-engineering:hover {
+    @apply border-accent-cyan/40;
+  }
+
+  .btn-primary {
+    @apply inline-block px-5 py-2.5 font-mono text-sm text-accent-cyan border border-accent-cyan/50 rounded-lg bg-accent-cyan/10 cursor-pointer transition-colors duration-200 no-underline;
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent-cyan/20 border-accent-cyan;
+  }
+
+  .badge-green {
+    @apply font-mono text-xs text-accent-green border border-accent-green/30 bg-accent-green/10 rounded px-2 py-0.5;
+  }
+
+  .badge-cyan {
+    @apply font-mono text-xs text-accent-cyan bg-bg-elevated rounded px-2 py-0.5;
+  }
+
+  .nav-link {
+    @apply font-mono text-sm text-text-muted transition-colors duration-200 cursor-pointer no-underline;
+  }
+
+  .nav-link:hover {
+    @apply text-accent-cyan;
+  }
+
+  .nav-link-active {
+    @apply text-accent-cyan border-b-2 border-accent-cyan pb-0.5;
+  }
+
+  .tech-tile {
+    @apply card-engineering flex flex-col items-center justify-center p-4 gap-2 cursor-pointer aspect-square;
+  }
+
+  .tech-tile:hover {
+    @apply border-accent-cyan;
+  }
+
+  .tech-tile img {
+    @apply w-10 h-10 object-contain;
+  }
+
+  .tech-tile span {
+    @apply font-mono text-xs text-text-muted text-center;
+  }
+
+  .timeline-row {
+    @apply card-engineering p-5 mt-4 border-l-2 border-l-accent-cyan/50;
+  }
+
+  .project-card {
+    @apply card-engineering overflow-hidden mt-6 cursor-pointer;
+  }
+
+  .project-card:hover {
+    @apply border-accent-cyan/50;
+  }
+
+  .project-card img {
+    @apply w-full object-cover;
+  }
+
+  .link-cyan {
+    @apply font-mono text-sm text-accent-cyan hover:underline cursor-pointer transition-colors duration-200;
+  }
+
+  .segmented-tabs {
+    @apply flex flex-wrap gap-1 bg-bg-elevated rounded-lg p-1 mb-8;
+  }
+
+  .segmented-tab {
+    @apply font-mono text-xs md:text-sm px-3 py-2 rounded-md text-text-muted cursor-pointer transition-colors duration-200 whitespace-nowrap;
+  }
+
+  .segmented-tab:hover {
+    @apply text-text-primary;
+  }
+
+  .segmented-tab-active {
+    @apply bg-accent-cyan/20 text-accent-cyan;
+  }
+
+  .mobile-menu {
+    @apply absolute top-full left-0 w-full bg-bg-card border border-border-subtle rounded-b-lg z-50 py-2;
+  }
+
+  .mobile-menu ul {
+    @apply list-none p-0 m-0;
+  }
+
+  .mobile-menu ul li {
+    @apply px-5 py-3 font-mono text-sm text-text-muted cursor-pointer text-center transition-colors duration-200;
+  }
+
+  .mobile-menu ul li:hover {
+    @apply text-accent-cyan bg-accent-cyan/10;
+  }
+
+  .accreditation-card {
+    @apply timeline-row flex flex-col md:flex-row md:items-center gap-4;
+  }
+
+  .language-bar-track {
+    @apply w-full h-1.5 bg-bg-elevated rounded-full mt-2;
+  }
+
+  .language-bar-fill {
+    @apply h-full bg-accent-cyan rounded-full transition-all duration-300;
+  }
 }
 
-.bg-gradient {
-  @apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-600;
-}
-
-.text-gradient {
-  @apply bg-clip-text bg-gradient text-transparent;
-}
-
-.section {
-  @apply pt-28 xl:pt-28 2xl:pt-44;
-}
-
-.text-content {
-  @apply dark:text-light-content text-dark-content;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* For active state */
-.active-nav-link {
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  transform: scale(1.2);
-  z-index: 2;
-  font-size: 18px;
-}
-
-
-/* For unhovered state */
-nav ul li a {
-  display: inline-block;
-  text-shadow: none;
-  transform: scale(1);
-  z-index: 1;
-  transition: transform 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease;
-  font-size: 16px;
-  padding: 0 4px;
-}
-
-/* For hovered state */
-nav ul li a:hover {
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  transform: scale(1.2);
-  /* Increase the size slightly */
-  z-index: 2;
-  /* Bring the hovered element to the front */
-  font-size: 18px;
-
-}
-
-
+/* Legacy aliases for gradual migration */
 .name-logo {
-  font-size: 2.5rem;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  @apply font-heading text-2xl font-bold text-text-primary;
+}
+
+.name-logo span {
+  @apply text-accent-cyan;
 }
 
 .name-logo1 {
-  font-size: 1.5rem;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  @apply section-label;
 }
 
 .name-logo2 {
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  @apply section-heading;
+}
+
+.text-gradient {
+  @apply text-accent-cyan;
 }
 
 .gradient-button {
-  display: inline-block;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 25px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1em;
-  line-height: 1em;
-  transition: all 0.3s ease;
+  @apply btn-primary;
 }
 
-.gradient-button:hover {
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+.bg-gradient {
+  @apply bg-accent-cyan/20;
 }
 
-.section1 {
+.active-nav-link {
+  @apply nav-link-active;
+}
+
+.flex-wrap > .project-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 
-.image-container {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-
-.image-item {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.slideshowSlider {
-  display: flex;
-  transition: transform 1s ease-in-out;
+.flex-wrap > .project-card > div {
+  flex-grow: 1;
 }
 
 .slideshow {
   width: 50%;
-  /* Adjust as needed */
   margin: 0 auto;
   overflow: hidden;
 }
 
-.slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.project-card {
-  transition: all 0.3s ease;
-  /* This is to make the changes happen smoothly */
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  /* This makes the card slightly larger */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  /* This adds a deeper shadow */
-}
-
-.flex-wrap>.project-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-wrap>.project-card>.dark\:bg-dark-card {
-  flex-grow: 1;
-}
-
-/* Initially hide the hamburger menu */
-.hamburger-menu {
-  display: none;
-}
-
-/* CSS for the Projects scrolling menu - tablet screens */
-@media (max-width: 1024px) {
-  #countrySelection-wrapper,
-  #yearSelection-wrapper,
-  #PPSelection-wrapper {
-    padding: 0 20px;
-    height: 80px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  #countrySelection ul li,
-  #yearSelection ul li,
-  #PPSelection ul li {
-    margin: 16px 12px;
-    font-size: 14px;
-  }
-}
-
-/* Phone screens only - show hamburger menu */
-@media (max-width: 640px) {
-  #countrySelection-wrapper {
-    padding: 0 10px;
-    height: 60px;
-  }
-  #countrySelection ul li {
-    margin: 12px 8px;
-    font-size: 12px;
-  }
-  /* Show hamburger menu */
-  .hamburger-menu {
-    display: block;
-    padding: 10px 0;
-  }
-  /* Hide horizontal menu on phones */
-  #countrySelection-items {
-    display: none;
-  }
-  /* Year and PP selection responsive */
-  #yearSelection-wrapper,
-  #PPSelection-wrapper {
-    padding: 0 10px;
-    height: 60px;
-  }
-  #yearSelection ul li,
-  #PPSelection ul li {
-    margin: 12px 8px;
-    font-size: 12px;
-  }
-  /* Grid adjustments for phones */
-  .grid {
-    gap: 1rem;
-  }
-}
-
-.mobile-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 50;
-  padding: 10px 0;
-  border-radius: 0 0 8px 8px;
-}
-
-.dark .mobile-menu {
-  background-color: #191919;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-menu ul li {
-  padding: 12px 20px;
-  cursor: pointer;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  text-align: center;
-}
-
-.mobile-menu ul li:hover {
-  background-color: rgba(19, 163, 234, 0.1);
-}
-
-
-#countrySelection {
-  position: relative;
-
-}
-
-#countrySelection::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%);
-  z-index: 1;
-}
-
-#countrySelection-wrapper {
-  display: flex;
-  /* Add this */
-  align-items: center;
-  /* Add this */
-  justify-content: center;
-  /* Add this */
-  position: relative;
-  overflow: hidden;
-  height: 100px;
-  padding: 0 100px;
-}
-
-#countrySelector {
-  position: absolute;
-  /* Add this */
-  left: 50%;
-  /* Add this */
-  top: 50%;
-  transform: translateX(-50%, -50%);
-  /* Add this */
-  /* rest of the properties */
-}
-
-#countrySelector {
-  position: relative;
-  margin-left: -5px;
-  top: -1px;
-  width: 20px;
-  /* or however wide you want the SVG to be */
-  height: 20px;
-  /* or however tall you want the SVG to be */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-
-#countrySelection ul li {
-  display: inline-block;
-  margin: 16px 24px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-.countrySelection-paddle-left,
-.countrySelection-paddle-right {
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
-}
-
-.slick-prev,
-.countrySelection-paddle-left {
-  left: 0;
-}
-
-#yearSelection {
-  position: relative;
-
-}
-
-#yearSelection::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  /* background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%); */
-  z-index: 1;
-}
-
-
-#yearSelection-wrapper {
-  display: flex;
-  /* Add this */
-  align-items: center;
-  /* Add this */
-  justify-content: center;
-  /* Add this */
-  position: relative;
-  overflow: hidden;
-  height: 100px;
-  padding: 0 100px;
-}
-
-#yearSelector {
-  position: absolute;
-  /* Add this */
-  left: 50%;
-  /* Add this */
-  top: 50%;
-  transform: translateX(-50%, -50%);
-  /* Add this */
-  /* rest of the properties */
-}
-
-#yearSelector {
-  position: relative;
-  margin-left: -5px;
-  top: -1px;
-  width: 20px;
-  /* or however wide you want the SVG to be */
-  height: 20px;
-  /* or however tall you want the SVG to be */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#yearSelection ul li {
-  display: inline-block;
-  margin: 16px 24px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-
-
-.yearSelection-paddle-left,
-.yearSelection-paddle-right {
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
-}
-
-#PPSelection {
-  position: relative;
-
-}
-
-
-#PPSelection::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  /* background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(176, 51, 145, 255) 100%); */
-  z-index: 1;
-}
-
-
-
-
-#PPSelection-wrapper {
-  display: flex;
-  /* Add this */
-  align-items: center;
-  /* Add this */
-  justify-content: center;
-  /* Add this */
-  position: relative;
-  overflow: hidden;
-  height: 100px;
-  padding: 0 100px;
-}
-
-
-#PPSelector {
-  position: absolute;
-  /* Add this */
-  left: 50%;
-  /* Add this */
-  top: 50%;
-  transform: translateX(-50%, -50%);
-  /* Add this */
-  /* rest of the properties */
-}
-
-#PPSelector {
-  position: relative;
-  margin-left: -5px;
-  top: -1px;
-  width: 20px;
-  /* or however wide you want the SVG to be */
-  height: 20px;
-  /* or however tall you want the SVG to be */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-
-.active p,
-.active a {
-  color: #fff !important;
-}
-
-.active {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.non-active {
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
-}
-
-
-
-
-
-#PPSelection ul li {
-  display: inline-block;
-  margin: 16px 24px;
-  background: linear-gradient(to right, rgba(19, 163, 234, 255) 0%, rgba(86, 255, 37, 255) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-.PPSelection-paddle-left,
-.yearSelection-paddle-right {
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: none;
-}
-
-
-.slick-prev,
-.yearSelection-paddle-left {
-  left: 0;
-}
-
-.slick-prev,
-.PPSelection-paddle-left {
-  left: 0;
-}
-
-.slick-prev,
-.icon-chevronleft {
-  transform: rotate(180deg);
-}
-
-.icon-chevronleft,
-.icon-chevronright {
-  background-image: url('http://www.res-testing.com/images/arrow.png');
-  background-repeat: no-repeat;
-  background-size: 20px;
-}
-
-.arrow {
-  width: 25px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.slick-next,
-.countrySelection-paddle-right {
-  right: 0;
-}
-
-.slick-next,
-.yearSelection-paddle-right {
-  right: 0;
-}
-
-.slick-next,
-.PPSelection-paddle-right {
-  right: 0;
 }

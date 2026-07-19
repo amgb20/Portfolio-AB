@@ -1,109 +1,78 @@
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { personalDetails } from "../Details";
+import { personalDetails, socialMediaUrl } from "../Details";
+import { fadeIn } from "../utils/gsapReducedMotion";
 
 function Home() {
   const { name, tagline, img, img2 } = personalDetails;
-  const h11 = useRef();
-  const h12 = useRef();
-  const h13 = useRef();
-  const myimageref = useRef();
-  const myimageref2 = useRef();
+  const { linkdein, github, googlescholar } = socialMediaUrl;
+  const heroRef = useRef();
+  const imageRef = useRef();
+
   useEffect(() => {
-    const tl = gsap.timeline();
-    tl.from(
-      h11.current,
-      {
-        x: "-100%",
-        delay: 0.8,
-        opacity: 0,
-        duration: 2,
-        ease: "Power3.easeOut",
-      },
-      "<"
-    )
-      .from(
-        h12.current,
-        {
-          x: "-100%",
-          delay: 0.5,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      )
-      .from(
-        h13.current,
-        {
-          x: "-100%",
-          delay: 0.1,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      )
-      .from(
-        myimageref.current,
-        {
-          x: "200%",
-          delay: 0.5,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-        )
-        .from(
-          myimageref2.current,
-          {
-            x: "200%",
-            delay: 0.5,
-            opacity: 0,
-            duration: 2,
-            ease: "Power3.easeOut",
-          },
-          "<"
-      );
-      return () => tl.kill();
+    const tl = fadeIn([heroRef.current, imageRef.current]);
+    return () => tl?.kill();
   }, []);
 
   return (
-    <main className="container mx-auto max-width pt-6 md:pt-8 lg:pt-10 xl:pt-12 pb-12 md:flex justify-between items-start flex-row">
-      <div className="text-center md:w-1/2 md:mr-5">
-        <h1
-          ref={h11}
-          className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-3xl xl:leading-tight font-bold"
-        >
-          Hi,👋<br></br>My Name is<br></br>
-        </h1>
-        <h1
-          ref={h12}
-          className="text-2xl bg-clip-text bg-gradient text-transparent md:text-4xl xl:text-5xl xl:leading-tight font-bold"
-        >
-          {name}
-        </h1>
-        <h2
-          ref={h13}
-          className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-3xl xl:leading-tight font-bold"
-        >
-          {tagline}
-        </h2>
-        <img
-          ref={myimageref2}
-          className="w-20 md:w-24 lg:w-28 mx-auto mt-4 md:mt-5"
-          src={img2}
-          alt="University of Cambridge crest"
-        />
-      </div>
-      <div className="md:w-1/2">
-        <img ref={myimageref} className="w-full md:ml-auto rounded-2xl" src={img} alt="Alexandre Benoit" />
+    <main className="container mx-auto max-width pt-6 md:pt-12 pb-12">
+      <div className="md:flex justify-between items-center gap-10">
+        <div ref={heroRef} className="md:w-1/2">
+          <p className="font-mono text-sm text-accent-cyan mb-4">
+            &gt; whoami
+          </p>
+          <h1 className="font-heading text-3xl md:text-5xl xl:text-6xl font-bold text-text-primary leading-tight">
+            {name}
+          </h1>
+          <p className="font-mono text-base md:text-lg text-text-muted mt-4">
+            {tagline}
+          </p>
+          <div className="border-t border-border-subtle my-6" />
+          <div className="flex items-center gap-4">
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="link-cyan"
+            >
+              GitHub
+            </a>
+            <span className="text-border-subtle">|</span>
+            <a
+              href={linkdein}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="link-cyan"
+            >
+              LinkedIn
+            </a>
+            <span className="text-border-subtle">|</span>
+            <a
+              href={googlescholar}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="link-cyan"
+            >
+              Scholar
+            </a>
+          </div>
+          <img
+            className="w-16 md:w-20 mt-6 opacity-80"
+            src={img2}
+            alt="University of Cambridge crest"
+          />
+        </div>
+        <div ref={imageRef} className="md:w-1/2 mt-10 md:mt-0">
+          <div className="card-engineering border-accent-cyan/30 p-2">
+            <img
+              className="w-full rounded-md"
+              src={img}
+              alt="Alexandre Benoit"
+            />
+          </div>
+        </div>
       </div>
     </main>
-);
-
-
+  );
 }
 
 export default Home;

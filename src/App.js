@@ -11,16 +11,20 @@ import Accreditations from "./Pages/Accreditations";
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/technologies" element={<Technologies />} />
-        <Route path="/accreditations" element={<Accreditations />} />
-      </Routes>
-      <Footer />
+      <div className="min-h-screen flex flex-col pt-24 pb-8">
+        <Header />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/accreditations" element={<Accreditations />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
