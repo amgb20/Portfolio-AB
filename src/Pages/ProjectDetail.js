@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getProjectBySlug, projects } from "../Details";
 import ProjectCard from "../Components/ProjectCard";
 import TechPill from "../Components/ui/TechPill";
+import Seo from "../Components/Seo";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -11,6 +12,7 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="app-container flex flex-col items-center gap-6 px-6 pt-40 pb-24 text-center">
+        <Seo title="Project not found" path="/projects" />
         <h1 className="section-title">Project not found</h1>
         <p className="section-subtitle">
           The project you are looking for doesn&apos;t exist or may have moved.
@@ -28,6 +30,11 @@ export default function ProjectDetail() {
 
   return (
     <>
+      <Seo
+        title={project.title}
+        description={project.description}
+        path={`/projects/${project.slug}`}
+      />
       <article className="app-container px-6 pt-32 pb-16 md:pt-40">
         <Link
           to="/projects"

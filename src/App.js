@@ -9,6 +9,8 @@ import Experience from "./Pages/Experience";
 import Publications from "./Pages/Publications";
 import Projects from "./Pages/Projects";
 import ProjectDetail from "./Pages/ProjectDetail";
+import OffTheClock from "./Pages/OffTheClock";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/publications" element={<Publications />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/off-the-clock" element={<OffTheClock />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

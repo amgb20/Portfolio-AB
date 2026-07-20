@@ -8,6 +8,7 @@ const navColumn = [
   { to: "/experience", label: "Experience" },
   { to: "/publications", label: "Publications" },
   { to: "/projects", label: "Projects" },
+  { to: "/off-the-clock", label: "Off the Clock" },
 ];
 
 export default function Footer() {

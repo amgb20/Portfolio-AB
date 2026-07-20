@@ -3,6 +3,7 @@ import { projects, projectGroupsMeta } from "../Details";
 import PageHeader from "../Components/ui/PageHeader";
 import SegmentedTabs from "../Components/ui/SegmentedTabs";
 import ProjectCard from "../Components/ProjectCard";
+import Seo from "../Components/Seo";
 
 const categories = [
   { id: "university", label: "University Projects" },
@@ -85,6 +86,11 @@ export default function Projects() {
 
   return (
     <>
+      <Seo
+        title="Projects"
+        description="A library of Alexandre Benoit's university and side projects across machine learning, computer vision, robotics, web and start-ups."
+        path="/projects"
+      />
       <PageHeader
         label="Portfolio"
         title="Projects"

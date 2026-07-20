@@ -1,0 +1,22 @@
+{
+  "short_name": "A. Benoit",
+  "name": "Alexandre Benoit — ML Engineer & Scientist",
+  "description": "Machine Learning Engineer & Scientist (University of Cambridge MPhil). Publications, university and side projects.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "og-image.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0F2742",
+  "background_color": "#EAF4FF"
+}

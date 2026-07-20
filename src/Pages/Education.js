@@ -8,6 +8,7 @@ import {
 import PageHeader from "../Components/ui/PageHeader";
 import AccordionCard from "../Components/ui/AccordionCard";
 import TechPill from "../Components/ui/TechPill";
+import Seo from "../Components/Seo";
 
 function AwardIcon() {
   return (
@@ -115,6 +116,11 @@ function CertificationCard({ cert }) {
 export default function Education() {
   return (
     <>
+      <Seo
+        title="Education"
+        description="Alexandre Benoit's education: MPhil in Machine Learning & Machine Intelligence at the University of Cambridge and MEng at the University of Bath, plus certifications and awards."
+        path="/education"
+      />
       <PageHeader
         label="Education"
         title="Education & Credentials"

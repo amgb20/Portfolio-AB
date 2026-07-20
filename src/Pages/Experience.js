@@ -3,6 +3,7 @@ import { workDetails, charitiesDetails, contactDetails } from "../Details";
 import PageHeader from "../Components/ui/PageHeader";
 import AccordionCard from "../Components/ui/AccordionCard";
 import TechPill from "../Components/ui/TechPill";
+import Seo from "../Components/Seo";
 
 function TechRow({ items }) {
   if (!items || items.length === 0) return null;
@@ -188,6 +189,11 @@ function ProjectsRow({ items }) {
 export default function Experience() {
   return (
     <>
+      <Seo
+        title="Experience"
+        description="Machine learning research and engineering experience across Cambridge, UCL, Bath, Savanta and motorsport — from equivariant GNNs to production AI systems."
+        path="/experience"
+      />
       <PageHeader
         label="Experience"
         title="Professional Experience"

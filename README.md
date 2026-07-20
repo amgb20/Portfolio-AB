@@ -1,12 +1,37 @@
-# Alexandre Benoit Engineering Portfolio
+# Alexandre Benoit — Portfolio
 
-Inspired from https://github.com/pavanmg007/react-developer-portfolio-template
+Personal portfolio (React + Tailwind CSS, Create React App).
 
-# This is to start the project
-npm install in the root directory 
+## Local development
 
+```bash
+npm install
 npm start
+```
 
-# This is the deploy on netflyss
+Runs at http://localhost:3000.
+
+## Build
+
+```bash
 npm run build
-firebase deploy
+```
+
+Outputs a static site to `build/`.
+
+## Deployment (Vercel)
+
+This project is configured for Vercel via [`vercel.json`](vercel.json):
+
+- Build command: `npm run build`
+- Output directory: `build`
+- SPA rewrites so client-side routes (e.g. `/publications`, `/projects/:slug`) resolve to `index.html`
+
+Deploy by importing the repo into Vercel (auto-detected as Create React App), or run:
+
+```bash
+npx vercel        # preview
+npx vercel --prod # production
+```
+
+Production domain: https://alexandrebenoit.com

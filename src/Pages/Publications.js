@@ -6,6 +6,7 @@ import {
 } from "../Details";
 import PageHeader from "../Components/ui/PageHeader";
 import PublicationCard from "../Components/PublicationCard";
+import Seo from "../Components/Seo";
 
 const totalCitations = publications.reduce(
   (sum, p) => sum + (p.citedBy || 0),
@@ -18,6 +19,11 @@ const paperCount = publications.filter(
 export default function Publications() {
   return (
     <>
+      <Seo
+        title="Publications & Talks"
+        description="Peer-reviewed journal and conference papers, preprints and invited talks by Alexandre Benoit on ML for energy systems, path planning and graph neural networks."
+        path="/publications"
+      />
       <PageHeader
         label="Research"
         title="Publications & Talks"

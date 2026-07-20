@@ -3,6 +3,17 @@
 
 // --- Profile & institution images ---
 import profile from "./assets/profile picture.jpg";
+import galleryAbout from "./assets/aboutme.png";
+import gallery1 from "./assets/1.png";
+import gallery2 from "./assets/2.png";
+import gallery3 from "./assets/3.png";
+import gallery4 from "./assets/4.png";
+import gallery5 from "./assets/5.png";
+import gallery6 from "./assets/6.png";
+import gallery7 from "./assets/7.png";
+import gallery8 from "./assets/8.png";
+import gallery9 from "./assets/9.png";
+import gallery10 from "./assets/10.png";
 import uniCambridge from "./assets/uni-logo/university_of_cambridge_logo.jpg";
 import uniBath from "./assets/uni-logo/university_of_bath_logo.jpg";
 import uniLycee from "./assets/uni-logo/lycee_francais_de_londres_logo.jpg";
@@ -107,6 +118,37 @@ export const personalDetails = {
     "I build efficient machine learning models for energy-management systems and physical-world problems, with a focus on model interpretability, graph neural networks, and inference efficiency.",
   about: `I am studying Machine Learning and Machine Intelligence (MPhil) at the University of Cambridge and hold a Master's (MEng) in Integrated Mechanical & Electrical Engineering from the University of Bath. Originally from France and living in London since 2017, I am deeply passionate about developing efficient Machine Learning models for energy-management systems, such as batteries and charging stations, and equally committed to model interpretability. My current research interests include Graph Neural Networks and inference efficiency.`,
   about1: `Outside of research I am an active, sporty person: tennis is my primary sport, and I compete in the British University Karting Championship. I also enjoy handball, golf, surfing, snowboarding, boxing, calisthenics and triathlons, play the guitar and am a huge fan of jazz.`,
+};
+
+export const galleryImages = [
+  { src: galleryAbout, alt: "Alexandre Benoit" },
+  { src: gallery1, alt: "Off the clock" },
+  { src: gallery2, alt: "Off the clock" },
+  { src: gallery3, alt: "Off the clock" },
+  { src: gallery4, alt: "Off the clock" },
+  { src: gallery5, alt: "Off the clock" },
+  { src: gallery6, alt: "Off the clock" },
+  { src: gallery7, alt: "Off the clock" },
+  { src: gallery8, alt: "Off the clock" },
+  { src: gallery9, alt: "Off the clock" },
+  { src: gallery10, alt: "Off the clock" },
+];
+
+export const offTheClock = {
+  intro:
+    "I have a builder's mind — a CTO at heart. I love shipping apps and solving real-life problems I have run into myself, turning ideas into working products. I'm a researcher at heart, endlessly curious, and always up for a good collaboration.",
+  collaborate:
+    "If you're working on something interesting — or just want to swap ideas — I'd love to hear from you.",
+  travel:
+    "Travelling is a real passion of mine: I've explored more than 37 countries and counting, and every trip feeds my curiosity and the way I approach problems.",
+  countries: "37+",
+  sports: [
+    { name: "Tennis", emoji: "🎾" },
+    { name: "Karting", emoji: "🏎️" },
+    { name: "Guitar", emoji: "🎸" },
+    { name: "Boxing", emoji: "🥊" },
+    { name: "Skating", emoji: "🛹" },
+  ],
 };
 
 export const socialMediaUrl = {

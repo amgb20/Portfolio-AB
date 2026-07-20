@@ -8,6 +8,7 @@ const navItems = [
   { to: "/experience", label: "Experience" },
   { to: "/publications", label: "Publications" },
   { to: "/projects", label: "Projects" },
+  { to: "/off-the-clock", label: "Off the Clock" },
 ];
 
 export default function Header() {
@@ -68,7 +69,7 @@ export default function Header() {
             ))}
           </NavLink>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -88,7 +89,7 @@ export default function Header() {
             onClick={() => setIsMenuOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
-            className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
           >
             <span className="relative block h-4 w-6">
               <span
@@ -112,7 +113,7 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col bg-bg transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col bg-bg transition-all duration-300 lg:hidden ${
           isMenuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"

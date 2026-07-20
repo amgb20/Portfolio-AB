@@ -10,6 +10,7 @@ import {
 import Button from "../Components/ui/Button";
 import SectionHeading from "../Components/ui/SectionHeading";
 import PublicationCard from "../Components/PublicationCard";
+import Seo from "../Components/Seo";
 
 const paperCount = publications.filter((p) => p.category !== "colloquium").length;
 const citationCount = publications.reduce((sum, p) => sum + (p.citedBy || 0), 0);
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo path="/" />
       {/* Hero */}
       <section className="flex min-h-[92vh] items-center px-6 pt-28 pb-16">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
