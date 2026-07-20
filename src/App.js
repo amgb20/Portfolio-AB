@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "./Components/ScrollToTop";
 import InteractiveBackground from "./Components/InteractiveBackground";
 import Header from "./Components/Header";
@@ -33,6 +34,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 }
