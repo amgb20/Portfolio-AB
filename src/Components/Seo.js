@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const SITE_URL = "https://alexandrebenoit.com";
+export const SITE_URL = "https://www.alexandrebenoit.com";
 const BRAND = "Alexandre Benoit";
 const DEFAULT_TITLE = "Alexandre Benoit — ML Engineer & Scientist";
 const DEFAULT_DESCRIPTION =

@@ -34,4 +34,4 @@ npx vercel        # preview
 npx vercel --prod # production
 ```
 
-Production domain: https://alexandrebenoit.com
+Production domain: https://www.alexandrebenoit.com
