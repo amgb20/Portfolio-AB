@@ -1,26 +1,38 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollToTop";
+import InteractiveBackground from "./Components/InteractiveBackground";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Education from "./Pages/Education";
+import Experience from "./Pages/Experience";
+import Publications from "./Pages/Publications";
 import Projects from "./Pages/Projects";
-import Technologies from "./Pages/Technologies";
-import Accreditations from "./Pages/Accreditations";
+import ProjectDetail from "./Pages/ProjectDetail";
+import OffTheClock from "./Pages/OffTheClock";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/technologies" element={<Technologies />} />
-        <Route path="/accreditations" element={<Accreditations />} />
-      </Routes>
-      <Footer />
+      <ScrollToTop />
+      <InteractiveBackground />
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/publications" element={<Publications />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/off-the-clock" element={<OffTheClock />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
